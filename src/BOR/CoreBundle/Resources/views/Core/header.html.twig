@@ -16,9 +16,9 @@
                 </li>
 
             {% else %}
-                <li><a href="{{ url("bor_vip_index") }}"><span>S'abonner</span></a>
-                </li>
-                <li><a href="{{ url("bor_user_adherer") }}" onclick="ga('send', 'event', 'header', 'bouton', 'adherer');"><span>Adhérer</span></a>
+                {#<li><a href="{{ url("bor_vip_index") }}"><span>S'abonner</span></a>
+                </li>#}
+                <li><a href="{{ url("bor_user_adherer") }}" onclick="ga('send', 'event', 'header', 'bouton', 'adherer');"><span>Inscription</span></a>
                 </li>
                 <li><a href="{{ url("fos_user_security_login") }}" onclick="ga('send', 'event', 'header', 'bouton', 'connexion');"><span>Connexion</span></a>
                 </li>
@@ -55,7 +55,7 @@
 
 
         {% if app.user %}
-            <li><a href="{{ url("bor_vip_index") }}"><span>S'abonner</span></a>
+            {#<li><a href="{{ url("bor_vip_index") }}"><span>S'abonner</span></a>#}
             </li>
             <li class="authentification">
                 <a href="{{ url("bor_user_myprofil") }}">{{ app.user.firstname }} {{ app.user.lastname }}
@@ -65,14 +65,14 @@
                 </a>
             </li>
         {% else %}
-            <li>
+            {#<li>
                 <a href="{{ url("bor_vip_index") }}"><span>S'abonner</span></a>
-            </li>
+            </li>#}
             <li>
                 <a href="{{ url("fos_user_security_login") }}" onclick="ga('send', 'event', 'header', 'bouton', 'connexion');">Connexion</a>
             </li>
             <li>
-                <a href="{{ url("bor_user_adherer") }}" onclick="ga('send', 'event', 'header', 'bouton', 'adherer');">Adhérer</a>
+                <a href="{{ url("bor_user_adherer") }}" onclick="ga('send', 'event', 'header', 'bouton', 'adherer');">Inscription</a>
             </li>
         {% endif %}
     </ul>
