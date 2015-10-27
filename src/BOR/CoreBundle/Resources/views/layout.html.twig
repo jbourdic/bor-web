@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        {% block title %}{% if page_title is defined %} {{ page_title }}{% else %} Blabla Academy {% endif %}{% endblock %}
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {% block meta %}{% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block stylesheets %}
+    <!-- Les styles css ICI -->
+    <link rel="stylesheet" href="{{ asset("bundles/borcore/tpl/styles/main.css") }}" />
+    {% endblock %}
+    {% block javascripts %}
+    <!-- Les blocs javascripts ICI -->
+    {% endblock %}
+    <link rel="shortcut icon" href="" />
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57752381-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</head>
+
+<body {% block bodyId %}{% endblock %}>
+    <header>
+        {% block header %} {{ render(controller('BORCoreBundle:Core:header')) }} {% endblock %}
+    </header>
+
+    <nav class="sidenav">
+        {% block sidebar %} {{ render(controller('BORCoreBundle:Core:sidebar' )) }} {% endblock %}
+    </nav>
+
+    {% if app.user %}
+        <nav class="dashboard">
+            {{ render(controller('BORCoreBundle:Core:dashboard')) }}
+        </nav>
+    {% endif %}
+    <div class="main-container" {% block mainId %}{% endblock %}>
+        <div class="flash-message"></div>
+        {% block content %}
+        <!-- Contenu de la page ICI -->
+        {% endblock %}
+    </div>
+    <footer>
+        {% block footer %} {% include 'BORCoreBundle:Core:footer.html.twig' %} {% endblock %}
+    </footer>
+    {% block script %}
+        <script type="text/javascript" src="{{ asset("bundles/borcore/tpl/scripts/libs/jquery-2.1.3.min.js") }}"></script>
+        {% block lib %}
+        {% endblock %}
+        <script type="text/javascript" src="{{ asset("bundles/borcore/tpl/scripts/main.js") }}"></script>
+        {% block specific_script %}{% endblock %}
+     {% endblock %}
+</body>
+
+</html>

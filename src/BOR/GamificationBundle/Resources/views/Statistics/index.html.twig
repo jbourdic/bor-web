@@ -1,0 +1,58 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+{% block mainId %}id="main-contact"{% endblock %}
+{% block content %}
+    <div class="content">
+
+        <h1 class="ttl-1 color-white">Statistics list</h1>
+        <div class="content-box bg-trans">
+            <table class="records_list">
+                <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>User</th>
+                    <th>Level</th>
+                    <th>Experience</th>
+                    <th>Level Experience</th>
+                    <th>Credit</th>
+                    <th>Qcm</th>
+                    <th>Cours</th>
+                </tr>
+                </thead>
+                <tbody>
+                {#{% set rank = (pagination.page - 1) * (pagination.resultPerPage) + 1 %}#}
+
+                {% for entity in entities %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ entity.user.firstname }} {{ entity.user.lastname }}</td>
+                        <td>{{ entity.level }}</td>
+                        <td>{{ entity.experience }}</td>
+                        <td>{{ entity.levelExperience }}</td>
+                        <td>{{ entity.credit }}</td>
+                        <td>{{ entity.qcm }}</td>
+                        <td>{{ entity.courses }}</td>
+                    </tr>
+                    {#{% set rank = rank + 1 %}#}
+                {% endfor %}
+                </tbody>
+            </table>
+
+            {# {% include 'BORCoreBundle::pagination.html.twig' %}#}
+        </div>
+
+    </div>
+    {% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+<link rel="stylesheet" href="{{ asset("bundles/borcore/datatables/media/css/jquery.dataTables.min.css") }}" />
+{% endblock %}
+{% block lib %}
+    <script src="{{ asset("bundles/borcore/datatables/media/js/jquery.dataTables.min.js") }}"></script>
+{% endblock %}
+{% block specific_script %}
+    <script>
+        $(function(){
+            $('table').dataTable();
+        })
+    </script>
+{% endblock %}

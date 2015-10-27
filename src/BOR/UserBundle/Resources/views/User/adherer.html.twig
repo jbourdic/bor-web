@@ -1,0 +1,41 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+{% set page_title = 'Adhérer - Blabla.academy' %}
+{% block meta %}
+    <meta name="description" content="Adhérer à Blabla.academy">
+{% endblock %}
+{% block content %}
+    <div id="contenu_compte" class="content">
+        <div id="Creer_compte">
+            <h1> Adhérer</h1>
+            <p class="chapo"></p>
+        </div>
+
+
+        <div id="ad_ex">
+
+            <div id="profil_ad">
+                <img src="{{ asset('bundles/borcore/tpl/img/common/avatar.png') }}" alt="blabla logo">
+                <h2>Profil adherent</h2>
+                <p></p>
+
+                <div class="LienBouton_ad">
+                    <p>
+                        <a href="{{ url('fos_user_registration_register') }}" onclick="ga('send', 'event', 'inscription', 'bouton', 'adherent');">Creer un compte </a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div id ="profil_ex">
+                <img  src="{{ asset('bundles/borcore/tpl/img/common/avatar.png') }}" alt="blabla logo">
+                <h2> Profil expert</h2>
+                <p></p>
+                <div class="LienBouton_ex">
+                    <p>
+                        <a href="{{ url('fos_user_registration_register', {'expert':1}) }}" onclick="ga('send', 'event', 'inscription', 'bouton', 'expert');">Creer un compte</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

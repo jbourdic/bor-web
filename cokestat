@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+./bin/coke > cokeOutput.txt
+
+CUR_PARAM="$1"
+if [ "${CUR_PARAM:0:2}" = "-v" ]
+then
+  echo "Details des erreurs :"
+  cat cokeOutput.txt | grep "ERROR |"
+fi
+
+if [ "${CUR_PARAM:2:1}" = "w" ]
+then
+  echo "Details des warnings :"
+  cat cokeOutput.txt | grep "WARNING |"
+fi
+
+echo "Nombre de fichiers :"
+find src/ -type f -name "*.php" | wc -l
+echo "Nombre de lignes de php :"
+find src/ -type f -name "*.php" | xargs cat | wc -l
+echo "Nombre d'erreurs :"
+cat cokeOutput.txt | grep "ERROR |" | wc -l
+echo "Nombre de warning :"
+cat cokeOutput.txt | grep "WARNING |" | wc -l
+
+rm cokeOutput.txt

@@ -1,0 +1,45 @@
+bor_core:
+    resource: "@BORCoreBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+bor_advert:
+    resource: "@BORAdvertBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+bor_blog:
+    resource: "@BORBlogBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+bor_media:
+    resource: "@BORMediaBundle/Controller/"
+    type:     annotation
+
+bor_user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+bor_api:
+    type: rest
+    resource: "@BORApiBundle/Resources/config/routing_rest.yml"
+    prefix: /api
+
+bor_vip:
+    resource: "@BORVipBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+bor_gamification:
+    resource: "@BORGamificationBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+bor_admin:
+    resource: "@BORAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"

@@ -1,0 +1,42 @@
+{% extends 'BORAdminBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>Partner admin</h1>
+
+    <ul>
+        <li>
+            <a href="{{ path('bor_admin_partenaire_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Website</th>
+                <th>Active</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td>{{ entity.name }}</td>
+                    <td><a href="{{ entity.website }}">{{ entity.website }}</a></td>
+                    <td>{{ entity.active }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('bor_admin_partenaire_show', { 'id': entity.id }) }}">Show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('bor_admin_partenaire_edit', { 'id': entity.id }) }}">Edit</a>
+                            </li>
+                        </ul>
+                    </td>               
+                </tr>
+            {% endfor %}
+        </tbody>
+{% endblock %}
+

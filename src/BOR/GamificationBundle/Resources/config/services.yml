@@ -1,0 +1,8 @@
+services:
+    bor_core.gamification:
+        class: BOR\GamificationBundle\Services\Gamification
+        arguments: ["@doctrine.orm.entity_manager"]
+
+    bor_gamification.level_manager:
+            class: BOR\GamificationBundle\Manager\LevelManager
+            arguments: ["@doctrine.orm.entity_manager"]

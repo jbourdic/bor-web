@@ -1,0 +1,68 @@
+{% extends 'BORCoreBundle::layout.html.twig' %}
+{% block mainId %} id="main-contact"{% endblock %}
+{% block content -%}
+    <div id="concept">
+    <h1 class="H1Contact">CONTACTEZ-NOUS</h1>
+    <div class="BlockConnexionTall">
+        <h1 class="H1FormContact">ENVOYER UN MESSAGE</h1>
+
+    {{ form_errors(form) }}
+        <hr class="HrGrey">
+        <div id="BlockFormConnexionTall">
+            <form class="Form" method="POST" action="">
+                <div class="RawForm">
+                    <label class="LabelInput">{{form_label(form.email)}} :</label>
+                    {{form_widget(form.email, {"attr":{
+                    "class":"TextInputTall",
+                    "id":"ValidEmail",
+                    "type":"mail",
+                    "required":"true",
+                    "placeholder":"Saisissez votre E-mail"
+                        }})
+                    }}
+                </div>
+                <div class="RawForm">
+                    <label class="LabelInput">{{form_label(form.phone,'Téléphone')}} :</label>
+                    {{form_widget(form.phone, {"attr":{
+                    "class":"TextInputTall",
+                    "type":"text",
+                    "placeholder":"Saisissez votre Numéro de Tel"
+                        }})
+                    }}
+                </div>
+                <div class="RawForm">
+                    <label class="LabelInput">{{form_label(form.subject,'Objet')}} :</label>
+                    {{form_widget(form.subject, {"attr":{
+                    "class":"TextInputTall",
+                    "id":"ValidObjet",
+                    "type":"text",
+                    "required":"true",
+                    "placeholder":"Saisissez votre objet"
+                        }})
+                    }}
+                </div>
+                <div class="RawForm">
+                    <label class="LabelDescriptionInput">{{form_label(form.message,'Message')}} :</label>
+                    {{form_widget(form.message, {"attr":{
+                    "class":"TextAreaInputTall",
+                    "id":"ValidMessage",
+                    "required":"true",
+                    "placeholder":"500 caractères"
+                        }})
+                    }}
+                </div>
+                <div class="RawForm">
+                    {{ form_widget(form.submit,{
+                    "label":"Envoyer mon message",
+                    "attr":{
+                        "class":"OrangeSubmit",
+                        }})
+                    }}
+                </div>
+                {{ form_end(form) }}
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

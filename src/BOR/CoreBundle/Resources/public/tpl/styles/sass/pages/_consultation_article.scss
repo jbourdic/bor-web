@@ -1,0 +1,703 @@
+/* ==========================================================================
+   @comment:
+   ========================================================================== */
+
+/*----------------------------------------------------------------
+	Mode desktop
+-----------------------------------------------------------------*/
+.contenu-page-article{
+  width: 100%;
+  background-color:$bg-color-2 ;
+  border : black 1px solid;
+  padding : 25px;
+
+  h2{
+    color: $orange-color;
+    font-family: arial;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom:5px;
+    margin-top: 20px;
+  }
+
+  h3{
+    color: $text-color;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  h4{
+    color: $orange-color;
+    font-family: arial;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom:5px;
+  }
+
+  p{
+    font-size: 12px;
+    color: $text-color;
+    font-family:arial;
+    text-transform: inherit;
+    text-align: justify;
+  }
+
+  ul{
+    font-size: 12px;
+    color: $text-color;
+    font-family:arial;
+    font-weight: inherit;
+
+    li{
+      list-style: circle;
+    }
+  }
+
+  @include clearfix;
+}
+
+.slider{
+  width: 50%;
+  float: left;
+  padding-right: 4%;
+}
+
+.contenu-annonce{
+  width: 50%;
+  float: right;
+  margin-top:-24px;
+
+}
+
+.signaler_annonce{
+   font-size: 12px;
+   color: $text-color;
+   font-family:arial;
+   font-style: italic;
+   text-decoration: underline;
+   margin-top: 20px;
+   float:left;
+ }
+
+.signaler_annonce:hover{
+  color: $orange-color;
+}
+
+.signaler_commentaire{
+  font-size: 12px;
+  color: $text-color;
+  font-family:arial;
+  font-style: italic;
+  text-decoration: underline;
+  float:left;
+}
+
+.signaler_commentaire:hover{
+  color: $orange-color;
+}
+
+.titre-annonce-mobile{
+  display: none;
+}
+
+.titre-page{
+  width:100%;
+}
+
+.outils-right{
+  position: absolute;
+  right:25px;
+  display: inline-block;
+  margin-top:10px;
+
+  .editer-profil{
+    padding: 0;
+  }
+}
+
+.retour-nav{
+  color: $text-color;
+  text-decoration: underline;
+  font-size: 14px;
+  display: inline-block;
+  padding-bottom: 15px;
+
+  a:hover {
+    color: $orange-color;
+  }
+}
+
+#vignette{
+  width: 100%;
+  overflow: hidden;
+  img{
+    width: 100%;
+  }
+}
+
+.img1-active,.img2-active, .img3-active {
+  margin-bottom: 10px;
+}
+
+.img2-active{
+   background-image:url(../img/annonce/visuel_test2.png);
+ }
+
+.img3-active{
+  background-image:url(../img/annonce/visuel_test3.png);
+}
+
+.img4-active{
+  background-image:url(../img/annonce/visuel_test4.png);
+}
+
+.img5-active{
+  background-image:url(../img/annonce/visuel_test5.png);
+}
+
+.img1{
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+}
+
+.img2{
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+}
+
+.img3{
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+}
+
+.img4{
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+}
+
+.img5{
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+}
+
+.liste-image{
+  p{
+    text-transform: uppercase;
+  }
+}
+
+.auteur{
+  font-size:15px;
+  font-style: italic;
+}
+
+.prix{
+  float: left;
+  width: 33%;
+}
+
+.lieu{
+  float:left;
+  width: 33%;
+  padding-left:15px;
+}
+
+.type{
+  float: right;
+  width: 33%;
+}
+
+.informations-vendeur{
+  margin-top: 70px;
+  a{
+    font-size: 12px;
+    color: $text-color;
+    font-family:arial;
+    text-decoration: underline;
+  }
+
+  img{
+    margin-right: 10px;
+  }
+}
+
+.consult_num{
+  margin-right: 60px;
+  display: inline-block;
+}
+
+.consult_num a:hover{
+  color: $orange-color;
+}
+
+.envoi_mail{
+display: inline-block;
+}
+
+.envoi_mail a:hover{
+  color: $orange-color;
+}
+
+.ajout_favoris{
+  background-image: url(../img/annonce/favoris.png);
+  background-repeat: no-repeat;
+  width: 30px;
+  display:inline-block;
+  height: 20px;
+
+  a:hover &, &.active{
+    background-image: url(../img/annonce/favoris_hover.png);
+  }
+}
+
+.deposer_annonce{
+  background-image: url(../img/annonce/deposer_annonce.png);
+  background-repeat: no-repeat;
+  width: 64px;
+  display:inline-block;
+  height: 22px;
+
+  a:hover &{
+    background-image: url(../img/annonce/deposer_annonce_hover.png);
+  }
+}
+
+.Facebook{
+  background-image: url(../img/annonce/facebook_partage.png);
+  background-repeat: no-repeat;
+  width: 28px;
+  display:inline-block;
+  height: 22px;
+
+  a:hover &{
+    background-image: url(../img/annonce/facebook_partage_hover.png);
+  }
+}
+
+.Twitter{
+  background-image: url(../img/annonce/twitter_partage.png);
+  background-repeat: no-repeat;
+  width: 28px;
+  display:inline-block;
+  height: 22px;
+
+  a:hover &{
+    background-image: url(../img/annonce/twitter_partage_hover.png);
+  }
+}
+
+.Google{
+  background-image: url(../img/annonce/google_partage.png);
+  background-repeat: no-repeat;
+  width: 20px;
+  display:inline-block;
+  height: 22px;
+
+  a:hover &{
+    background-image: url(../img/annonce/google_partage_hover.png);
+  }
+}
+.social-networks{
+  float:right;
+  margin-top: 20px;
+}
+
+.social-networks-comments{
+  float:right;
+  margin-top: 0px;
+}
+
+.pagination{
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.nav-back{
+  width: 32%;
+  display: inline-block;
+  text-align: left;
+}
+.nav-front{
+  width: 32%;
+  display: inline-block;
+  text-align: right;
+}
+.num-pagination{
+  width: 32%;
+  display: inline-block;
+
+  p{
+    text-align: center;
+  }
+}
+
+
+#bloc-onglets{
+   width: 100%;
+
+  .active{
+    border-right: solid 1px $border-grey;
+    border-left: solid 1px $border-grey;
+    border-top: solid 1px $border-grey;
+    a{
+      color:#f18033;
+      text-transform: uppercase;
+    }
+  }
+
+  .inactive{
+    border-bottom: solid 1px $border-grey;
+    a{
+      color:$text-color;
+    }
+  }
+ }
+
+#liste-comments{
+  width: 100%;
+  height: 230px;
+  overflow:scroll;
+}
+
+#bouton-infos{
+  display: inline-block;
+  width: 49%;
+
+  a{
+    display: block;
+    font-size: 14px;
+    padding: 5px 20px 5px 20px;
+
+    &:hover{
+      color: $orange-color;
+    }
+  }
+
+}
+
+
+
+#bouton-avis{
+  display: inline-block;
+  width: 49%;
+
+  a{
+    display: block;
+    font-size: 14px;
+    padding: 5px 20px 5px 20px;
+
+    &:hover{
+      color: $orange-color;
+    }
+  }
+}
+
+.contenu-onglet-1{
+  width: 99%;
+  border-bottom: solid;
+  border-left: solid;
+  border-right: solid;
+  border-width: 1px;
+  border-color: #{$border-grey};
+  padding: 10px 0px 0px 20px;
+}
+
+.photo-profil{
+  float: left;
+  width: 15%;
+}
+
+.info-profil{
+  float: left;
+  width: 30%;
+
+  .color-orange{
+    color: $orange-color;
+  }
+}
+
+.lien-profil{
+  float: right;
+  width: 55%;
+
+  a{
+    font-size: 12px;
+    color: $text-color;
+    font-family:arial;
+    text-transform: inherit;
+    display: block;
+    padding-bottom: 8px;
+
+    img{
+      margin-right: 15px;
+    }
+
+    &:hover{
+      color: $orange-color;
+    }
+
+  }
+}
+
+.description-profil{
+  width: 100%;
+  clear: both;
+  padding-top: 10px;
+}
+
+.contenu-onglet-2{
+  width: 99%;
+  display: none;
+  border-bottom: solid;
+  border-left: solid;
+  border-right: solid;
+  border-width: 1px;
+  border-color: #{$border-grey};
+  padding: 10px 0px 0px 20px;
+}
+
+.detail-comment{
+  width: 99%;
+  border-bottom: solid 1px $border-grey;
+  height: 115px;
+  margin-top: 15px;
+}
+
+.commentaires{
+  width: 100%;
+  text-align: right;
+  padding-right: 10px;
+
+  a{
+    font-size: 12px;
+    color: $text-color;
+    font-family:arial;
+    text-transform: inherit;
+    display: inline-block;
+    padding-bottom: 8px;
+    margin-left: 25px;
+
+    img{
+      margin-right: 15px;
+    }
+
+    &:hover{
+      color: $orange-color;
+    }
+
+  }
+}
+
+.avis{
+  float: right;
+  width: 50%;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.auteur-avis{
+  float: left;
+  width: 50%;
+
+  .color-orange{
+    color: $orange-color;
+  }
+}
+
+.post-comment-mobile{
+  visibility: hidden;
+  display: none;
+}
+
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 1270px
+-----------------------------------------------------------------*/
+@media screen and (max-width:1270px){
+
+  .post-comment-mobile{
+    visibility: hidden;
+    display: none;
+  }
+}
+/*----------------------------px------------------------------------
+	Breakpoint 2 : 980
+-----------------------------------------------------------------*/
+@media screen and (max-width:980px){
+  #bouton-avis a{
+    font-size: 10px;
+    padding: 5px 5px 5px 5px;
+   }
+  #bouton-infos a{
+    font-size:10px;
+    padding: 5px 5px 5px 5px;
+  }
+  .post-comment-mobile{
+    visibility: hidden;
+    display: none;
+  }
+}
+/*----------------------------------------------------------------
+	Breakpoint 3 : 940px
+-----------------------------------------------------------------*/
+@media screen and (max-width:940px){
+
+  .contenu-annonce{
+    width: 40%;
+  }
+
+  .prix{
+    float: inherit;
+    width: 100%;
+    padding-left:15px;
+  }
+
+  .lieu{
+    float:inherit;
+    width: 100%;
+    padding-left:15px;
+  }
+
+  .type{
+    float: inherit;
+    width: 100%;
+    padding-left:15px;
+  }
+
+  #vignette{
+    width: 100%;
+  }
+
+  .slider{
+    padding-right: 0%;
+  }
+
+  .informations-vendeur{
+    margin-top: 0px;
+  }
+
+  .consult_num{
+    margin-right: 10px;
+  }
+
+  .social-networks{
+    float: right;
+  }
+
+  .signaler_annonce{
+    float: left;
+  }
+  .post-comment-mobile{
+    visibility: hidden;
+    display: none;
+  }
+}
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 640px
+-----------------------------------------------------------------*/
+
+@media screen and (max-width:650px){
+  .social-networks{
+    float: left;
+  }
+
+}
+/*----------------------------------------------------------------
+	Breakpoint 1 : 790px
+-----------------------------------------------------------------*/
+
+@media screen and (max-width:790px){
+  .titre-annonce-mobile{
+	 display: inherit;
+   }
+  .titre-annonce-desktop{
+	display: none;
+  }
+
+  .slider {
+    float: inherit;
+    width: 100%;
+    padding-right: 0%;
+  }
+
+  .contenu-annonce{
+    float: inherit;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .contenu-page{
+    margin:auto;
+    height: auto;
+    clear: both;
+  }
+
+  .informations-vendeur{
+    margin-top: 0px;
+  }
+
+  .social-networks{
+    float: inherit;
+    display: block;
+  }
+
+  .signaler_annonce{
+    float: inherit;
+    display: block;
+  }
+
+  .post-comment-desktop{
+    visibility: hidden;
+    display: none;
+  }
+
+  .commentaires a {
+    display: inherit;
+  }
+
+  #liste-comments{
+    width: 100%;
+    overflow:visible;
+  }
+
+  .post-comment-mobile{
+    visibility: visible;
+    display: inherit;
+    text-align: left;
+
+    h5{
+      text-transform: uppercase;
+      margin-bottom: 0px;
+    }
+
+    a{
+      color: white;
+      margin-left: 0px;
+    }
+
+    .ajout-avis{
+      float: right;
+    }
+
+    textarea{
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .LienBouton a:hover{
+      color: white;
+      font-size: 12px;
+
+    }
+  }
+
+}

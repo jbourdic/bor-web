@@ -1,0 +1,24 @@
+.media-selector {
+  &.gallery-open {
+    .media-gallery{
+      display: block;
+    }
+  }
+  .media-gallery{
+    @include clearfix;
+
+    display: none;
+    position: fixed;
+    top: 0;left: 0;
+    width: 100%;height: 100%;
+    background-color: rgba(255, 255, 255, .9);
+
+    overflow-y: scroll;
+
+  }
+  .icon-close{
+    display: table-cell;
+    cursor: pointer;
+    font-size: 50px; color: #d00; font-weight: bold; font-family: helvetica,arial; line-height: 1;
+  }
+}

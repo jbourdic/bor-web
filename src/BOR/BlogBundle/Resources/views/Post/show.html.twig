@@ -1,0 +1,181 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+{% set page_title = entity.title~' - Blabla.academy' %}
+{% block meta %}
+    {% if (entity.metaTitle != "") %}<meta property="og:title" content="{{ entity.metaTitle }}" />{% endif %}
+    {% if (entity.metaDescription != "") %}
+        <meta property="og:description" content="{{ entity.metaDescription }}" />
+        <meta name="description" content="{{ entity.metaDescription }}">
+    {% endif %}
+    {% if (url != "") %}<meta property="og:url" content="{{ app.request.getSchemeAndHttpHost() }}{{ url }}" />{% endif %}
+    <meta property="og:image" content="" />
+{% endblock %}
+
+{% block content %}
+
+    <div class="content">
+        <div class="titre-page">
+            <h1>Personnaliser mon logement</h1>
+        </div>
+
+        <div class="retour-nav">
+            <a href="{{ path('bor_post_list') }}">&lg; Retour à la liste des articles</a>
+        </div>
+        <div class="outils-right">
+            {% if app.user == entity.user %}
+                <a class="editer-profil" href="{{ url("bor_post_edit", {'id': entity.id}) }}"><span><img alt="Editer l'article" src="{{ asset("bundles/borcore/tpl/img/picto_compte/picto_editer.png") }}"/></span></a>
+            {% endif %}
+        </div>
+        <div class="contenu-page-article">
+            <div id="popup1" class="popup1">
+                <div class="close-popup" data-toggle="close-popup" data-target="#popup1">X</div>
+                <iframe src="{{ url('bor_blockpost_create' , { 'id': entity.id }) }}" frameborder="0"></iframe>
+            </div>
+            <div>
+                <img style="width: 47%;float:left;" src="
+                    {% if entity.media is not null %}
+                        {{ asset(entity.media.getWebPath()) }}
+                    {% else %}
+                        {{ asset('bundles/borcore/tpl/img/common/multimedia-default.png') }}
+                    {% endif %}">
+            </div>
+            <div class="contenu-annonce">
+                <div class="titre-annonce-desktop">
+                    <h2>
+                        {{ entity.title }}
+                    </h2>
+                    <h3>Sous titre</h3>
+                    <p class="auteur">Auteur : {{ entity.user }} - Date de publication : {{ entity.createdOn|date('Y-m-d H:i:s') }}</p>
+                </div>
+                <div class="">
+                    {% autoescape false %}
+                    {{ entity.content }}
+                    {% endautoescape %}
+                </div>
+                <div class="pagination">
+                    <div class="nav-back">
+                        <a href="#"><img src="{{ asset('bundles/borcore/tpl/img/common/fleche_g.png') }}" alt=""></a>
+                    </div>
+                    <div class="nav-front">
+                        <a href="#"><img src="{{ asset('bundles/borcore/tpl/img/common/fleche_d.png') }}" alt=""></a>
+                    </div>
+                </div>
+
+                <div id="bloc-onglets" class="">
+                    <div id="bouton-infos" class="active">
+                        <a href="#">Informations auteur</a>
+                    </div>
+                    <div id="bouton-avis" class="inactive">
+                        <a href="#">Avis adhérents</a>
+                    </div>
+                    <div class="contenu-onglet-1">
+                        <div class="photo-profil">
+                            <img src="{{ asset('bundles/borcore/tpl/img/article/photo-profil-miniature.png') }}" alt="">
+                        </div>
+                        <div class="info-profil">
+                            <p class="color-orange">{{ entity.user.firstname }} {{ entity.user.lastname }}</p>
+                            {% if entity.user.job is defined %}
+                                <p>{{ entity.user.job }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="lien-profil">
+                            <a href="{{ url('bor_user_expert_show', {'id': entity.user.id})}}"><img src="{{ asset('bundles/borcore/tpl/img/article/picto-profil.png') }}" alt="" onclick="ga('send', 'event', 'article', 'bouton', 'profil');"><u>Consulter son profil</u></a>
+                            <a href="mailto:{{ entity.user.email }}" onclick="ga('send', 'event', 'article', 'bouton', 'email');"><img src="{{ asset('bundles/borcore/tpl/img/annonce/mail.png') }}" width="12px" alt=""><u>Envoyer un email</u></a>
+                        </div>
+                        <div class="description-profil">
+                            {% if entity.user.description is defined %}
+                                <p>{{ entity.user.description }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="contenu-onglet-2">
+                        {{ knp_disqus_render('blablaacademy', {'identifier': app.request.getSchemeAndHttpHost()~url, 'limit': 10, 'disqus_developer': 1}) }}
+                    </div>
+                </div>
+
+                <a data-target="#popup1" data-toggle="open-popup" class="signaler_annonce">Signaler l'article</a>
+                <div class="social-networks">
+                    <a href="javascript:ouvre('http://www.facebook.com/share.php?u=http://{{ app.request.getHost }}{{ path('bor_post_show', { 'id': entity.id , 'slug': entity.title }) }}&title={{ entity.title }}')" onclick="ga('send', 'event', 'article', 'partage', 'facebook');"><span class="Facebook" title="Partager sur Facebook"></span></a>
+                    <a href="javascript:ouvre('http://twitter.com/intent/tweet?status={{ entity.title }}+http://{{ app.request.getHost }}{{ path('bor_post_show', { 'id': entity.id , 'slug': entity.title }) }}')" onclick="ga('send', 'event', 'article', 'partage', 'twitter');"><span class="Twitter" title="Partager sur Twitter"></span></a>
+                    <a href="javascript:ouvre('https://plus.google.com/share?url=http://{{ app.request.getHost }}{{ path('bor_post_show', { 'id': entity.id , 'slug': entity.title }) }}')" onclick="ga('send', 'event', 'article', 'partage', 'google');"><span class="Google" title="Partager sur Google +"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block body -%}
+    <h1>Post</h1>
+
+    <table class="record_properties">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>
+                {{ entity.title }}
+            </td>
+        </tr>
+        <tr>
+            <th>Content</th>
+            <td>
+                {% autoescape false %}
+                {{ entity.content }}
+                {% endautoescape %}
+            </td>
+        </tr>
+        <tr>
+            <th>Iduser</th>
+            <td>{{ entity.user }}</td>
+        </tr>
+        <tr>
+            <th>Idmedia</th>
+            <td>{{ entity.idMedia }}</td>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <td>{{ entity.type }}</td>
+        </tr>
+        <tr>
+            <th>Active</th>
+            <td>{{ entity.active }}</td>
+        </tr>
+        <tr>
+            <th>Createdon</th>
+            <td>{{ entity.createdOn|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Updatedon</th>
+            <td>{{ entity.updatedOn|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Metatitle</th>
+            <td>{{ entity.metaTitle }}</td>
+        </tr>
+        <tr>
+            <th>Metadescription</th>
+            <td>{{ entity.metaDescription }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('bor_post_list') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('bor_post_edit', { 'id': entity.id }) }}">
+                Edit
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('bor_blockpost_create' , {'id': entity.id} )  }}">Block</a>
+        </li>
+    </ul>
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.getSchemeAndHttpHost() }}{{ url }}">Share on Facebook</a>
+    <a target="_blank" href="https://twitter.com/share?url={{ app.request.getSchemeAndHttpHost() }}{{ url }}&text=Texte_du_tweet&via=CompteTwitterBlablaAcademy&hashtags=BOR,Blabla.academy">Share on Twitter</a>
+    <a target="_blank" href="https://plus.google.com/share?url={{ app.request.getSchemeAndHttpHost() }}{{ url }}">Share on Google+</a>
+{% endblock %}

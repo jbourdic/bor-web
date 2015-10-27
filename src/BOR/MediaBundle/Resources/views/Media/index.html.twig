@@ -1,0 +1,31 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+{% set page_title = 'Ma galerie - Blabla.academy' %}
+{% block meta %}
+    <meta name="description" content="Ma galerie - Blabla.academy">
+{% endblock %}
+{% block content %}
+<div class="title-expert">
+    <h2 class="text-shadow">Ma galerie</h2>
+</div>
+<div class="profil-expert">
+    <ul>
+        <li>
+            {{ form_start(add_form) }}
+            <label for="file">Ajouter une photo</label>
+            {{ form_widget(add_form.file) }}
+            {{ form_rest(add_form) }}
+            {{ form_end(add_form) }}
+        </li>
+    {% for entity in entities %}
+        <li>
+            <img style="width:100px;" src="{{ asset(entity.media.getWebPath()) }}" alt="{{ entity.media.name }}"></td>
+            <p>
+                {{ entity.media.createdOn|date('d/m/Y H:i') }}
+                {{ form(entity.delete_form) }}
+            </p>
+        </li>
+        </tr>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

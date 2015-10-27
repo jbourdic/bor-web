@@ -1,0 +1,48 @@
+{% extends 'BORAdminBundle::layout.html.twig' %}
+{% block content %}
+    <h1>Sponsorship list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Idsponsor</th>
+                <th>Godsonemail</th>
+                <th>Hasaccepted</th>
+                <th>Createdon</th>
+                <th>Updatedon</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('sponsorship_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.idSponsor }}</td>
+                <td>{{ entity.godsonEmail }}</td>
+                <td>{{ entity.hasAccepted }}</td>
+                <td>{% if entity.createdOn %}{{ entity.createdOn|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.updatedOn %}{{ entity.updatedOn|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('sponsorship_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('sponsorship_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('sponsorship_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

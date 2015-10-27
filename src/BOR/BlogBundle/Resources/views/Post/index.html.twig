@@ -1,0 +1,55 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+{% block mainId %}id="advert"{% endblock %}
+{% block content %}
+<div class="content">
+    <div class="left-button-search-result"><div><span></span></div></div>
+    <div id="search-result-container">
+        <div id="search-result-top-left">
+            <h1>Articles</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac facilisis felis. Mauris tincidunt gravida
+                ligula, malesuada interdum leo rhoncus eu.</p>
+        </div>
+        <div id="search-result-top-right">
+            <input type="search" placeholder="Rechercher"><div class="search-button"><a href=""></a></div>
+            <select name="Search filtrer">
+                <option value="">Filtrer les résultats</option>
+                <option value="">Par date</option>
+                <option value="">Par auteur</option>
+            </select>
+        </div>
+
+        <div class="clear"></div>
+        <div class="page-and-link-search-result">
+            <div>
+                <a href="#" class="search-page-hidden"></a>
+                <a href="#" class="search-page-hidden"></a>
+            </div>
+        </div>
+
+        {% for entity in entities %}
+            <div class="search-result">
+                <a href="{{ path('bor_post_show', { 'id': entity.id }) }}" class="search-result-img">
+                    <img src="
+                    {% if entity.media is not null %}
+                        {{ asset(entity.media.getWebPath()) }}
+                    {% else %}
+                        {{ asset('bundles/borcore/tpl/img/common/multimedia-default.png') }}
+                    {% endif %}
+                    " alt="image article"></a>
+                <div class="search-result-bottom-title search-result-bottom">
+                    <p>{{ entity.title }}</p>
+
+                    <div class="favorite-search-result-icone visuallyhidden"></div>
+                </div>
+                <div class="search-result-bottom-hover search-result-bottom">
+                    <ul>
+                        <li><a href="javascript:ouvre('http://www.facebook.com/share.php?u=wikipedia.fr&title=Wikipedia')" title="facebook"></a></li>
+                        <li><a href="javascript:ouvre('http://twitter.com/intent/tweet?status=Wikipedia+wikipedia.fr')" title="tweeter"></a></li>
+                        <li><a href="javascript:ouvre('https://plus.google.com/share?url=wikipedia.fr')" title="google +"></a></li>
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'BORCoreBundle::layout.html.twig' %}
+{% set page_title = 'Blabla.academy : experts en immobilier' %}
+{% block meta %}
+    <meta name="description" content="Blabla.academy est un outil de recherche, de partage et d'apprentissage en immobilier. Trouvez des annonces logement, contactez un expert ou apprenez grâce aux vidéos du MOOC.">
+{% endblock %}
+{% block bodyId %} id="homepage" {% endblock %}
+{% block content %}
+
+{% include 'BORCoreBundle:Core:main-container.html.twig' %}
+
+{{ form(form_filter) }}
+
+{% block popup %}
+{% endblock %}
+
+{% endblock %}
+     
+{% block lib %}
+{{ parent() }}
+    <script src="{{ asset("bundles/borcore/tpl/scripts/libs/bootstrap.min.js") }}"></script>
+{% endblock %}
+

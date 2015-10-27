@@ -1,0 +1,903 @@
+/* ==========================================================================
+   @comment:
+   ========================================================================== */
+
+/*----------------------------------------------------------------
+	Mode desktop
+-----------------------------------------------------------------*/
+#main-contact{
+  margin:0;
+  background: url("#{$pathImg}image_contact.png") no-repeat center fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.BlockConnexionTall{padding-bottom: 15px;}
+
+
+.LienForm{
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.HrGrey{
+  border: none;
+  height: 1px;
+  background-color: #{$border-grey};
+  color: #{$border-grey};
+  max-width: 620px;
+  width: 100%;
+  margin: auto;
+  margin-top: 3%;
+}
+
+.H1Form {
+  font-size: 18px;
+}
+
+.H1FormContact {
+  font-size: 18px;
+  max-width: 620px;
+  width: 100%;
+  margin: auto;
+  padding-top: 3%;
+}
+
+.H1Black {
+  font-size: 20px;
+  color: #{$black-color};
+  padding-left: 20px;
+}
+
+.H1Contact {
+  font-size: 20px;
+  color: #{$white-color};
+  padding-left: 20px;
+  z-index:10000;
+}
+
+#bouton-article{
+  position: absolute;
+  margin-top: -50px;
+  margin-left: -1px;
+}
+
+#bouton-article a{
+  display: block;
+  background-color: #{$light-grey-color};
+  font-size: 14px;
+  border-top: solid;
+  border-left: solid;
+  border-right: solid;
+  border-width: 1px;
+  border-color: #{$border-grey};
+  color: #{$orange-color};
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#bouton-referencement{
+  position: absolute;
+  margin-top: -50px;
+  margin-left: 99px;
+}
+
+#bouton-referencement a{
+  display: block;
+  background-color: #{$light-grey-color};
+  font-size: 14px;
+  color: #{$border-grey};
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#bouton-article2{
+  position: absolute;
+  margin-top: -50px;
+  margin-left: -1px;
+}
+
+#bouton-article2 a{
+  display: block;
+  background-color: #{$light-grey-color};
+  font-size: 14px;
+  color: #{$border-grey};
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#bouton-referencement2{
+  position: absolute;
+  margin-top: -50px;
+  margin-left: 99px;
+}
+
+#bouton-referencement2 a{
+  display: block;
+  background-color: #{$light-grey-color};
+  font-size: 14px;
+  border-top: solid;
+  border-left: solid;
+  border-right: solid;
+  border-width: 1px;
+  border-color: #{$border-grey};
+  color: #{$orange-color};
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#h4-other-picture{
+  font-size: 11px;
+}
+
+.PForm{
+  margin-top: -5px;
+  font-size: 13px;
+}
+
+.BlockConnexion{
+  position: relative;
+    max-width: 550px;
+    width: 100%;
+   background-color: rgba(255, 255, 255, 0.7);
+  margin: 0 auto;
+  @include centerer;
+ }
+.main-container .BlockConnexion h2
+{
+  margin-bottom:10px;
+}
+.main-container .BlockConnexion .PForm
+{
+  font-size:12px;
+}
+.main-container .H1Contact
+{
+  text-shadow: 2px 2px 2px black;
+  font-weight: normal;
+}
+
+.H1FormContact{
+  font-weight: normal;
+}
+
+.BlockConnexionAnnonce{
+  background-color: #{$light-grey-color};
+  border-color: #{$border-grey};
+  border-width: 1px;
+  border-style: solid;
+  margin: 0 auto;
+  @include clearfix;
+
+}
+
+.BlockConnexionTall{
+  position: relative;
+  max-width: 690px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  @include clearfix;
+}
+
+.BlockConnexionContact{
+  max-width: 690px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.7);
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .Form{
+    margin-bottom:30px;
+  }
+}
+
+
+.BlockAddPicture {
+  float:left;
+  width: 40%;
+  height: 400px;
+  margin-top: 30px;
+  margin-left: 30px;
+
+}
+
+#WindowsAddPicture{
+  border-color: #{$border-grey};
+  border-width: 1px;
+  border-style: solid;
+  width: 100%;
+  height: 280px;
+}
+
+#palette-texte{
+  border-color: #{$border-grey};
+  border-width: 1px;
+  border-style: solid;
+  width: 100%;
+  height: 100px;
+}
+
+#other-picture{
+  width:100%;
+}
+
+#BlockFormConnexion{
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  @include clearfix;
+}
+
+#BlockFormAddAnnonce{
+  width: 370px;
+  padding-top: 2%;
+  margin-right: 30px;
+  float:right;
+}
+
+#BlockFormAddArticle{
+  padding-top: 22px;
+  border-color: #{$border-grey};
+  border-width: 1px;
+  border-style: solid;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+#BlockFormAddReferencement{
+  padding-top: 22px;
+  border-color: #{$border-grey};
+  border-width: 1px;
+  border-style: solid;
+  margin-top: 30px;
+  margin-left: 50px;
+  margin-bottom: 80px;
+}
+
+
+#BlockFormConnexionTall{
+  max-width: 620px;
+  width: 100%;
+  margin: auto;
+  padding-top: 3%;
+}
+
+.RawForm{
+  display: inline-block;
+  float: right;
+  padding-bottom: 10px;
+}
+
+.RawFormArticle{
+  display: inline-block;
+  padding-bottom: 10px;
+  padding-right: 20px;
+}
+
+.commentaire-creation-article {
+  display: inline-block;
+  float: right;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  width: 95%;
+}
+
+#RawFormArticleValid{
+  display: inline-block;
+  float: right;
+  padding-bottom: 10px;
+  padding-right: 80px;
+  padding-top: 10px;
+}
+
+.Form{
+  @include clearfix;
+}
+
+#CrossCloseForm{
+  position: absolute;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  top: -8px;
+  right: -8px;
+  background-image: url("#{$pathImg}close.png");
+  background-repeat: no-repeat;
+  float: right;
+}
+
+.LienForm{
+  padding-right: 20px;
+}
+
+#pictures-rollover{
+   margin: 100px auto;
+   height:86px;
+   width:160px;
+ }
+
+.rollover-picture {
+  display: inline-block;
+  background:url("#{$pathImg}rollover_picture.png") 0 0;
+  height:86px;
+  width:56px;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.rollover-picture:hover, .rollover-picture.has-element {
+  background:url("#{$pathImg}rollover_picture.png") no-repeat 0 -86px;
+}
+
+a.rollover-photo {
+  display: inline-block;
+  background:url("#{$pathImg}rollover_photo.png") 0 0;
+  height:86px;
+  width:56px;
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+a.rollover-photo:hover, a.rollover-photo.active {
+  background:url("#{$pathImg}rollover_photo.png") no-repeat 0 -86px;
+}
+
+.article-picture{
+  display: inline-block;
+  border-color: #838383;
+  border-width: 1px;
+  border-style: solid;
+  height: 80px;
+  width: 24%;
+  float: left;
+  margin-left: 1%;
+  text-align: center;
+  margin-top: -15px;
+}
+
+.pictures-rollover-little{
+  margin: 30px 0;
+  height: 80px;
+}
+
+.rollover-picture-little {
+  display: inline-block;
+  background:url("#{$pathImg}little_picture.png") 0 0;
+  height:17px;
+  width:18px;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.rollover-picture-little:hover, .rollover-picture-little.has-element {
+  background:url("#{$pathImg}little_picture.png") no-repeat 0 -18px;
+}
+
+a.rollover-photo-little {
+  display: inline-block;
+  background:url("#{$pathImg}little_photo.png") 0 0;
+  height:17px;
+  width:21px;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+a.rollover-photo-little:hover, a.rollover-photo-little.active {
+  background:url("#{$pathImg}little_photo.png") no-repeat 0 -17px;
+}
+
+.rollover-picture-eye {
+  display: inline-block;
+  background:url("#{$pathImg}rollover_see.png") 0 0;
+  height:12px;
+  width:23px;
+  cursor: pointer;
+}
+
+.rollover-picture-eye:hover {
+  background:url("#{$pathImg}rollover_see.png") no-repeat 0 -12px;
+}
+
+.rollover-picture-backup {
+  display: inline-block;
+  background:url("#{$pathImg}rollover_sauv.png") 0 0;
+  height:12px;
+  width:12px;
+  margin-left: 15px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.rollover-picture-backup:hover {
+  background:url("#{$pathImg}rollover_sauv.png") no-repeat 0 -12px;
+}
+
+.rollover-picture-delete {
+  display: inline-block;
+  background:url("#{$pathImg}rollover_delete.png") 0 0;
+  height:12px;
+  width:11px;
+  cursor: pointer;
+}
+
+.rollover-picture-delete:hover {
+  background:url("#{$pathImg}rollover_delete.png") no-repeat 0 -12px;
+}
+
+.balise-referencement{
+  font-size: 12px;
+  color: #{$border-grey};
+  width: 100%;
+  padding-left: 10px;
+  display: inline-block;
+}
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 1200px
+-----------------------------------------------------------------*/
+@media screen and (max-width:1200px) {
+
+  #BlockFormAddReferencement{
+    padding-top: 22px;
+    border-color: #{$border-grey};
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom: 40px;
+  }
+}
+/*----------------------------------------------------------------
+	Breakpoint 2 : 1024px
+-----------------------------------------------------------------*/
+@media screen and (max-width:1024px)
+{
+#BlockFormConnexionTall {
+  .RawForm {
+    display: block;
+    padding: 0 20px 20px 20px;
+    float: none;
+    > label, > input {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+  #BlockFormAddReferencement{
+    padding-top: 22px;
+    border-color: #{$border-grey};
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+  }
+
+  .BlockAddPicture {
+    float:left;
+    width: 90%;
+    height: 430px;
+    margin-top: 30px;
+    margin-left: 30px;
+
+    #WindowsAddPicture {
+      height:300px;
+
+      #pictures-rollover {
+        margin: 110px auto;
+      }
+    }
+
+    .article-picture {
+      height: 90px;
+
+      .pictures-rollover-little {
+        margin: 35px 0;
+        height: 80px;
+      }
+    }
+  }
+
+  #BlockFormAddAnnonce {
+    width:90%;
+    float:left;
+    margin-left:30px;
+
+    .TextInputAddAnnonce {
+      width: 100%;
+    }
+
+    .TextAreaInputAddAnnonce {
+      display: inherit;
+      width: 100%;
+    }
+
+    .ListeInputDownGrey {
+      width:100%;
+    }
+
+    .ListeInputDownGrey select {
+      width:104%;
+    }
+
+
+  }
+
+  .RawForm {
+    width: 100%;
+  }
+
+  .TextAreaInputTall{
+    width: 100% !important;
+  }
+
+
+}
+
+/*----------------------------------------------------------------
+	Breakpoint 3 : 768px
+-----------------------------------------------------------------*/
+@media screen and (max-width: $wide-phone)
+{
+
+
+  .BlockAddPicture {
+    float:left;
+    width: 90%;
+    height: 430px;
+    margin-top: 30px;
+    margin-left: 30px;
+
+    #WindowsAddPicture {
+      height:300px;
+
+      #pictures-rollover {
+        margin: 110px auto;
+      }
+    }
+
+    .article-picture {
+      height: 90px;
+
+      .pictures-rollover-little {
+        margin: 35px 0;
+        height: 80px;
+      }
+    }
+
+  }
+
+  #BlockFormAddAnnonce {
+    width:90%;
+    float:left;
+    margin-left:30px;
+
+    .TextInputAddAnnonce {
+      width: 100%;
+    }
+
+    .TextAreaInputAddAnnonce {
+      display: inherit;
+      width: 100%;
+    }
+
+    .ListeInputDownGrey {
+      width:100%;
+    }
+
+    .ListeInputDownGrey select {
+      width:104%;
+    }
+
+    .OrangeSubmit {
+      width:100%;
+      margin-top: 10px;
+    }
+
+
+
+  }
+
+  .RawForm {
+    width: 100%;
+  }
+
+}
+
+/*----------------------------------------------------------------
+	Entre 768px et 1024px
+-----------------------------------------------------------------*/
+
+@media screen and (max-width:900px){
+
+  .BlockAddPicture {
+    float:left;
+    width: 90%;
+    height: 430px;
+    margin-top: 30px;
+    margin-left: 30px;
+
+    #WindowsAddPicture {
+      height:300px;
+
+      #pictures-rollover {
+        margin: 110px auto;
+      }
+    }
+
+
+  }
+  #BlockFormAddAnnonce {
+    width:90%;
+    float:left;
+    margin-left:30px;
+
+    .TextInputAddAnnonce {
+      width: 100%;
+    }
+
+    .TextAreaInputAddAnnonce {
+      display: inherit;
+      width: 100%;
+    }
+
+    .ListeInputDownGrey {
+      width:100%;
+    }
+
+    .ListeInputDownGrey select {
+      width:104%;
+    }
+
+    .OrangeSubmit {
+      width:100%!important;
+      margin-top: 10px;
+    }
+
+
+
+  }
+
+  .RawForm {
+    width: 100%;
+  }
+
+  #BlockFormAddArticle{
+    padding-top: 22px;
+    border-color: #{$border-grey};
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 30px;
+    margin-left: 50px;
+  }
+
+  #BlockFormAddReferencement{
+    padding-top: 22px;
+    border-color: #{$border-grey};
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom: 80px;
+  }
+
+  #bouton-article{
+    position: absolute;
+    margin-top: -47px;
+    margin-left: -1px;
+  }
+
+  #bouton-article a{
+    display: block;
+    background-color: #{$light-grey-color};
+    font-size: 10px;
+    border-top: solid;
+    border-left: solid;
+    border-right: solid;
+    border-width: 1px;
+    border-color: #{$border-grey};
+    color: #{$orange-color};
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #bouton-article2{
+    position: absolute;
+    margin-top: -47px;
+    margin-left: -1px;
+  }
+
+  #bouton-article2 a{
+    display: block;
+    background-color: #{$light-grey-color};
+    font-size: 10px;
+    color: #{$border-grey};
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #bouton-referencement{
+    position: absolute;
+    margin-top: -47px;
+    margin-left: 99px;
+  }
+
+  #bouton-referencement a{
+    display: block;
+    background-color: #{$light-grey-color};
+    font-size: 10px;
+    color: #{$border-grey};
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #bouton-referencement2{
+    position: absolute;
+    margin-top: -47px;
+    margin-left: 99px;
+  }
+
+  #bouton-referencement2 a{
+    display: block;
+    background-color: #{$light-grey-color};
+    font-size: 10px;
+    border-top: solid;
+    border-left: solid;
+    border-right: solid;
+    border-width: 1px;
+    border-color: #{$border-grey};
+    color: #{$orange-color};
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .col-md-7{
+    float: left;
+    width: 48%;
+  }
+
+  .balise-referencement{
+    font-size: 8px;
+    color: #{$border-grey};
+    width: 100%;
+    padding-left: 10px;
+    display: inline-block;
+  }
+}
+
+
+
+/*----------------------------------------------------------------
+	Breakpoint 4 : 480px
+-----------------------------------------------------------------*/
+@media screen and (max-width:480px)
+{
+
+
+
+  .BlockAddPicture {
+    width:85%;
+  }
+
+  #BlockFormAddAnnonce {
+    width:84%;
+    height:710px;
+
+    .TextInputAddAnnonce {
+      width: 100%;
+    }
+
+    .TextAreaInputAddAnnonce {
+      display: inherit;
+      width: 100%;
+    }
+
+    .ListeInputDownGrey {
+      width:100%;
+    }
+
+    .ListeInputDownGrey select {
+      width:107%;
+    }
+  }
+
+  .RawForm {
+    float:left;
+    width:100%;
+
+    .LabelA {
+      padding-bottm: 10px;
+      font-size: 12px;
+    }
+
+    .LabelInput {
+      width:100%;
+      padding-bottom:5px;
+    }
+
+    .TextInput {
+      width:100%;
+
+    }
+
+    .OrangeSubmit {
+      width:100%;
+      margin-top: 10px;
+    }
+
+    .LienBouton {
+      width:100%;
+    }
+
+    .LienBouton a {
+      width:100%;
+      padding-left: 30%;
+    }
+
+    .LienBouton a:hover {
+      width:100%!important;
+      padding-left: 30%;
+    }
+  }
+
+  .BlockConnexionTall {
+    width: 100%;
+    position: static;
+    height: 100%;
+
+    .TextAreaInputTall {
+      display: inherit;
+      width:70%;
+    }
+
+    .TextInputTall {
+      width:70%;
+    }
+
+
+    .H1FormContact {
+      padding-top: 6%;
+      margin-left: 6%;
+    }
+
+    .HrGrey {
+      width: 90%;
+    }
+
+  }
+
+
+
+
+  #BlockFormAddArticle{
+    margin-left: 10px;
+    margin-top: 32px;
+  }
+
+  .RawFormArticle{
+    margin-left:15px;
+  }
+
+}

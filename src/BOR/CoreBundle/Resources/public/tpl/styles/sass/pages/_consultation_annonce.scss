@@ -1,0 +1,382 @@
+/* ==========================================================================
+   @comment:
+   ========================================================================== */
+
+/*----------------------------------------------------------------
+	Mode desktop
+-----------------------------------------------------------------*/
+.contenu-page{
+  width: 100%;
+  background-color:$bg-color-2 ;
+  border : black 1px solid;
+  padding : 25px;
+
+  h2{
+    color: $orange-color;
+    font-family: arial;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom:5px;
+    margin-top: 20px;
+  }
+
+  h3{
+    color: $orange-color;
+    font-family: arial;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom:5px;
+  }
+
+  p{
+    font-size: 12px;
+    color: $text-color;
+    font-family:arial;
+    text-transform: inherit;
+    text-align: justify;
+  }
+
+  ul{
+    font-size: 12px;
+    color: $text-color;
+    font-family:arial;
+    font-weight: inherit;
+
+    li{
+      list-style: circle;
+    }
+  }
+
+  @include clearfix;
+
+  .slider{
+    width: 50%;
+    float: left;
+    padding-left: 4%;
+  }
+
+  .contenu-annonce{
+    width: 50%;
+    float: right;
+    margin-top:-15px;
+
+  }
+
+  .signaler_annonce{
+    font-size: 12px;
+    color: $text-color;
+    font-family:arial;
+    font-style: italic;
+    text-decoration: underline;
+    margin-top: 20px;
+    float:left;
+  }
+
+  .signaler_annonce:hover{
+    color: $orange-color;
+  }
+
+  .titre-annonce-mobile{
+    display: none;
+  }
+
+  .titre-page{
+    width:100%;
+  }
+
+  .outils-right{
+    position: absolute;
+    right:0px;
+  }
+
+  .img1-active,.img2-active, .img3-active {
+    max-width: 370px;
+    height: 240px;
+    margin-bottom: 10px;
+  }
+
+  .img2-active{
+    background-image:url(../img/annonce/visuel_test2.png);
+  }
+
+  .img3-active{
+    background-image:url(../img/annonce/visuel_test3.png);
+  }
+
+  .img4-active{
+    background-image:url(../img/annonce/visuel_test4.png);
+  }
+
+  .img5-active{
+    background-image:url(../img/annonce/visuel_test5.png);
+  }
+
+  .img-small{
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    overflow: hidden;
+    margin-right: 5px;
+    img{
+      max-width: 150%;
+      min-height: 100%;
+      position: relative;
+      left:50%;
+      transform: translateX(-50%);
+    }
+  }
+  .liste-image{
+    p{
+      text-transform: uppercase;
+    }
+  }
+
+  .prixTTC{
+    font-size:18px;
+    font-weight: bold;
+  }
+
+  .ville{
+    font-size:15px;
+    font-style: italic;
+  }
+
+  .prix{
+    float: left;
+    width: 33%;
+  }
+
+  .lieu{
+    float:left;
+    width: 33%;
+    padding-left:15px;
+  }
+
+  .type{
+    float: right;
+    width: 33%;
+  }
+
+  .informations-vendeur{
+    margin-top: 70px;
+    a{
+      font-size: 12px;
+      color: $text-color;
+      font-family:arial;
+      text-decoration: underline;
+    }
+
+    img{
+      margin-right: 10px;
+    }
+  }
+
+  .consult_num{
+    margin-right: 60px;
+    display: inline-block;
+  }
+
+  .consult_num a:hover{
+    color: $orange-color;
+  }
+
+  .envoi_mail{
+    display: inline-block;
+  }
+
+  .envoi_mail a:hover{
+    color: $orange-color;
+  }
+
+  .ajout_favoris{
+    background-image: url(../img/annonce/favoris.png);
+    background-repeat: no-repeat;
+    width: 30px;
+    display:inline-block;
+    height: 20px;
+
+    a:hover &, &.active{
+      background-image: url(../img/annonce/favoris_hover.png);
+    }
+  }
+
+  .deposer_annonce{
+    background-image: url(../img/annonce/deposer_annonce.png);
+    background-repeat: no-repeat;
+    width: 64px;
+    display:inline-block;
+    height: 22px;
+
+    a:hover &{
+      background-image: url(../img/annonce/deposer_annonce_hover.png);
+    }
+  }
+
+  .Facebook{
+    background-image: url(../img/annonce/facebook_partage.png);
+    background-repeat: no-repeat;
+    width: 28px;
+    display:inline-block;
+    height: 22px;
+
+    a:hover &{
+      background-image: url(../img/annonce/facebook_partage_hover.png);
+    }
+  }
+
+  .Twitter{
+    background-image: url(../img/annonce/twitter_partage.png);
+    background-repeat: no-repeat;
+    width: 28px;
+    display:inline-block;
+    height: 22px;
+
+    a:hover &{
+      background-image: url(../img/annonce/twitter_partage_hover.png);
+    }
+  }
+
+  .Google{
+    background-image: url(../img/annonce/google_partage.png);
+    background-repeat: no-repeat;
+    width: 20px;
+    display:inline-block;
+    height: 22px;
+
+    a:hover &{
+      background-image: url(../img/annonce/google_partage_hover.png);
+    }
+  }
+  .social-networks{
+    float:right;
+    margin-top: 20px;
+  }
+
+}
+
+
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 1270px
+-----------------------------------------------------------------*/
+@media screen and (max-width:1270px){
+
+
+}
+/*----------------------------------------------------------------
+	Breakpoint 2 : 1024px
+-----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+	Breakpoint 3 : 768px
+-----------------------------------------------------------------*/
+@media screen and (max-width:940px){
+
+  .contenu-annonce{
+    width: 40%;
+  }
+
+  .prix{
+    float: inherit;
+    width: 100%;
+    padding-left:15px;
+  }
+
+  .lieu{
+    float:inherit;
+    width: 100%;
+    padding-left:15px;
+  }
+
+  .type{
+    float: inherit;
+    width: 100%;
+    padding-left:15px;
+  }
+
+  #vignette{
+    width: 100%;
+  }
+
+  .slider{
+    padding-right: 0%;
+  }
+
+  .informations-vendeur{
+    margin-top: 0px;
+  }
+
+  .consult_num{
+    margin-right: 10px;
+  }
+
+  .social-networks{
+    float: right;
+  }
+
+  .signaler_annonce{
+    float: left;
+  }
+}
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 640px
+-----------------------------------------------------------------*/
+
+@media screen and (max-width:650px){
+  .social-networks{
+    float: left;
+  }
+
+}
+/*----------------------------------------------------------------
+	Breakpoint 1 : 480px
+-----------------------------------------------------------------*/
+
+@media screen and (max-width:480px){
+  .titre-annonce-mobile{
+	 display: inherit;
+   }
+  .titre-annonce-desktop{
+	display: none;
+  }
+
+  .slider {
+    float: inherit;
+    width: 100%;
+    padding-right: 0%;
+  }
+
+  .contenu-annonce{
+    float: inherit;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .contenu-page{
+    margin:auto;
+    height: auto;
+    clear: both;
+  }
+
+  .informations-vendeur{
+    margin-top: 0px;
+  }
+
+  .prixTTC{
+    padding-left: 0px;
+  }
+
+  .social-networks{
+    float: inherit;
+    display: block;
+  }
+
+  .signaler_annonce{
+    float: inherit;
+    display: block;
+  }
+
+
+
+}

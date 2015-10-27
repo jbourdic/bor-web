@@ -1,0 +1,257 @@
+/* ==========================================================================
+   @comment:
+   ========================================================================== */
+
+/*----------------------------------------------------------------
+	Mode desktop
+-----------------------------------------------------------------*/
+
+.editer-profil{
+  float:right;
+  padding-top:24px ;
+
+}
+
+.avatar{
+  margin:-15px 40px 0 0;
+  width:53px;
+}
+
+.HrBlack{
+  border: none;
+  height: 1px;
+
+}
+
+.H2Form{
+  font-size: 18px;
+}
+
+.PForm{
+  margin-top: -5px;
+  font-size: 13px;
+}
+
+.LabelInput1{
+  width: 88px;
+  display: inline-block;
+  color: #{$black-color};
+  padding-right: 10px;
+  font-size: 12px;
+}
+
+
+.LabelInput2{
+  width: 140px;
+  display: inline-block;
+  color: #{$black-color};
+  padding-right: 10px;
+  font-size: 10px;
+}
+
+
+
+.LabelInput3{
+  width: 185px;
+  display: inline-block;
+  color: #{$black-color};
+  padding-right: 10px;
+  font-size: 12px;
+}
+
+.CheckboxInput {
+  display: inline-block;
+  border: #{$border-grey} solid 1px;
+  padding-left: 5px;
+  font-size: 12px;
+  color: #{$border-grey};
+}
+.BlockCreation{
+
+  width: 66%;
+  margin:auto;
+  background-color: #f0eeee;
+  padding:30px 30px 87px 30px;
+}
+
+.BlockCreationD{
+  width: 50%;
+  margin: auto;
+  padding-top: 3%;
+  float: right;
+}
+
+.BlockCreationG{
+  width: 50%;
+  margin: auto;
+  padding-top: 3%;
+  float: left;
+}
+
+.BlockCreationBas{
+  width: 100%;
+  clear:both;
+  padding-top:15px;
+}
+.CheckBox{
+  padding-left: 90px;
+}
+.RawFormAdherent{
+  display: inline-block;
+  float: none;
+  padding-bottom: 10px;
+  margin-right: 10px;
+
+
+  a{
+    color:$hover-orange;
+    font-size: 13px;
+
+
+  }
+
+}
+
+#bouton{
+  float:right;
+  width: 50%;
+
+}
+
+#Titre h1{
+  margin-left:15%;
+
+
+}
+
+.LienForm{
+  padding-right: 20px;
+}
+
+#par_ami{
+  float:left;
+  width: 50%;
+
+  a{
+    font-size:10px;
+    margin-left:36%;
+
+
+  }
+
+}
+
+@media screen and (max-width:1286px){
+  .CheckBox{
+    padding-left:0;
+  }
+
+  .avatar{
+
+    margin:-15px 6px 0 0;
+    width:53px;
+}
+
+  .BlockCreationD{
+
+    margin:auto;
+    float: none !important;
+    clear:both;
+
+  }
+
+  .BlockCreationG{
+    margin:auto;
+    float:none;
+
+
+  }
+
+
+  #bouton{
+    float: none !important;
+    clear:both;
+    margin:auto;
+
+    p{
+      margin-top: 16px;
+    }
+  }
+
+  #par_ami{
+    float: none !important;
+    clear:both;
+    margin:auto;
+  }
+
+
+  .BlockCreationBas{
+
+    clear:both;
+
+
+  }
+
+  .LabelInput1{
+
+    width:236px;
+
+    display: inline-block;
+    color: #{$black-color};
+    padding-right: 10px;
+    font-size: 12px;
+
+  }
+
+  .LabelInput2{
+    display: inherit;
+  }
+
+  .PForm{
+    margin-bottom:10px;
+  }
+}
+
+
+@media screen and (max-width:980px){
+
+  .avatar{
+    margin:0 300px 10px 0;
+    width:53px;
+  }
+
+  .BlockCreation{
+    width: 100%;
+  }
+
+  .LabelInput2{
+    display: inherit;
+  }
+
+  .PForm{
+    margin-bottom:10px;
+  }
+
+}
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 1200px
+-----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+	Breakpoint 2 : 1024px
+-----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+	Breakpoint 3 : 768px
+-----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 480px
+-----------------------------------------------------------------*/
+@media screen and (max-width:980px){
+#Titre h1 {
+  margin-left: 4%;
+}
+
+}

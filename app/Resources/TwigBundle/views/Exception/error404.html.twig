@@ -1,0 +1,16 @@
+{% extends '::baseError.html.twig' %}
+{% set page_title = 'Erreur 404' %}
+{% set description = "Oups... Vous êtes perdu. Ce contenu n'existe pas." %}
+{% block meta %}
+    <meta name="description" content="{{ description }}">
+{% endblock %}
+{% block content %}
+    <div class="text-center">
+        <h1>404</h1>
+        <h2>Non trouvé</h2>
+        <p>{{ description }}</p>
+        {% block navError %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}

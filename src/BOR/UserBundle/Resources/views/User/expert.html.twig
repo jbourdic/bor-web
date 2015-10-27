@@ -1,0 +1,58 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+{% set page_title = 'Les experts Blabla.academy' %}
+{% block meta %}
+    <meta name="description" content="Les experts de Blaba.academy répondent à vos questions, quel que soit le domaine : achat, vente ou rénovation de biens.">
+{% endblock %}
+{% block content %}
+    <div class="content">
+        <div id="haut_page">
+            <p id="titre">Conseils</p>
+            <p id="sous_titre">Nos experts sont à votre disposition pour vous aider dans toutes vos démarches. Créez votre compte pour pouvoir communiquer avec eux et gagnez des points d'expériences.</p>
+        </div>
+        <div class="coverflow-wrapper">
+            <div id="coverflow">
+                {% for entity in entities %}
+                    <div class="cbImage">
+                        <div class="blocs">
+                            {% if entity.avatar is defined %}
+                                <img class="avatar_expert" src="{{ entity.avatar }}"
+                                     alt="{{ entity.firstname~' '~entity.lastname }}"/>
+                            {% else %}
+                                <img class="avatar_expert"
+                                     src="{{ asset("bundles/borcore/tpl/img/common/avatar.png") }}"/>
+                            {% endif %}
+                            <div class="identite">
+                                <p class="titre">{{ entity.firstname~' '~entity.lastname }}</p>
+
+                                <p class="fonction">{{ entity.job }}</p>
+                            </div>
+                        </div>
+                        <div id="description" class="blocs">
+                            <p class="titre">DESCRIPTION</p>
+
+                            <p>{{ entity.description }}</p>
+                        </div>
+                        {% if entity.videos is defined %}
+                            <div id="videos" class="blocs">
+                                <p class="titre">VIDEOS</p>
+                                <a href="#"> Nom Vidéo 1 - Niveau</a><br/>
+                                <a href="#"> Nom Vidéo 2 - Niveau</a><br/>
+                                <a href="#"> Nom Vidéo 3 - Niveau</a><br/>
+                                <a href="#"> ...</a>
+                            </div>
+                        {% endif %}
+                        <div>
+                            <a href="{{ url('bor_user_expert_show', {'id': entity.id}) }}"
+                               class="OrangeSubmit savoir_plus">En savoir plus</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block specific_script %}
+	<script type="text/javascript" src="{{ asset("bundles/borcore/tpl/scripts/libs/coverflow.min.js") }}"></script>
+{% endblock %}

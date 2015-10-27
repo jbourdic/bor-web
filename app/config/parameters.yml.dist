@@ -1,0 +1,28 @@
+# This file is a "template" of what your parameters.yml file should look like
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     symfony
+    database_user:     root
+    database_password: ~
+    # You should uncomment this if you want use pdo_sqlite
+    # database_path: "%kernel.root_dir%/data.db3"
+
+    mailer_transport: smtp
+    mailer_host: blabla.academy
+    mailer_user: pgermanaz
+    mailer_password: '1saucisse'
+
+    locale:            en
+
+    # A secret key that's used to generate certain security-related tokens
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    mooc.enter_url:  api/mooc/user
+    mooc.shared_key: 9lzw6lxz9mo044w8s00s8wkkokswgcs
+    mooc.login_url: http://127.0.0.1/mooc/mooc/app.php/authenticated/bor
+
+    knp_disqus.api_key: 0ZxPmUSTRGx4MIrTPeblvoyIgr02xh7nZdeUI5bmg2YR1WBpH78afBBTcuKUsV5F
+    knp_disqus.secret_key: ev5WhrmpMbFmAt112RoTR46bOt9GbomW3UGD2zqjx3SJbUEBRFje4nUnj8arAPil
+    knp_disqus.blabla.shortname: blablaacademy

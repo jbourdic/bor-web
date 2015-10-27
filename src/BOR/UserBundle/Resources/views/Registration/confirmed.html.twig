@@ -1,0 +1,15 @@
+{% extends 'BORCoreBundle:Core:index.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+{% block popup %}
+    <div class="modal-msg">
+        <div class="msg-box">
+            <div id="CrossCloseForm" class="modal-close"></div>
+            <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+            {% if app.session is not empty %}
+                {% set targetUrl = app.session.get('_security.' ~ app.security.token.providerKey ~ '.target_path') %}
+                {% if targetUrl is not empty %}<p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>{% endif %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'BORAdminBundle::layout.html.twig' %}
+{% block content %}
+    <h1>Blockpost</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Reason</th>
+                <td>{{ entity.reason }}</td>
+            </tr>
+            <tr>
+                <th>Idpost</th>
+                <td>{{ entity.post }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('bor_blockpost_list') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('bor_blockpost_edit', { 'id': entity.id }) }}">
+                Edit
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'BORAdminBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>User Admin</h1>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('bor_admin_user') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('bor_admin_user_edit', { 'id': entity.id }) }}">
+                Edit
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Civility</th>
+                <td>{{ entity.civility }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ entity.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ entity.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ entity.phone }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ entity.type }}</td>
+            </tr>
+            <tr>
+                <th>Active</th>
+                <td>{{ entity.active }}</td>
+            </tr>
+            <tr>
+                <th>Profileimage</th>
+                <td>{% if entity.media is not null %}
+                        <img style="width: 100px;" src="{{ asset(entity.media.getWebPath()) }}">
+                    {% endif %}</td>
+            </tr>
+            <tr>
+                <th>Sponsor</th>
+                <td>{{ entity.sponsor }}</td>
+            </tr>
+            <tr>
+                <th>Createdon</th>
+                <td>{{ entity.createdOn|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Updatedon</th>
+                <td>{{ entity.updatedOn|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

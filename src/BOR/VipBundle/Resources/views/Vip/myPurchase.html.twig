@@ -1,0 +1,34 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+{% block mainId %}id="advert"{% endblock %}
+{% block content %}
+    <div class="left-button-search-result"><div><span></span></div></div>
+    <div id="search-result-container">
+        <div id="search-result-top-left">
+        <h1>Mes Achats</h1>
+        </div>
+
+    <div class="clear"></div>
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">Id Facture</th>
+            <th scope="col">Abonnement</th>
+            <th scope="col">Date d'achat</th>
+            <th scope="col">Date d'expiration</th>
+            <th scope="col">Prix</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <th>{{ entity.id }}</th>
+                <td>{{ entity.package.name }}</td>
+                <td>{{ entity.orderDate|date('d/m/Y')}}</td>
+                <td>{{ entity.orderDate|date_modify("+"~ entity.package.days ~"day")|date('d/m/Y') }}</td>
+                <td>{{ entity.price }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

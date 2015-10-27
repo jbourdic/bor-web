@@ -1,0 +1,45 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+
+{% block content %}
+    <div id="Titre">
+        <h1>Création de partenaire</h1>
+    </div>
+
+    {{ form_start(form) }}
+    <div class="BlockCreation">
+        <div class="">
+            <h2>Informations partenaire</h2>
+
+
+            {{ form_errors(form) }}
+            <hr class="HrBlack">
+            <div class="RawFormAdherent">
+                {{ form_label(form.name, 'Nom', { 'label_attr': {'class':'LabelInput3'} }) }}
+                {{ form_widget(form.name, {'attr': {id:'civility',name:'_civility',class:'ListeInputDown'}}) }}
+            </div>
+            <div class="RawFormAdherent">
+                {{ form_label(form.website, 'Site web', { 'label_attr': {'class':'LabelInput3'} }) }}
+                {{ form_widget(form.website, {'attr': {id:'firstname',name:'_firstname',class:'TextInput'}}) }}
+            </div>
+            <div class="clear"></div>
+            <div class="RawFormAdherent">
+                {{ form_widget(form.active, {'attr': {id:'firstname',name:'_firstname',class:'CheckBoxInput1'}}) }}
+                {{ form_label(form.active, null, { 'label_attr': {'class':'LabelInputCheckBox'} }) }}
+            </div>
+            <div class="clear"></div>
+            <div class="RawFormAdherent">
+                {{form_widget(form.submit, { "label" : "Envoyer", "attr":{
+                    "class":"OrangeSubmit",
+                    "value":"Envoyer"
+                }})
+                }}
+            </div>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+    {{ form_rest(form) }}
+    {{ form_end(form) }}
+
+
+{% endblock %}

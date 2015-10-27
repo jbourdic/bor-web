@@ -1,0 +1,12 @@
+#src/BOR/ApiBundle/Resources/config/routing_rest.yml
+bor_api_mobile:
+    type: rest
+    resource: "@BORApiBundle/Controller/MobileController.php"
+    name_prefix: bor_mobile_
+    prefix: /mobile
+
+bor_api_mooc:
+    type: rest
+    resource: "@BORApiBundle/Controller/MoocController.php"
+    name_prefix: bor_mooc_
+    prefix: /mooc

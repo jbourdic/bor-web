@@ -1,0 +1,106 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset("bundles/borcore/foundation/css/foundation.min.css") }}" />
+    <link rel="stylesheet" href="{{ asset("bundles/borcore/datatables/media/css/jquery.dataTables.min.css") }}" />
+    <link rel="stylesheet" href="{{ asset("bundles/borcore/datatables/extensions/FixedColumns/css/dataTables.fixedColumns.min.css") }}" />
+    <script src="{{ asset("bundles/borcore/foundation/js/vendor/modernizr.js") }}"></script>
+</head>
+<style>
+    .inner-wrap{
+        min-height: 100vh;
+    }
+</style>
+<body>
+    <div class="off-canvas-wrap" data-offcanvas>
+        <div class="inner-wrap">
+            <nav class="tab-bar">
+                <section class="left-small">
+                    <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+                </section>
+
+                <section class="middle tab-bar-section">
+                    <h1 class="title">Espace Administrateur</h1>
+                </section>
+            </nav>
+
+            <aside class="left-off-canvas-menu">
+                <ul class="off-canvas-list">
+                    <li><label>Back Office</label></li>
+                    <li>
+                        <a href="{{ path('bor_admin_advert_list') }}">Liste des annonces</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('bor_blockadvert_index') }}">Liste des BlockAdvert</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('bor_admin_post_list') }}">Liste des Post</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('bor_blockpost_list') }}">Liste des BlockPost</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('bor_admin_user') }}">Liste des User</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('bor_blockuser') }}">Liste des BlockUser</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('bor_admin_partenaire_index') }}">Liste des Partenaires</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('bor_slider_index') }}">Administration slider</a>
+                    </li>
+                    <li><label>Gamification</label></li>
+                    <li>
+                        <a href="{{ path('bor_level_index') }}">Gérer les niveaux</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('bor_qcmpoint_index') }}">Gérer les points QCM</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('bor_action_index') }}">Gérer les Actions</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.google.fr/intl/fr/analytics/">Google Analytics</a>
+                    </li>
+                </ul>
+            </aside>
+
+            <section class="main-section">
+                <div class="large-12 columns">
+                    {% block content %}{% endblock %}
+                </div>
+            </section>
+
+            <a class="exit-off-canvas"></a>
+
+        </div>
+    </div>
+
+    <script src="{{ asset("bundles/borcore/foundation/js/vendor/jquery.js") }}"></script>
+    <script src="{{ asset("bundles/borcore/foundation/js/foundation.min.js") }}"></script>
+    <script src="{{ asset("bundles/borcore/datatables/media/js/jquery.dataTables.min.js") }}"></script>
+    <script src="{{ asset("bundles/borcore/datatables/extensions/FixedColumns/js/dataTables.fixedColumns.min.js") }}"></script>
+    <script>
+
+    $(document).foundation();
+    ($(function(){
+        var $tables = $('table');
+        if($tables.length > 0){
+            $tables.DataTable({
+                "scrollX": "100%",
+                "scrollCollapse": true
+            });
+            new $.fn.dataTable.FixedColumns( $tables, {
+                leftColumns:3
+            } );
+/*            $tables.DataTable();*/
+        }
+    }));
+</script>
+</body>
+</html>

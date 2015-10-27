@@ -1,0 +1,72 @@
+{% extends 'BORAdminBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>News list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Actions</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>User</th>
+                <th>Type</th>
+                <th>Active</th>
+                <th>Createdon</th>
+                <th>Updatedon</th>
+                <th>Metatitle</th>
+                <th>Metadescription</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('bor_post_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('bor_post_show', { 'id': entity.id }) }}">Show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('bor_post_edit', { 'id': entity.id }) }}">Edit</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('bor_blockpost_create' , {'id': entity.id} )  }}">Block</a>
+                        </li>
+                    </ul>
+                </td>
+                <td>{{ entity.title }}</td>
+                <td>{{ entity.content }}</td>
+                <td>{{ entity.user }}</td>
+                <td>{{ entity.type }}</td>
+                <td>{{ entity.active }}</td>
+                <td>{% if entity.createdOn %}{{ entity.createdOn|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.updatedOn %}{{ entity.updatedOn|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.metaTitle }}</td>
+                <td>{{ entity.metaDescription }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('bor_post_create') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <a href="{{ path('bor_post_news') }}">News</a>
+        </li>
+        <li>
+            <a href="{{ path('bor_post_renovate') }}">Renovate</a>
+        </li>
+        <li>
+        	<a href="{{ path('bor_post_list') }}">Back to the list</a>
+    	</li>
+    </ul>
+    {% endblock %}

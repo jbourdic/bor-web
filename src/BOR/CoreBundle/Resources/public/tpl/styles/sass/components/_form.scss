@@ -1,0 +1,72 @@
+/* ==========================================================================
+   @comment: Form type styling
+   ========================================================================== */
+
+/*----------------------------------------------------------------
+	Mode desktop
+-----------------------------------------------------------------*/
+
+
+/**
+  Basic Form style
+*/
+
+.form-group {
+  margin-bottom: 15px;
+
+  &.form-table{
+    display: table;
+    [class^="col-"]{
+      display: table-cell;
+      float: none;
+    }
+  }
+}
+/**
+  Inline form
+*/
+
+.form-inline {
+
+  .form-group{
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle
+  }
+  .form-control{
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+}
+
+/**
+  Horizontal form
+*/
+.form-horizontal{
+  .form-group{
+    @include clearfix;
+  }
+  .control-label{
+    padding-top: 7px;
+    padding-right: 0;
+    margin-bottom: 5px;
+    text-align: right;
+  }
+  .col-md-10, .col-md-8 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+input + .alert {
+  margin-bottom: 0;
+  margin-top: 14px;
+  padding: 10px;
+}
+@media screen and (min-width:$tablet) {
+  .form-md + .alert {
+    max-width: 200px;
+  }
+}

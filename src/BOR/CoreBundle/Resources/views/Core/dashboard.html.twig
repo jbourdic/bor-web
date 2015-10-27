@@ -1,0 +1,45 @@
+{% if (dashboard is defined) and (rank is defined) %}
+    {% set lvl = ((dashboard.experience / levelInfo.experienceMax) * 100) | number_format(0) %}
+    <a data-ty="{{ lvl }}"class=""></a>
+    <ul>
+        <li class="first-title-dashboard"><span class="icon-dashboard"></span><span>tableau <br />de bord</span>
+        </li>
+        <li class="wide{% if lvl > 96 %} active{% endif %}"><span class="title-dashboard">rang </span>
+            <br />
+            <span class="data-dashboard">{{ rank.rank }}/{{ rank.totalEntries }}</span>
+            <br />
+            <a href="{{ url("bor_core_concept") }}" class="tooltip" onclick="ga('send', 'event', 'gamification', 'lien', 'en_savoir_plus');">> En savoir plus</a>
+        </li>
+        <li {% if lvl > 80 %}class="active"{% endif %}><span class="title-dashboard">cours vus</span>
+            <br />
+            <span class="data-dashboard">{{ dashboard.courses }}</span>
+        </li>
+        {# todo Mettre un lien d'abonnement si valeur à 0 #}
+        <li {% if lvl > 64 %}class="active"{% endif %}>
+            <span class="title-dashboard">Abonnement restant</span>
+            <br />
+            <span class="data-dashboard">{{ subscribeDaysLeft }}</span>
+            <br />
+            <span class="title-dashboard">jours</span>
+        </li>
+        <li {% if lvl > 48 %}class="active"{% endif %}><span class="title-dashboard">Expérience</span>
+            <br />
+            <span class="data-dashboard">{{ dashboard.experience }}</span>
+        </li>
+        <li {% if lvl > 32 %}class="active"{% endif %}><span class="title-dashboard">crédits gagnés</span>
+            <br />
+            <span class="data-dashboard">{{ dashboard.credit }}</span>
+        </li>
+
+        <li {% if lvl > 16 %}class="active"{% endif %}>
+            <span class="title-dashboard">niveau</span>
+            <br />
+            <span class="data-dashboard">{{ dashboard.level }}</span>
+            <div class="level-displayer">
+                <span class="user-level">{{ dashboard.level }}</span>
+                <img class="logo" src="{{ asset("bundles/borcore/tpl/img/gauge/logo_lvl.png") }}" alt=""/>
+            </div>
+        </li>
+    </ul>
+{% endif %}
+{#@todo changer le css pour faire fonctionner la jauge#}

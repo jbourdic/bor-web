@@ -1,0 +1,96 @@
+@mixin clearfix {
+  &:before,
+  &:after {
+    content:" ";
+    display:table;
+  }
+  &:after { clear: both; }
+  *zoom: 1;
+}
+
+@mixin border-radius($tl:0, $tr:0, $br:0, $bl:0,$pie:false) {
+  -webkit-border-radius: $tl $tr $br $bl;
+  -moz-border-radius: $tl $tr $br $bl;
+  -ms-border-radius: $tl $tr $br $bl;
+  -o-border-radius:$tl $tr $br $bl;
+  border-radius: $tl $tr $br $bl;
+  @if $pie == true{
+    behavior:url(htc/PIE.htc);
+  }
+}
+
+
+/* linear-gradient */
+@mixin background-gradient($color: #F5F5F5, $colorStart: #EEE, $colorStop: #FFFFFF, $positionStart: bottom, $positionStop: top, $start: 0%, $stop: 100%) {
+  background: $color;
+  background: -moz-linear-gradient($positionStart, $colorStart $start, $colorStop $stop); /* FF 3.6 - 15 */
+  background: -webkit-gradient(linear, left $positionStart, left $positionStop, color-stop($start, $colorStart), color-stop($stop, $colorStop)); /* Safari 3.2 - 4.3, Chrome 2 - 9 */
+  background: -webkit-linear-gradient($positionStart, $colorStart $start, $colorStop $stop); /* Safari 5+, Chrome 10 - 25 */
+  background: -o-linear-gradient($positionStart, $colorStart $start, $colorStop $stop); /* Opera 11.1 - 12 */
+  background: linear-gradient($positionStart, $colorStart $start, $colorStop $stop); /* standard */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#{$colorStart}', endColorstr = '#{$colorStop}'); /* IE6 & IE7 & IE8 */
+}
+
+/* box-shadow */
+@mixin box-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $spread: 0, $color: #666666, $strength:4) {
+  -moz-box-shadow: $x-axis $y-axis $blur $spread $color;
+  -webkit-box-shadow: $x-axis $y-axis $blur $spread $color;
+  box-shadow: $x-axis $y-axis $blur $spread $color;
+  //filter:progid:DXImageTransform.Microsoft.Shadow(color=$color, Direction=180, Strength=$strength);
+}
+@mixin reset-box-shadow() {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  filter:progid:DXImageTransform.Microsoft.Shadow(enabled=false);
+}
+@mixin box-shadow-inset($x-axis: 0, $y-axis: 1px, $blur: 2px, $spread: 0, $color: #666666) {
+  -webkit-box-shadow: inset $x-axis $y-axis $blur $spread $color;
+  box-shadow: inset $x-axis $y-axis $blur $spread $color;
+}
+
+/* opacity */
+@mixin opacity($opacity: 0.5) {
+  opacity: $opacity;
+  filter: alpha(opacity= $opacity * 100 );
+}
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin button-variant($color, $background,$color-hover,$background-hover) {
+  color: $color;
+  background-color: $background;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color-hover;
+    background-color: $background-hover;
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: $background;
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}

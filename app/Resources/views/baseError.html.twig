@@ -1,0 +1,7 @@
+{% extends 'BORCoreBundle::layout.html.twig' %}
+
+{% block navError %}
+	<nav>
+		<a href="javascript:window.history.back()">Revenir</a> - <a href="{{ path('bor_core_index') }}">Accueil</a>
+	</nav>
+{% endblock %}

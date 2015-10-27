@@ -1,0 +1,159 @@
+#WindowsAddPicture{
+  border-color: #{$border-grey};
+  border-width: 1px;
+  border-style: solid;
+  width: 100%;
+  height: 280px;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.H1Black {
+  font-size: 20px;
+  color: #{$black-color};
+  padding-left: 20px;
+}
+
+#pictures-rollover{
+  margin: 100px auto;
+  height:86px;
+  width:160px;
+}
+
+a.rollover-picture {
+  display: inline-block;
+  background:url("#{$pathImg}rollover_picture.png") 0 0;
+  height:86px;
+  width:56px;
+  cursor: pointer;
+}
+
+a.rollover-picture:hover {
+  background:url("#{$pathImg}rollover_picture.png") no-repeat 0 -86px;
+}
+
+a.rollover-photo {
+  display: inline-block;
+  background:url("#{$pathImg}rollover_photo.png") 0 0;
+  height:86px;
+  width:56px;
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+a.rollover-photo:hover {
+  background:url("#{$pathImg}rollover_photo.png") no-repeat 0 -86px;
+}
+
+#other-picture{
+  width:100%;
+  margin-left: 5px;
+}
+
+#h4-other-picture{
+  font-size: 11px;
+}
+
+.article-picture{
+  display: inline-block;
+  border-color: #838383;
+  border-width: 1px;
+  border-style: solid;
+  height: 80px;
+  width: 24%;
+  float: left;
+  margin-left: 1%;
+  text-align: center;
+  margin-top: -15px;
+}
+
+.pictures-rollover-little{
+  margin: 30px 0;
+  height: 80px;
+}
+
+a.rollover-picture-little {
+  display: inline-block;
+  background:url("#{$pathImg}little_picture.png") 0 0;
+  height:17px;
+  width:18px;
+  cursor: pointer;
+}
+
+a.rollover-picture-little:hover {
+  background:url("#{$pathImg}little_picture.png") no-repeat 0 -18px;
+}
+
+a.rollover-photo-little {
+  display: inline-block;
+  background:url("#{$pathImg}little_photo.png") 0 0;
+  height:17px;
+  width:21px;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+a.rollover-photo-little:hover {
+  background:url("#{$pathImg}little_photo.png") no-repeat 0 -17px;
+}
+
+/*----------------------------------------------------------------
+	Breakpoint 2 : 1024px
+-----------------------------------------------------------------*/
+@media screen and (max-width:1024px)
+{
+
+}
+
+/*----------------------------------------------------------------
+	Breakpoint 3 : 768px
+-----------------------------------------------------------------*/
+@media screen and (max-width: $wide-phone)
+{
+
+
+}
+
+/*----------------------------------------------------------------
+	Entre 768px et 1024px
+-----------------------------------------------------------------*/
+
+@media screen and (max-width:900px){
+
+  .article-picture {
+    height: 90px;
+
+    .pictures-rollover-little {
+      margin: 35px 0;
+      height: 80px;
+    }
+  }
+}
+
+
+
+/*----------------------------------------------------------------
+	Breakpoint 4 : 480px
+-----------------------------------------------------------------*/
+@media screen and (max-width:480px)
+{
+  #WindowsAddPicture{
+    width: 95%;
+  }
+
+  #other-picture{
+    width:96%;
+    margin-top:20px;
+    margin-left:10px;
+  }
+
+  #h4-other-picture{
+    display:none;
+  }
+
+  .article-picture{
+    margin-right:1%;
+    margin-left:0px;
+  }
+
+}

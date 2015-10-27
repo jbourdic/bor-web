@@ -1,0 +1,95 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+
+{% block content %}
+<div class="content">
+    <h1 class="H1Black">CRÉER MON ARTICLE</h1>
+    <div class="BlockConnexionAnnonce">
+        {{ form_start(edit_form) }}
+        <div id="BlockFormAddArticle" class="col-md-12 clearfix">
+            <div id="bouton-article">
+                <p>
+                    <a href="#">ARTICLE</a>
+                </p>
+            </div>
+            <div id="bouton-referencement">
+                <p>
+                    <a href="#">RÉFÉRENCEMENT</a>
+                </p>
+            </div>
+            <div class="RawFormArticle">
+                {{ form_label(edit_form.title, 'Titre', { 'label_attr': {'class':'LabelInput'} }) }}
+                {{ form_widget(edit_form.title, {'attr': {class:'TextInputAddArticle'}}) }}
+            </div>
+            <div class="RawFormArticle">
+                <label class="LabelInput">Publier dans* :</label>
+                <div class="ListeInputDownGreyArticle">
+                    {{ form_widget(edit_form.type) }}
+                </div>
+            </div>
+            <div class="RawFormArticle">
+                {% if entity.media is not null %}
+                    <img style="width: 100px;" src="{{ asset(entity.media.getWebPath()) }}">
+                {% endif %}
+                <label class="LabelInput">Image :</label>
+                <div class="">
+                    {{ form_widget(edit_form.media) }}
+                </div>
+            </div>
+            <div class="RawFormArticle">
+                {{ form_label(edit_form.content, ' ', { 'label_attr': {'class':'LabelDescriptionInput'} }) }}
+                {{ form_widget(edit_form.content, {'attr': {class:'TextAreaInputAddArticle'}}) }}
+            </div>
+            <div class="RawFormArticle">
+                <a class="rollover-picture-eye"></a>
+                <a class="rollover-picture-backup"></a>
+                <a class="rollover-picture-delete"></a>
+            </div>
+        </div>
+
+        <!-- Bouton Référencement-->
+        <div id="BlockFormAddReferencement" class="col-md-12 clearfix" style="display: none;">
+            <div id="bouton-article2">
+                <p>
+                    <a href="#">ARTICLE</a>
+                </p>
+            </div>
+            <div id="bouton-referencement2">
+                <p>
+                    <a href="#">RÉFÉRENCEMENT</a>
+                </p>
+            </div>
+            <div class="balise-referencement">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis odio non eros mollis elementum. Duis quis vehicula nunc. In at tellus eu mauris porttitor lobortis. Mauris facilisis tristique turpis, in cursus nibh aliquet eu. Curabitur posuere risus ut quam auctor, eget ultricies est suscipit. Donec interdum metus sollicitudin diam rutrum lobortis non no</p>
+            </div>
+            <div class="RawFormArticle">
+                {{ form_label(edit_form.metaTitle, 'Titre pour le référencement', { 'label_attr': {'class':'LabelInput'} }) }}
+                {{ form_widget(edit_form.metaTitle, {'attr': {class:'TextInputAddArticle'}}) }}
+            </div>
+            <div class="balise-referencement">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis odio non eros mollis elementum. Duis quis vehicula nunc. In at tellus eu mauris porttitor lobortis. Mauris facilisis tristique turpis, in cursus nibh aliquet eu. Curabitur posuere risus ut quam auctor, eget ultricies est suscipit. Donec interdum metus sollicitudin diam rutrum lobortis non no</p>
+            </div>
+            <div class="RawFormArticle">
+                {{ form_label(edit_form.metaDescription, 'Description pour le référencement', { 'label_attr': {'class':'LabelDescriptionInput'} }) }}
+                {{ form_widget(edit_form.metaDescription, {'attr': {class:'TextAreaInputAddArticle'}}) }}
+            </div>
+        </div>
+        <div id="RawFormArticleValid" class="clearfix col-md-12">
+            {{ form_widget(edit_form.submit, {"attr":{"placeholder":"Je publie mon annonce","class":"OrangeSubmit"}}) }}
+            <p>{{ form_errors(edit_form) }}</p>
+        </div>
+        <div class="visuallyhidden">
+            {{ form_rest(edit_form) }}
+        </div>
+        {{ form_end(edit_form) }}
+    </div>
+</div>
+{% endblock %}
+
+
+{% block script %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/borblog/js/ckeditor/ckeditor.js') }}" type="text/javascript"></script>
+    <script type="text/javascript">
+        CKEDITOR.replace('bor_blogbundle_post_content');
+    </script>
+{% endblock %}

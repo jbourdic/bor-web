@@ -1,0 +1,59 @@
+<a class="btn-menu"></a>
+<ul>
+    <li>
+        <a href="{{ url("bor_core_concept") }}">
+            <span class="icon-concept"></span>
+            <span class="tooltip">concept</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{ url("bor_user_expert") }}">
+            <span class="icon-experts"></span>
+            <span class="tooltip">questionner</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{ url("bor_partenaire_index") }}">
+            <span class="icon-partenaires"></span>
+            <span class="tooltip">parties prenantes</span>
+        </a>
+    </li>
+    <li><a href="{{ url("bor_advert_list") }}">
+            <span class="icon-rechercher"></span>
+            <span class="tooltip">rechercher</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{ url("bor_post_renovate") }}">
+            <span class="icon-personnaliser"></span>
+            <span class="tooltip">Personnaliser</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{ url("bor_advert_create_post") }}">
+            <span class="icon-publier"></span>
+            <span class="tooltip">publier</span>
+        </a>
+    </li>
+    {% if app.user %}
+    <li>
+        <form action="{{ mooc.mooc_login_url }}" method="POST">
+            <input type="hidden" name="tokenMooc" value="{{ mooc.token_mooc }}">
+            <button type="submit"><span class="icon-moocer"></span><span class="tooltip">mooc</span></button>
+        </form>
+    </li>
+    {% else %}
+        <li>
+            <a href="{{ url("fos_user_security_login") }}">
+                <span class="icon-moocer"></span>
+                <span class="tooltip">Mooc</span>
+            </a>
+        </li>
+    {% endif %}
+    <li>
+        <a href="{{ url("bor_post_news") }}">
+            <span class="icon-actualites"></span>
+            <span class="tooltip">actualités</span>
+        </a>
+    </li>
+</ul>

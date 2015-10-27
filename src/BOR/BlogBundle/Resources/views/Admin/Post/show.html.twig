@@ -1,0 +1,68 @@
+{% extends 'BORAdminBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>Post admin</h1>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('bor_admin_post_list') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('bor_admin_post_edit', { 'id': entity.id }) }}">
+                Edit
+            </a>
+        </li>
+    </ul>
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ entity.title }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ entity.content }}</td>
+            </tr>
+            <tr>
+                <th>Iduser</th>
+                <td>{{ entity.user }}</td>
+            </tr>
+            <tr>
+                <th>Media/Photo</th>
+                <td>{% if entity.media is not null %}
+                        <img style="width: 100px;" src="{{ asset(entity.media.getWebPath()) }}">
+                    {% endif %}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ entity.type }}</td>
+            </tr>
+            <tr>
+                <th>Active</th>
+                <td>{{ entity.active }}</td>
+            </tr>
+            <tr>
+                <th>Createdon</th>
+                <td>{{ entity.createdOn|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Updatedon</th>
+                <td>{{ entity.updatedOn|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Metatitle</th>
+                <td>{{ entity.metaTitle }}</td>
+            </tr>
+            <tr>
+                <th>Metadescription</th>
+                <td>{{ entity.metaDescription }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

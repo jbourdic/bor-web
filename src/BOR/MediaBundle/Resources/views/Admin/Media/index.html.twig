@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Media list</h1>
+
+    {{ form_start(add_form) }}
+    <label for="file">Ajouter une photo</label>
+    {{ form_widget(add_form.file) }}
+    {{ form_rest(add_form) }}
+    {{ form_end(add_form) }}
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Créé le</th>
+                <th>Par</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><img style="width:100px;" src="{{ asset(entity.media.getWebPath()) }}" alt="{{ entity.media.name }}"></td>
+                <td>{{ entity.media.createdOn|date('Y-m-d H:i:s') }}</td>
+                <td>{% if entity.media.user %}{{ entity.media.user.id }} - {{ entity.media.user.email }}{% endif %}</td>
+                <td>{{ form(entity.delete_form) }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,234 @@
+/* ==========================================================================
+   @comment: Classes communes utiles sur le projet, body, html, ...
+   ========================================================================== */
+
+/*----------------------------------------------------------------
+	Mode desktop
+-----------------------------------------------------------------*/
+/**
+  Styling of main element's on all pages
+*/
+html {
+  width: 100%;height: 100%;
+  background: $bg-color;
+}
+
+body {
+  position: relative;
+  height: 100%;
+  font-size: 14px;color: $text-color;font-family:$font-arial;
+}
+.main-container {
+  position: relative;
+  min-height: 100%;
+
+  padding: $headerHeght 0 $footerHeight $sideNavWidth;
+/*
+  background: url("#{$pathImg}image_contact.png") no-repeat center fixed;
+  -webkit-background-size: cover;
+  background-size: cover;*/
+}
+@media screen and (max-width: $wide-phone), screen and (max-height: $height-break){
+  .main-container {
+    padding: $headerHeght 0px $footerHeight 0px;
+  }
+}
+/**
+  common bloc's
+*/
+
+//Content div - main box for content only
+.content {
+  position: relative;
+  width: 100%;
+  max-width: $content;
+  margin: 0 auto;
+  padding: $content-gutter;
+}
+.content-sm {
+  max-width: 690px;
+}
+.content-box {
+  position: relative;
+  padding: 18px 26px;
+  margin-bottom:15px;
+  background-color: $bg-color-2;
+  @include clearfix;
+}
+.bg-trans{
+  background-color: rgba($white-color, 0.7);
+  color: #222222;
+}
+/****
+ ****  Class utiles
+ ****/
+* {
+  box-sizing: border-box;
+}
+/*a, label, button, i, input, textarea, .price *, .ext-line,
+.ext-colLeft ul li div:after { @include transition(all 0.4s ease); }*/
+.no-animation *, .no-animation:before, .no-animation { @include transition(none) ; }
+
+.ext-fade {
+  opacity: 0;
+  @include transition(opacity 0.15s linear);
+  &.in { opacity: 1; }
+}
+.ext-hide { display: none; }
+.clear { clear: both; }
+.pull-left  { float: left !important; }
+.pull-right { float: right !important; }
+.align-top { vertical-align: top !important; }
+.align-middle { vertical-align: middle !important; }
+.align-bottom { vertical-align: bottom !important; }
+.text-left{text-align: left!important; }
+.text-right{text-align: right!important; }
+.text-center{text-align: center!important; }
+.text-justify{text-align: justify!important; }
+.text-underline{text-decoration: underline!important; }
+
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px; width: 1px;
+  margin: -1px; padding: 0; border: 0;
+  cursor: none;
+}
+.clearfix{
+  @include clearfix;
+}
+.centered {
+  @include centerer;
+}
+p { padding: 0; margin: 0 0 8px; }
+ul { margin: 0; padding: 0;
+  li { list-style: none; }
+}
+a{ color:#47484b; text-decoration: none; }
+
+/**
+  @color styling
+*/
+
+.primary-orange {
+  color: $primary-orange;
+}
+.text-dark {
+  color: $black-color;
+}
+
+/**
+  @common margin
+*/
+.mrgb-xs{
+   margin-bottom: 8px;
+ }
+.mrgb-sm{
+  margin-bottom: 12px;
+}
+.mrgb-md{
+  margin-bottom: 16px;
+}
+.mrgb-lg{
+  margin-bottom: 20px;
+}
+
+.mrgt-xs{
+  margin-top: 8px;
+}
+.mrgt-sm{
+  margin-top: 12px;
+}
+.mrgt-md{
+  margin-top: 16px;
+}
+.mrgt-lg{
+  margin-top: 20px;
+}
+
+/**
+  @common padding
+*/
+.pdl-xs{
+  padding-left: 8px;
+}
+.pdl-sm{
+  padding-left: 12px;
+}
+.pdl-md{
+  padding-left: 16px;
+}
+.pdl-lg{
+  padding-left: 20px;
+}
+
+.pdr-xs{
+  padding-right: 8px;
+}
+.pdr-sm{
+  padding-right: 12px;
+}
+.pdr-md{
+  padding-right: 16px;
+}
+.pdr-lg{
+  padding-right: 20px;
+}
+
+.pdt-xs{
+  padding-top: 8px;
+}
+.pdt-sm{
+  padding-top: 12px;
+}
+.pdt-md{
+  padding-top: 16px;
+}
+.pdt-lg{
+  padding-top: 20px;
+}
+
+.pdb-xs{
+  padding-bottom: 8px;
+}
+.pdb-sm{
+  padding-bottom: 12px;
+}
+.pdb-md{
+  padding-bottom: 16px;
+}
+.pdb-lg{
+  padding-bottom: 20px;
+}
+/** Main-container original padding**/
+.main-container-pdg{
+
+  padding: $headerHeght $page-gutter $footerHeight $sideNavWidth+$page-gutter;
+  .dashboard + .main-container & {
+    padding-right: $dashNavWidth+$page-gutter;
+  }
+}
+@media screen and (max-width: $wide-phone), screen and (max-height: $height-break){
+  .main-container-pdg {
+    padding: $headerHeght $gutter-m $footerHeight $gutter-m;
+    .dashboard + .main-container & {
+      padding-right: $gutter-m;
+    }
+  }
+}
+/*----------------------------------------------------------------
+	Breakpoint 1 : 1200px
+-----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+	Breakpoint 2 : 1024px
+-----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+	Breakpoint 3 : 768px
+-----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 480px
+-----------------------------------------------------------------*/

@@ -1,0 +1,47 @@
+{% extends 'BORAdminBundle::layout.html.twig' %}
+{% block content %}
+    <h1>Sponsorship</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Idsponsor</th>
+                <td>{{ entity.idSponsor }}</td>
+            </tr>
+            <tr>
+                <th>Godsonemail</th>
+                <td>{{ entity.godsonEmail }}</td>
+            </tr>
+            <tr>
+                <th>Hasaccepted</th>
+                <td>{{ entity.hasAccepted }}</td>
+            </tr>
+            <tr>
+                <th>Createdon</th>
+                <td>{{ entity.createdOn|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Updatedon</th>
+                <td>{{ entity.updatedOn|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('sponsorship') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('sponsorship_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

@@ -1,0 +1,197 @@
+/* ==========================================================================
+   @comment:
+   ========================================================================== */
+
+/*----------------------------------------------------------------
+	Mode desktop
+-----------------------------------------------------------------*/
+
+.sidenav {
+
+  position: fixed;left:0;top: $headerHeght;
+  width: $sideNavWidth;height: calc(100% - #{$headerHeght} - #{$footerHeight});
+  background-color: #f0eeee;
+  font-family: "arial" ;
+  text-transform: uppercase;
+  font-size: 8px;
+  font-weight: bold;
+  text-align: center;
+
+  .open-menu {
+    height: 100%;
+  }
+  > ul {
+    height: 100%;
+
+    li {
+      position: relative;
+      a, button{
+        @include centerer;
+      }
+      button{
+        border: none;
+        cursor: pointer;
+        background: none;
+        min-width: 42px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  li{
+    display: block;
+    height:12.5%;
+    border-top : 1px $border-grey solid;
+
+    a, button{
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    a:hover {
+      span {
+        color : $hover-orange;
+      }
+      .icon-concept{
+          background-image: url("../img/picto_menu/desktop/concept_hover.png");
+      }
+      .icon-experts{
+          background-image: url("../img/picto_menu/desktop/conseil_hover.png");
+      }
+      .icon-partenaires{
+          background-image: url("../img/picto_menu/desktop/partenaire_hover.png");
+
+      }
+      .icon-rechercher{
+
+          background-image: url("../img/picto_menu/desktop/loupe_loupe.png");
+
+      }
+      .icon-publier{
+
+          background-image: url("../img/picto_menu/desktop/annoncer_hover.png");
+
+      }
+      .icon-personnaliser{
+
+          background-image: url("../img/picto_menu/desktop/perso_hover.png");
+
+      }
+      .icon-moocer{
+          background-image: url("../img/picto_menu/desktop/mooc_hover.png");
+      }
+      .icon-actualites{
+          background-image: url("../img/picto_menu/desktop/actualites_hover.png");
+      }
+
+    }
+
+  }
+  //icone concept
+  .icon-concept{
+    background-repeat: no-repeat;
+    background-image: url("../img/picto_menu/desktop/concept.png");
+    background-position: top;
+    display:block;
+    margin-top: 8px;
+    height:35px;
+  }
+
+  //icone experts
+  .icon-experts{
+    background-repeat: no-repeat;
+    background-image: url("../img/picto_menu/desktop/conseil.png");
+    background-position: top;
+    display:block;
+    margin-top: 8px;
+    height: 35px;
+  }
+
+  //icone partenaires
+  .icon-partenaires{
+    background-repeat: no-repeat;
+    background-image: url("../img/picto_menu/desktop/partenaire.png");
+    background-position: top;
+    display:block;
+    margin-top: 8px;
+    height: 35px;
+  }
+
+  //icone rechercher
+  .icon-rechercher{
+    background-repeat: no-repeat;
+    background-image: url("../img/picto_menu/desktop/loupe.png");
+    background-position: top;
+    display:block;
+    margin-top: 8px;
+    height: 35px;
+  }
+
+  //icone publier
+  .icon-publier{
+    background-repeat: no-repeat;
+    background-image: url("../img/picto_menu/desktop/annoncer.png");
+    background-position: top;
+    display:block;
+    margin-top: 8px;
+    height: 35px;
+  }
+
+  //icone personnaliser
+  .icon-personnaliser{
+    background-repeat: no-repeat;
+    background-image: url("../img/picto_menu/desktop/perso.png");
+    background-position: top;
+    display:block;
+    margin-top: 8px;
+    height: 35px;
+  }
+
+  //icone mooc
+  .icon-moocer{
+    background-repeat: no-repeat;
+    background-image: url("../img/picto_menu/desktop/mooc.png");
+    background-position: top;
+    display:block;
+    margin-top: 8px;
+    height: 35px;
+  }
+
+  //icone actualites
+  .icon-actualites{
+    background-repeat: no-repeat;
+    background-image: url("../img/picto_menu/desktop/actualites.png");
+    background-position: top;
+    display:block;
+    margin-top: 8px;
+    height: 35px;
+  }
+
+  .nav-dashboard-menu{
+    visibility: hidden;
+  }
+}
+
+.btn-menu{
+  display:none;
+}
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 1200px
+-----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+	Breakpoint 2 : 1024px
+-----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+	Breakpoint 3 : 768px
+-----------------------------------------------------------------*/
+@media screen and (max-width: $wide-phone), screen and (max-height: $height-break){
+  .sidenav {
+    display: none;
+  }
+
+}
+/*----------------------------------------------------------------
+	Breakpoint 1 : 480px
+-----------------------------------------------------------------*/

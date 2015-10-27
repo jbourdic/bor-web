@@ -1,0 +1,15 @@
+{% extends 'BORAdminBundle::layout.html.twig' %}
+
+{% block content  %}
+    <h1>Post creation admin</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('bor_admin_post_list') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

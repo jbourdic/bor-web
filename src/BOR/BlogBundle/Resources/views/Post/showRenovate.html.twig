@@ -1,0 +1,57 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+{% set page_title = 'Personnaliser votre intérieur' %}
+{% block meta %}
+    <meta name="description" content="Découvrez les astuces et les conseils de nos experts pour vous aider à rénover et personnaliser votre intérieur.">
+{% endblock %}
+{% block mainId %}id="advert"{% endblock %}
+{% block content %}
+    <div class="content">
+    <div class="left-button-search-result"><div><span></span></div></div>
+    <div id="search-result-container">
+        <div id="search-result-top-left">
+        <h1>Personnaliser ou pas, telle est la question !</h1>
+        <p>Découvrez les conseils de nos experts. Vous connaitrez les meilleures pratiques à adopter lors de la rénovation de votre intérieur.</p>
+        </div>
+        <div id="search-result-top-right">
+            <input type="search" placeholder="Rechercher"><div class="search-button"><a href=""></a></div>
+            <select name="Search filtrer">
+              <option value="">Filtrer les résultats</option>
+              <option value="">Par date</option>
+              <option value="">Par auteur</option>
+            </select>
+        </div>
+
+    <div class="clear"></div>
+    <div class="page-and-link-search-result">
+        <div>
+            <a href="#" class="search-page-hidden"></a>
+            <a href="#" class="search-page-hidden"></a>
+        </div>
+    </div>
+            {% for entity in entities %}
+                <div class="search-result">
+                    <a class="search-result-img" href="{{ path('bor_post_show', { 'id': entity.id , 'slug': entity.title }) }}">
+                        <img src="
+                            {% if entity.media is not null %}
+                                {{ asset(entity.media.getWebPath()) }}
+                            {% else %}
+                                {{ asset('bundles/borcore/tpl/img/common/multimedia-default.png') }}
+                            {% endif %}" alt="image logement">
+                    </a>
+                    <div class="search-result-bottom-title search-result-bottom">
+                        <p>{{ entity.title }}</p>
+                    </div>
+                    <div class="search-result-bottom-hover search-result-bottom">
+                        <ul>
+                            <li><a href="javascript:ouvre('http://www.facebook.com/share.php?u={{ app.request.getHost }}{{ path('bor_post_show', { 'id': entity.id , 'slug': entity.title }) }}&title={{ entity.title }}')" title="facebook"></a></li>
+                            <li><a href="javascript:ouvre('http://twitter.com/intent/tweet?status={{ entity.title }}+{{ app.request.getHost }}{{ path('bor_post_show', { 'id': entity.id , 'slug': entity.title }) }}')" title="tweeter"></a></li>
+                            <li><a href="javascript:ouvre('https://plus.google.com/share?url={{ app.request.getHost }}{{ path('bor_post_show', { 'id': entity.id , 'slug': entity.title }) }}')" title="google +"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>        
+        <div class="right-button-search-result"><div><span class="right-button-character"></span></div></div>
+    </div>
+
+{% endblock %}

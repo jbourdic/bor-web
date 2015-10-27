@@ -1,0 +1,11 @@
+parameters:
+    bor_core.mooc_provider.class: BOR\CoreBundle\Service\MoocProvider
+    bor_core.bor_contact.class : BOR\CoreBundle\Service\BorContact
+
+services:
+    bor_core.mooc_provider:
+        class: %bor_core.mooc_provider.class%
+        arguments: [%mooc.enter_url%, %mooc.login_url%, %mooc.shared_key%]
+    bor_core.contact:
+        class: %bor_core.bor_contact.class%
+        arguments: [@mailer]

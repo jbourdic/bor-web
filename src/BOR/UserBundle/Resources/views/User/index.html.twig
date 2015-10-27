@@ -1,0 +1,55 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>User list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Civility</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Phone</th>
+                <th>Type</th>
+                <th>Active</th>
+                <th>Profileimage</th>
+                <th>Createdon</th>
+                <th>Updatedon</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('bor_user_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.civility }}</td>
+                <td>{{ entity.firstname }}</td>
+                <td>{{ entity.lastname }}</td>
+                <td>{{ entity.phone }}</td>
+                <td>{{ entity.type }}</td>
+                <td>{{ entity.active }}</td>
+                <td>{% if entity.media is not null %}
+                        <img style="width: 100px;" src="{{ asset(entity.media.getWebPath()) }}">
+                    {% endif %}</td>
+                <td>{% if entity.createdOn %}{{ entity.createdOn|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.updatedOn %}{{ entity.updatedOn|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('bor_user_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('bor_user_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('bor_blockuser_new', { 'idUser': entity.id }) }}">block</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% endblock %}

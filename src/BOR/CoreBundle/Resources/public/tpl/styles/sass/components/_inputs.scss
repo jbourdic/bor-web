@@ -1,0 +1,644 @@
+/* ==========================================================================
+   @comment: Gestions des styles de base pour les inputs
+   ========================================================================== */
+
+/*----------------------------------------------------------------
+	Mode desktop
+-----------------------------------------------------------------*/
+
+.OrangeSubmit{
+  height: 30px;
+  background-color: #{$orange-color};
+  font-size: 14px;
+  border: none;
+  color: white;
+  border-radius: 2px;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  -ms-border-radius:2px;
+  position: relative;
+  padding-left: 30px;
+  padding-right: 50px;
+  background-image: url("#{$pathImg}input_arrow_white.png");
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  &.small{
+    width: 220px;
+  }
+}
+
+.OrangeSubmit:hover{
+  background-color: #{$border-grey};
+}
+.LabelInput{
+  display: inline-block;
+  color: #{$black-color};
+  padding-right: 10px;
+  font-size: 12px;
+}
+
+#div-lien-bouton-deroulement{
+  width: 190px;
+}
+
+#form-lien-bouton-deroulement{
+  font-size: 12px;
+  color: #{$border-grey};
+}
+
+#label-affichage{
+  margin-top: 20px;
+  margin-left: 70px;
+  margin-right: 30px;
+}
+
+#div-bouton-deroulement{
+  border-right: solid 1px #{$border-grey};
+  border-left: solid 1px #{$border-grey};
+  border-bottom: solid 1px #{$border-grey};
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-top: -8px;
+}
+
+#liste-choix{
+  margin-top: 10px;
+  margin-left: 5px;
+  width: 180px;
+}
+
+#liste-choix select{
+  width: 200px;
+  background-position: center right 30px;
+}
+
+#liste-choix2{
+  margin-top: 10px;
+  margin-left: 5px;
+  width: 180px;
+}
+
+#liste-choix2 select{
+  width: 200px;
+  background-position: center right 30px;
+}
+
+#texte-input-lien-bouton-deroulement{
+  width: 180px;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.form-radio{
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 12px;
+}
+
+.form-radio2{
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.TextInput{
+  display: inline-block;
+  border: #{$border-grey} solid 1px;
+  width: 220px;
+  height: 25px;
+  padding-left: 5px;
+  font-size: 12px;
+  color: #{$border-grey};
+  &.right{float:right;}
+
+}
+
+.TextInputSmall{
+  display: inline-block;
+  border: #{$border-grey} solid 1px;
+  width: 80px;
+  height: 25px;
+  padding-left: 5px;
+  margin-left: 5px;
+  font-size: 12px;
+  color: #{$border-grey};
+}
+
+#text-max{
+  margin-left: 15px;
+
+}
+
+.TextInputTall{
+  display: inline-block;
+  border: #{$border-grey} solid 1px;
+  width: 470px;
+  height: 25px;
+  padding-left: 5px;
+  font-size: 12px;
+  color: #{$border-grey};
+}
+
+.TextInputAddAnnonce{
+  display: inline-block;
+  border: #{$border-grey} solid 1px;
+  width: 220px;
+  height: 20px;
+  padding-left: 5px;
+  font-size: 12px;
+  color: #{$border-grey};
+  background-color: #{$light-grey-color};
+}
+
+.TextInputAddArticle{
+  float: right;
+  display: inline-block;
+  border: #{$border-grey} solid 1px;
+  width: 320px;
+  height: 20px;
+  padding-left: 5px;
+  font-size: 12px;
+  color: #{$border-grey};
+  background-color: #{$light-grey-color};
+}
+
+::-moz-placeholder{
+  font-size: 12px;
+  color: #{$border-grey};
+}
+
+:-ms-input-placeholder{
+   font-size: 12px;
+   color: #{$border-grey};
+ }
+
+::-webkit-input-placeholder{
+  font-size: 12px;
+  color: #{$border-grey};
+}
+
+.TextAreaInput{
+  border: #{$border-grey} solid 1px;
+  padding-left: 5px;
+  padding-top: 5px;
+  font-size: 12px;
+  color: #{$border-grey};
+  height: 100px;
+  width: 220px;
+}
+
+.TextAreaInputAddAnnonce{
+  border: #{$border-grey} solid 1px;
+  padding-left: 5px;
+  padding-top: 5px;
+  font-size: 12px;
+  color: #{$border-grey};
+  height: 50px;
+  width: 220px;
+  background-color: #{$light-grey-color};
+}
+
+.TextAreaInputAddArticle{
+  border: #{$border-grey} solid 1px;
+  padding-left: 5px;
+  padding-top: 5px;
+  font-size: 12px;
+  color: #{$border-grey};
+  height: 60px;
+  width: 320px;
+  background-color: #{$light-grey-color};
+}
+
+.texte-description-courte{
+  border: #{$border-grey} solid 1px;
+  float: right;
+  padding-left: 5px;
+  padding-top: 5px;
+  font-size: 12px;
+  color: #{$border-grey};
+  height: 60px;
+  width: 69%;
+  background-color: #{$light-grey-color};
+}
+
+.TextAreaInputTall{
+  border: #{$border-grey} solid 1px;
+  padding-left: 5px;
+  padding-top: 5px;
+  font-size: 12px;
+  color: #{$border-grey};
+  height: 165px;
+  width:470px;
+}
+
+.LabelDescriptionInput{
+  display: inline-block;
+  color: #{$black-color};
+  padding-right: 10px;
+  font-size: 12px;
+}
+
+.ListeInputDown{
+  border: #{$border-grey} solid 1px;
+  width: 220px;
+  height: 25px;
+  font-size: 12px;
+  overflow: hidden;
+  background-color: #{$light-grey-color};
+  }
+
+.ListeInputDown select {
+  width: 240px;
+  border: none;
+  color: #{$border-grey};
+  padding-bottom: 3px;
+  padding-top: 3px;
+  background-image: url("#{$pathImg}select_arrow_orange.png");
+  background-repeat: no-repeat;
+  background-position: center right 30px;
+  background-color: #{$light-grey-color};
+}
+
+.ListeInputDownGrey{
+   display: inline-block;
+   vertical-align: middle;
+   border: #{$border-grey} solid 1px;
+   width: 220px;
+   height: 25px;
+   font-size: 12px;
+   overflow: hidden;
+   background-color: #{$light-grey-color};
+ }
+
+.ListeInputDownGrey select {
+  width: 240px;
+  border: none;
+  color: #{$border-grey};
+  padding-bottom: 3px;
+  padding-top: 3px;
+  background-image: url("#{$pathImg}select_arrow_grey_down.png");
+  background-repeat: no-repeat;
+  background-position: center right 30px;
+  background-color: #{$light-grey-color};
+}
+
+.ListeInputDownGreyArticle{
+  display: inline-block;
+  vertical-align: middle;
+  border: #{$border-grey} solid 1px;
+  width: 320px;
+  height: 25px;
+  font-size: 12px;
+  overflow: hidden;
+  background-color: #{$light-grey-color};
+}
+
+.ListeInputDownGreyArticle select {
+  width: 340px;
+  border: none;
+  color: #{$border-grey};
+  padding-bottom: 3px;
+  padding-top: 3px;
+  background-image: url("#{$pathImg}select_arrow_grey_down.png");
+  background-repeat: no-repeat;
+  background-position: center right 30px;
+  background-color: #{$light-grey-color};
+}
+
+.ListeInputHome{
+  border: #{$border-grey} solid 1px;
+  width: 220px;
+  height: 30px;
+  font-size: 12px;
+  overflow: hidden;
+  background-color: #{$light-grey-color};
+}
+
+.ListeInputHome select {
+  width: 240px;
+  border: none;
+  color: #{$border-grey};
+  padding-bottom: 3px;
+  padding-top: 5px;
+  background-image: url("#{$pathImg}select_arrow_grey.png");
+  background-repeat: no-repeat;
+  background-position: center right 30px;
+  background-color: #{$light-grey-color};
+}
+
+.LienBouton a{
+  display: block;
+  width: 190px;
+  padding-bottom: 9px;
+  padding-top: 7px;
+  padding-left: 30px;
+  background-color: #{$orange-color};
+  font-size: 14px;
+  border: none;
+  color: white;
+  border-radius: 2px;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  -ms-border-radius:2px;
+  background-image: url("#{$pathImg}input_arrow_white.png");
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+}
+
+.LienBouton a:hover{
+  display: block;
+  width: 190px;
+  padding-bottom: 9px;
+  padding-top: 7px;
+  padding-left: 30px;
+  background-color: #{$border-grey};
+  font-size: 14px;
+  border: none;
+  color: white;
+  border-radius: 2px;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  -ms-border-radius:2px;
+  background-image: url("#{$pathImg}input_arrow_white.png");
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+}
+
+.LienBoutonDeroulement a{
+  display: block;
+  width: 190px;
+  padding-bottom: 9px;
+  padding-top: 7px;
+  padding-left: 30px;
+  background-color: #{$orange-color};
+  font-size: 14px;
+  border: none;
+  color: white;
+  background-image: url("#{$pathImg}input_arrow_white_down.png");
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+}
+
+.LienBoutonDeroulement a:hover{
+  display: block;
+  width: 190px;
+  padding-bottom: 9px;
+  padding-top: 7px;
+  padding-left: 30px;
+  background-color: #{$border-grey};
+  font-size: 14px;
+  border: none;
+  color: white;
+  background-image: url("#{$pathImg}input_arrow_white_down.png");
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+}
+
+
+[type="checkbox"]:not(:checked) + label,[type="checkbox"]:checked + label {
+  position: relative;
+  font-size: 10px;
+  font-style: italic;
+}
+
+.LabelInputCheckBox{
+  padding-left: 30px;
+}
+/*----------------------------------------------------------------
+Breakpoint 1 : 1200px
+-----------------------------------------------------------------*/
+@media screen and (min-width:1200px) {
+
+
+  .TextInputAddAnnonce {
+    width: 275px;
+  }
+
+  .TextAreaInputAddAnnonce {
+    width:275px;
+  }
+
+  .ListeInputDownGrey {
+    width:275px;
+
+  }
+
+  .ListeInputDownGrey select {
+    width:275px;
+    background-position: right 10px center;
+  }
+
+  #BlockFormAddAnnonce {
+    width:410px;
+  }
+
+  .OrangeSubmit {
+    padding-left: 62px;
+    padding-right: 68px;
+  }
+}
+
+
+@media screen and (max-width:1200px) {
+
+  .ListeInputDownGreyArticle{
+    display: inline-block;
+    vertical-align: middle;
+    border: #{$border-grey} solid 1px;
+    width: 220px;
+    height: 25px;
+    font-size: 12px;
+    overflow: hidden;
+    background-color: #{$light-grey-color};
+  }
+
+  .ListeInputDownGreyArticle select {
+    width: 240px;
+    border: none;
+    color: #{$border-grey};
+    padding-bottom: 3px;
+    padding-top: 3px;
+    background-image: url("#{$pathImg}select_arrow_grey_down.png");
+    background-repeat: no-repeat;
+    background-position: center right 30px;
+    background-color: #{$light-grey-color};
+  }
+
+  .TextInputAddArticle{
+    float: right;
+    display: inline-block;
+    border: #{$border-grey} solid 1px;
+    width: 220px;
+    height: 20px;
+    padding-left: 5px;
+    font-size: 12px;
+    color: #{$border-grey};
+    background-color: #{$light-grey-color};
+  }
+}
+/*----------------------------------------------------------------
+	Breakpoint 2 : 1024px
+-----------------------------------------------------------------*/
+@media screen and (max-width: 1024PX)
+{
+  #homepage .ListeInputHome{
+    border: #{$border-grey} solid 1px;
+    width: 150px;
+    height: 20px;
+    font-size: 12px;
+    overflow: hidden;
+    background-color: #{$light-grey-color};
+    margin-bottom:10px;
+  }
+  #homepage .ListeInputHome select
+  {
+    padding-top: 2px !important;
+  }
+  #homepage .LienBouton a {
+    width: 150px;
+    font-size: 12px;
+    padding-left: 15px;
+    height: 23px;
+    margin-bottom: 7px;
+    padding-top:5px;
+  }
+  .BlockConnexionContact .TextAreaInputTall{
+    width:100%;
+  }
+
+  .ListeInputDownGreyArticle{
+    display: inline-block;
+    vertical-align: middle;
+    border: #{$border-grey} solid 1px;
+    width: 180px;
+    height: 25px;
+    font-size: 12px;
+    overflow: hidden;
+    background-color: #{$light-grey-color};
+  }
+
+  .ListeInputDownGreyArticle select {
+    width: 200px;
+    border: none;
+    color: #{$border-grey};
+    padding-bottom: 3px;
+    padding-top: 3px;
+    background-image: url("#{$pathImg}select_arrow_grey_down.png");
+    background-repeat: no-repeat;
+    background-position: center right 30px;
+    background-color: #{$light-grey-color};
+  }
+}
+/*----------------------------------------------------------------
+	Breakpoint 3 : 768px
+-----------------------------------------------------------------*/
+@media screen and (max-width: 868PX)
+{
+  #homepage .ListeInputHome{
+    border: #{$border-grey} solid 1px;
+    width: 80px;
+    height: 20px;
+    font-size: 12px;
+    overflow: hidden;
+    background-color: #{$light-grey-color};
+    margin-bottom:10px;
+  }
+  #homepage .ListeInputHome select
+  {
+    padding-top: 2px !important;
+  }
+  #homepage .LienBouton a {
+    width: 110px;
+    font-size: 12px;
+    padding-left: 15px;
+    height: 23px;
+    margin-bottom: 7px;
+    padding-top:5px;
+  }
+
+
+}
+
+
+
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 480px
+-----------------------------------------------------------------*/
+
+
+@media screen and (max-width: 480px)
+{
+  #homepage .LienBouton a {
+    width: 110px;
+    font-size: 12px;
+    padding-left: 15px;
+    height: 23px;
+    margin-bottom: 7px;
+    padding-top:5px;
+  }
+
+  .TextInputAddArticle{
+    width:330px;
+  }
+
+  .ListeInputDownGreyArticle{
+    width:330px;
+    margin-left: 3px;
+  }
+
+  .texte-description-courte{
+    width:100%;
+
+  }
+}
+
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 900px
+-----------------------------------------------------------------*/
+@media screen and (max-width:1024px){
+  .OrangeSubmit {
+    float:right;
+    margin-top:10px;
+    margin-bottom:20px;
+  }
+}
+
+@media screen and (max-width: 900PX)
+{
+  .TextInputAddArticle{
+    float: right;
+    display: inline-block;
+    border: #{$border-grey} solid 1px;
+    width: 150px;
+    height: 20px;
+    padding-left: 5px;
+    font-size: 12px;
+    color: #{$border-grey};
+    background-color: #{$light-grey-color};
+  }
+
+  .ListeInputDownGreyArticle{
+    display: inline-block;
+    vertical-align: middle;
+    border: #{$border-grey} solid 1px;
+    width: 110px;
+    height: 25px;
+    font-size: 12px;
+    overflow: hidden;
+    background-color: #{$light-grey-color};
+  }
+
+  .ListeInputDownGreyArticle select {
+    width: 130px;
+    border: none;
+    color: #{$border-grey};
+    padding-bottom: 3px;
+    padding-top: 3px;
+    background-image: url("#{$pathImg}select_arrow_grey_down.png");
+    background-repeat: no-repeat;
+    background-position: center right 30px;
+    background-color: #{$light-grey-color};
+  }
+
+}

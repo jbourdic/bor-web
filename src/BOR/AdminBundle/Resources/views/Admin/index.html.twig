@@ -1,0 +1,48 @@
+{% extends 'BORAdminBundle::layout.html.twig' %}
+{% block content %}
+    <h2>Back Office</h2>
+    <ul>
+        <li>
+            <a href="{{ path('bor_admin_advert_list') }}">Liste des annonces</a>
+        </li>
+        <li>
+            <a href="{{ path('bor_blockadvert_index') }}">Liste des BlockAdvert</a>
+        </li>
+        <li>
+            <a href="{{ path('bor_admin_post_list') }}">Liste des Post</a>
+        </li>
+        <li>
+            <a href="{{ path('bor_blockpost_list') }}">Liste des BlockPost</a>
+        </li>
+        <li>
+            <a href="{{ path('bor_admin_user') }}">Liste des User</a>
+        </li>
+        <li>
+            <a href="{{ path('bor_blockuser') }}">Liste des BlockUser</a>
+        </li>
+        <li>
+            <a href="{{ path('bor_admin_partenaire_index') }}">Liste des Partenaires</a>
+        </li>
+        <li>
+            <a href="{{ path('bor_slider_index') }}">Administration slider</a>
+        </li>
+    </ul>
+    <h2>Gamification</h2>
+    <ul>
+        <li>
+            <a href="{{ path('bor_level_index') }}">Gérer les niveaux</a>
+        </li>
+        <li>
+            <a href="{{ path('bor_qcmpoint_index') }}">Gérer les points QCM</a>
+        </li>
+        <li>
+            <a href="{{ path('bor_action_index') }}">Gérer les Actions</a>
+        </li>
+        <li>
+            <a target="_blank" href="http://www.google.fr/intl/fr/analytics/">Google Analytics</a>
+        </li>
+    </ul>
+
+    {#	{% include 'BORCoreBundle:Core:main-container.html.twig' %}#}
+{% endblock %}
+

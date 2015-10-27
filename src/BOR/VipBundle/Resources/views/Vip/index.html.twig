@@ -1,0 +1,65 @@
+{% extends 'BORCoreBundle::layout.html.twig' %}
+{% set page_title = 'Les offres d\'abonnements de Blabla.academy' %}
+{% block meta %}
+    <meta name="description" content="Blabla.academy propose des offres d'abonnements gratuite et payante pour profiter pleinement de l'accès au MOOC.">
+{% endblock %}
+{% block mainId %} id="main-contact"{% endblock %}
+{% block content %}
+    <div class="content-box" id="vip">
+        <div class="achat-box bg-trans">
+            <h1 class="ttl-1">Nos offres d&#039;abonnement</h1>
+            <p class="desc">
+                Que vous soyez expert ou adhérent, vous pouvez souscrire à l'un de nos abonnements pour bénéficier de services supplémentaires sur le site.
+            </p>
+
+            <div class="col-4">
+                <h2 class="ttl-2"><img src="{{ asset('bundles/borcore/tpl/img/common/SG2014_picto_decouverte.png') }}" alt=""/>FREEMIUM</h2>
+                <p class="mb-lg">
+                    L'abonnement freemium vous est attribué dès que vous vous inscrivez sur le site.
+                </p>
+                <p>C'est entièrement gratuit et vous permet de bénéficier des services suivants :</p>
+                <ul>
+                    <li> - Un espace personnel pour gérer votre compte </li>
+                    <li> - Une sauvegarde de vos favoris sur tous vos écrans</li>
+                </ul>
+                <div class="clearfix">
+                    {% if app.user %}
+                    <span class="OrangeSubmit btn btn-default btn-disabled" onclick="ga('send', 'event', 'abonnements', 'bouton', 'freemium');">Déjà souscrit</span>
+                    {% else %}
+                    <a class="OrangeSubmit btn btn-default" href="{{ url("bor_user_adherer") }}">Souscrire</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-4">
+                <h2 class="ttl-2"><img src="{{ asset('bundles/borcore/tpl/img/common/SG2014_picto_business.png') }}" alt=""/>PREMIUM / MOIS</h2>
+                <p class="mb-lg">
+                    L'abonnement Premium/mois est à 8€ par mois et vous donne un accès illimité aux vidéos du MOOC pendant le mois courant.
+                </p>
+                {# <p> Est-ce renouvelé automatiquement ? ou est-ce l'utilisateur doit souscrire de nouveau chaque mois ? </p> #}
+                <p>Il vous permet de bénéficier des services suivants:</p>
+                <ul>
+                    <li> - Obtenez un espace personnel </li>
+                    <li> - Sauvegardez vos favoris sur tous vos écrans</li>
+                    <li> - Accédez au MOOC et visionnez des vidéos en illimité pendant un mois</li>
+                </ul>
+                <div class="clearfix">
+                    <a class="OrangeSubmit btn btn-default" href="{{ url('bor_purchase_create',{'productName': 'mois'}) }}" onclick="ga('send', 'event', 'abonnements', 'bouton', 'premium_mois');">Souscrire</a>
+                </div>
+            </div>
+            <div class="col-4">
+                <h2 class="ttl-2"><img src="{{ asset('bundles/borcore/tpl/img/common/SG2014_picto_appmobile_vip.png') }}" alt=""/>PREMIUM / AN</h2>
+                <p class="mb-lg">
+                    Premium/an (96€ par an): 
+                </p>
+                <ul>
+                    <li> - Obtenez un espace personnel </li>
+                    <li> - Sauvegardez vos favoris sur tous vos écrans</li>
+                    <li> - Accèdez au MOOC et visionnez des vidéos en illimité pendant un an</li>
+                </ul>
+                <div class="clearfix">
+                    <a class="OrangeSubmit btn btn-default" href="{{ url('bor_purchase_create',{'productName': 'an'}) }}" onclick="ga('send', 'event', 'abonnements', 'bouton', 'premium_an');">Souscrire</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

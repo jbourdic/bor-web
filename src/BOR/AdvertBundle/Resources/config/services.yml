@@ -1,0 +1,5 @@
+services:
+    bor_advert.favorite:
+        class: BOR\AdvertBundle\Services\Favorite
+        scope: request
+        arguments: ["@doctrine.orm.entity_manager", "@request"]

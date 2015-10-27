@@ -1,0 +1,95 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div id="Titre">
+    <h1>Modifier mes informations</h1>
+</div>
+
+<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+    <div class="BlockCreation">
+
+        <div class="BlockCreationG">
+            <h2>Mes informations personnelles</h2>
+
+
+            {{ form_errors(form) }}
+            <hr class="HrBlack">
+            <div class="RawFormAdherent">
+                {{ form_label(form.civility, null, { 'label_attr': {'class':'LabelInput3'} }) }}
+                {{ form_widget(form.civility, {'attr': {id:'civility',name:'_civility',class:'ListeInputDown'}}) }}
+            </div>
+            <div class="RawFormAdherent">
+                {{ form_label(form.firstname, null, { 'label_attr': {'class':'LabelInput3'} }) }}
+                {{ form_widget(form.firstname, {'attr': {id:'firstname',name:'_firstname',class:'TextInput'}}) }}
+            </div>
+            <div class="RawFormAdherent">
+                {{ form_label(form.lastname, null, { 'label_attr': {'class':'LabelInput3'} }) }}
+                {{ form_widget(form.lastname, {'attr': {id:'lastname',name:'_lastname',class:'TextInput'}}) }}
+            </div>
+            <div class="RawFormAdherent">
+                {{ form_label(form.phone, null, { 'label_attr': {'class':'LabelInput3'} }) }}
+                {{ form_widget(form.phone, {'attr': {id:'phone',name:'_phone',class:'TextInput'}}) }}
+            </div>
+            <div class="RawFormAdherent">
+                {{ form_label(form.zipCode, null, { 'label_attr': {'class':'LabelInput3'} }) }}
+                {{ form_widget(form.zipCode, {'attr': {id:'zipCode',name:'_zipCode',class:'TextInput'}}) }}
+            </div>
+        </div>
+        <div class="BlockCreationD">
+            <h2>Mes informations de compte</h2>
+            <hr class="HrBlack">
+            <div class="RawFormAdherent">
+                {{ form_label(form.media, null, { 'label_attr': {'class':'LabelInput3'} }) }}
+                {% if user and user.media %}
+                    <img style="width:100px;" src="{{ asset(user.getMedia().getWebPath()) }}"/>
+                {% endif %}
+                {{ form_widget(form.media,{'attr':{id:"file",name:"_file",class:""} }) }}
+            </div>
+            <div class="RawFormAdherent">
+                {{ form_label(form.email, null, { 'label_attr': {'class':'LabelInput3'} }) }}
+                {{ form_widget(form.email,{'attr':{id:"email",name:"_email",class:"TextInput"} }) }}
+            </div>
+            {% for passwordField in form.plainPassword %}
+                <div class="RawFormAdherent">
+                    {{ form_label(passwordField, null, { 'label_attr': {'class':'LabelInput3'} }) }}
+                    {{ form_widget(passwordField, { 'attr': {'class': 'TextInput',id:"",'name':''} }) }}
+                </div>
+            {% endfor %}
+
+        </div>
+        {% if app.user.type != 'user' %}
+        <div class="BlockCreationBas">
+            <h2 class="H2Form">Mes informations d'experts</h2>
+            <hr class="HrBlack">
+            <div class="BlockCreationG">
+                <div class="RawFormAdherent">
+                    {{ form_label(form.job, null, { 'label_attr': {'class':'LabelInput2'} }) }}
+                    {{ form_widget(form.job,{'attr':{id:'job',name:'_job',class:'TextInput'}}) }}
+                </div>
+                <div class="RawFormAdherent">
+                    {{ form_label(form.description, null, { 'label_attr': {'class':'LabelInput2'} }) }}
+                    {{ form_widget(form.description,{'attr':{id:'isExpert',name:'_isExpert',class:'TextAreaInputAddAnnonce'}}) }}
+                </div>
+            </div>
+            <div class="BlockCreationD">
+                <div class="RawFormAdherent">
+                    {{ form_label(form.website, null, { 'label_attr': {'class':'LabelInput2'} }) }}
+                    {{ form_widget(form.website,{'attr':{id:'website',name:'_website',class:'TextInput'}}) }}
+                </div>
+                <div class="RawFormAdherent">
+                    {{ form_label(form.presentationVideo, null, { 'label_attr': {'class':'LabelInput2'} }) }}
+                    {{ form_widget(form.presentationVideo,{'attr':{id:'presentationVideo',name:'_presentationVideo',class:'TextInput'}}) }}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div class="BlockCreationBas">
+            <div id="bouton">
+                <div class="RawFormAdherent">
+                    <input class="OrangeSubmit" type="submit" value="{{ 'registration.submit'|trans }}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display:none">
+    {{ form_rest(form) }}
+    </div>
+</form>

@@ -1,0 +1,37 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+{% set page_title = 'Les parties prenantes de Blabla.academy' %}
+{% block meta %}
+    <meta name="description" content="Les parties prenantes contribuent activement à la réussite de Blabla.academy. Découvrez-les et devenez-en un à votre tour.">
+{% endblock %}
+{% block content %}
+    <div class="content">
+        <div id="haut_page">
+            <h1 id="titre">Nos parties prenantes parlent d'elles</h1>
+            <p id="sous_titre">Retrouvez et contactez l'ensemble de nos partenaires. Vous souhaitez devenir l'un d'eux ? Faites nous parvenir votre demande grâce à <a href="{{ url('bor_contact_create') }}">notre formulaire de contact</a>.</p>
+        </div>
+        <div class="coverflow-wrapper">
+            <div id="coverflow">
+                {% for entity in entities %}
+                    <div class="cbImage {%  if loop.index == 1 %} active {%  endif  %}">
+                        <div class="blocs">
+                            {% if entity.avatar is defined %}
+                                <img class="avatar_expert" src="{{ entity.avatar }}" alt="{{ entity.firstname~' '~entity.lastname }}"/>
+                            {% else %}
+                                <img class="avatar_expert" src="{{ asset("bundles/borcore/tpl/img/common/avatar.png") }}"/>
+                            {% endif %}
+                            <div class="identite">
+                                <p class="titre">{{ entity.name }}</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="{{ entity.website }}" target="_blank" class="OrangeSubmit savoir_plus">En savoir plus</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block specific_script %}
+    <script type="text/javascript" src="{{ asset("bundles/borcore/tpl/scripts/libs/coverflow.min.js") }}"></script>
+{% endblock %}

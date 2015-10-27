@@ -1,0 +1,398 @@
+/* ==========================================================================
+   @comment:
+   ========================================================================== */
+
+/*----------------------------------------------------------------
+	Mode desktop
+-----------------------------------------------------------------*/
+
+#multimedia{
+
+#search-result-container{
+  width: 87%;
+  margin: 0 auto;
+  float: left;
+}
+
+#search-result-top-left{
+  width:800px;
+  float:left;
+}
+
+#search-result-top-left h1{
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+#search-result-top-left p{
+  width: 70%;
+  float: left;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin-left: 20px;
+  color: #868686;
+  margin-top: 0%;
+}
+
+#search-result-top-right{
+  float:right;
+  position: relative;
+  margin-top:20px;
+}
+
+.search-button{
+  background-color: #838383;
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  top: 0;
+  right: 0;
+  padding: 3px;
+
+  a{
+	background: url("../../tpl/img/common/loupe-white.png") no-repeat;
+	background-size: cover;
+	height: 20px;
+	width: 20px;
+	display: block;
+
+  }
+}
+
+#search-result-top-right input{
+  display: block;
+  width: 210px;
+  height: 22px;
+  background-color: #e9e9e9;
+  color: #858282;
+  border: 1px solid #858282;
+  margin-right: 26px;
+}
+
+#search-result-top-right select{
+  margin-top: 15px;
+  width: 236px;
+  height: 22px;
+  background-color: #e9e9e9;
+  color: #858282;
+  border: 0px;
+}
+
+.clear{
+  clear: both;
+}
+
+
+  .search-container-result {
+	height:600px;
+	margin:0 auto;
+	position:relative;
+  }
+
+.search-result{
+  width: 225px;
+  height: 250px;
+  position:relative;
+  float:left;
+  margin-left:10px;
+  margin-bottom: 10px;
+
+  /*Affichage de l'image pour une annonce*/
+  .search-result-img{
+	position: relative;
+	cursor: pointer;
+	display: block;
+	margin-bottom: 0;
+	width: 100%;height: 100%;
+	overflow: hidden;
+
+	img {
+	  width: 100%;
+	}
+  }
+
+
+
+  li{
+	display:inline-block;
+  }
+  .search-result-bottom{
+	opacity:0.6;
+	color:#FFF;
+	position:absolute;
+	bottom:0;
+	width:100%;
+	padding:10px;
+	height:50px;
+	max-height:50px;
+  }
+
+  .search-result-bottom-title{
+	background-color:$primary-orange;
+	font-size: 10px;
+
+	.bouton_suppr{
+	  float: right;
+	  display: none;
+	}
+
+	.nom_article{
+	  font-size:12px;
+	  float: left;
+	}
+
+	p{
+	  font-size: 14px;
+	  margin-bottom: 3px;
+	  float: left	;
+	}
+
+  }
+
+  .search-result-bottom-hover{
+	opacity:1;
+	height:100%!important;
+	max-height: 100% !important;
+
+	a{
+	  position: absolute;
+	  bottom: 10px;
+	  right: 10px;
+	  height:30px;
+	  width:30px;
+	  background:url("../../tpl/img/common/trash-white.png") no-repeat;
+	  background-size:cover;
+
+	  &:hover{
+		background-position:0px -32px;
+		cursor: pointer;
+	  }
+	}
+  }
+}
+
+/*-----------------Hover under div.the search-result -----------*/
+
+
+.left-button-search-result{
+  width: 7%;
+  float: left;
+  display: block;
+  div{
+	height: 40px;
+	width: 25px;
+	background-color: $light-grey-color;
+	color: white;
+	padding: 10px;
+	margin: 0 auto;
+	position: relative;
+	top: 21.8em;
+  }
+  span{
+	display: block;
+	border-top: 1px solid white;
+	border-left: 1px solid white;
+	-webkit-transform: rotate(-45deg);
+	height: 20px;
+	width: 20px;
+  }
+}
+
+.right-button-search-result{
+  width: 4%;
+  float: left;
+  display: block;
+  div{
+	height: 40px;
+	width: 25px;
+	background-color: $light-grey-color;
+	color: white;
+	padding: 10px;
+	margin: 0 auto;
+	position: relative;
+	top: 21.8em;
+	-webkit-transform: rotate(180deg);
+  }
+  span{
+	display: block;
+	border-top: 1px solid white;
+	border-left: 1px solid white;
+	-webkit-transform: rotate(-45deg);
+	height: 20px;
+	width: 20px;
+  }
+}
+
+.page-and-link-search-result{
+  position: relative;
+  margin-top:10px;
+  margin-bottom:10px;
+  ul {
+	position: absolute;
+	right: 0;
+	top: 0;
+	li {
+	  display: inline-block;
+	}
+  }
+  span {
+	display: block;
+	margin: 0 auto;
+	width: 100px;
+	font-size: 14px;
+	color:$footer-font-color;
+  }
+}
+
+.download-search-result {
+  background: url(../img/common/deposer.png) no-repeat;
+  background-size: cover;
+  height: 26px;
+  width: 20px;
+  display: block;
+
+  &:hover{
+	background-position: 0px -26px;
+  }
+}
+
+.edit-search-result {
+  background: url(../img/common/deposer.png) no-repeat;
+  background-size: cover;
+  height: 26px;
+  width: 20px;
+  display: block;
+
+  &:hover{
+	background-position: 0px -26px;
+  }
+}
+
+.trash-search-result {
+  background: url(../img/common/deposer.png) no-repeat;
+  background-size: cover;
+  height: 26px;
+  width: 20px;
+  display: none;
+
+  &:hover{
+	background-position: 0px -26px;
+  }
+}
+
+.search-page-hidden {
+  display: none;
+}
+.hidden-page-search-result {
+  display: none;
+}
+
+#search-result-top-right input::-webkit-input-placeholder {font-size: 16px;}
+
+}
+/*----------------------------------------------------------------
+	Breakpoint 1 : 1200px
+-----------------------------------------------------------------*/
+@media screen and (min-width: 1200px) {
+  .search-container-result {
+	max-width:975px;
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .search-container-result {
+	max-width:705px;
+  }
+}
+
+
+/*----------------------------------------------------------------
+	Breakpoint 2 : 1024px
+-----------------------------------------------------------------*/
+@media screen and (max-width: 1024px) {
+  .search-container-result {
+	max-width:725px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .search-container-result {
+	max-width:520px;
+  }
+}
+
+
+
+/*----------------------------------------------------------------
+	Breakpoint 3 : 768px
+-----------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  .search-container-result {
+	max-width:520px;
+  }
+}
+/*----------------------------------------------------------------
+	Breakpoint 1 : 480px
+-----------------------------------------------------------------*/
+@media screen and (max-width: 480px) {
+  .search-container-result {
+	max-width:230px;
+  }
+}
+@media screen and (max-width: $phone)
+{
+
+  .page-and-link-search-result {
+	div {
+	  margin: 0 auto;
+	  width: 100px;
+	  span {
+		float: left;
+		width: 65px;
+		margin: 0px 5px;
+	  }
+	}
+
+  }
+  .right-button-search-result,.left-button-search-result {
+	display: none;
+  }
+  .search-result {
+	display: block;
+	margin: 10px auto;
+	float: none;
+  }
+  #search-result-container {
+	width:100%;
+  }
+  .search-page-hidden {
+	display: inline-block;
+	float: left;
+	color:$footer-font-color;
+  }
+  #search-result-top-left p {
+	padding: 10px;
+	float:none;
+	width: 100%;
+	text-align: justify;
+	margin-left: 0px;
+  }
+  #search-result-top-right {
+	margin: 0 auto;
+	display: block;
+	width: 240px;
+	float: none;
+  }
+  .hidden-page-search-result {
+	display: block;
+	margin-bottom: 10px;
+
+  }
+  .page-and-link-search-result ul {
+	right: 20%;
+  }
+
+}
+
+

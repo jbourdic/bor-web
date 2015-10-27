@@ -1,0 +1,16 @@
+{% extends '::baseError.html.twig' %}
+{% set page_title = 'Erreur 500' %}
+{% set description = "Oups... Une erreur inattendue s'est produite." %}
+{% block meta %}
+    <meta name="description" content="{{ description }}">
+{% endblock %}
+{% block content %}
+    <div class="text-center">
+        <h1>500</h1>
+        <h2>Erreur</h2>
+        <p>{{ description }}<br>Nous avons été averti. Si le problème persiste, n'hésitez pas à nous <a href="{{ path('bor_contact_new') }}">contacter</a>.</p>
+        {% block navError %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}

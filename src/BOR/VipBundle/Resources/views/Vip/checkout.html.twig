@@ -1,0 +1,56 @@
+{% extends 'BORCoreBundle::layout.html.twig' %}
+{% block javascript %}
+
+{% endblock %}
+
+{% block mainId %} id="main-contact"{% endblock %}
+{% block content %}
+    <div class="content-box" id="vip">
+
+        <div class="achat-box bg-trans">
+            <h1 class="ttl-1">Valider mon abonnement</h1>
+            <p class="desc">
+                Vous avez choisi l'abonnement suivant :
+            </p>
+
+            <div class="line-1">
+                <h2 class="ttl-3"><img src="{{ asset('bundles/borcore/tpl/img/common/SG2014_picto_business.png') }}" alt=""/>&nbsp;{{ package.name }}</h2>
+                <h2 class="ttl-4">{{ package.price }}€</h2>
+                <p class="desc-2">Vous pourrez pendant votre abonnement :</p>
+                <ul>
+                    <li>- accéder en illimité aux vidéos du MOOC</li>
+                    <li>- obtenir un espace personnel</li>
+                    <li>- sauvegarder vos favoris sur tous vos écrans</li>
+                </ul>
+
+            </div>
+
+            <p class="desc-3">
+                Afin de régler votre achat, merci de cliquer sur le bouton Paypal ci-dessous :
+            </p>
+
+            <div class="paypal">
+            <script type="text/javascript" src="https://js.braintreegateway.com/v2/braintree.js"></script>
+            {{ form_start(form) }}
+            {{ form_row(form.paymentMethod) }}
+            <div id="paypal-container"></div>
+                {{form_widget(form.submit, { "label" : "Terminer", "attr":{
+                    "class":"OrangeSubmit"
+                }})
+                }}
+            <div class="visuallyhidden">
+                {{ form_rest(form) }}
+            </div>
+            {{ form_end(form) }}
+            <script type="text/javascript">
+                braintree.setup("{{ token }}", "paypal", {
+                    container: "paypal-container",  // to specify DOM elements, use an ID, a DOM node, or a jQuery element
+                    paymentMethodNonceInputField: "bor_vipbundle_purchase_paymentMethod"
+                });
+            </script>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

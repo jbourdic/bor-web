@@ -1,0 +1,56 @@
+{% extends 'BORAdminBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>Slider</h1>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('bor_slider_index') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('bor_slider_edit', { 'id': entity.id }) }}">
+                Edit
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Link</th>
+                <td>{{ entity.link }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ entity.text }}</td>
+            </tr>
+            <tr>
+                <th>Active</th>
+                <td>{{ entity.active }}</td>
+            </tr>
+            <tr>
+                <th>Order</th>
+                <td>{{ entity.slideOrder }}</td>
+            </tr>
+            <tr>
+                <th>CreatedOn</th>
+                <td>{{ entity.createdOn|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedOn</th>
+                <td>{{ entity.updatedOn|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Photo actuelle</th>
+                <td><img src="{{ asset(entity.getMedia().getWebPath()) }}"/></td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

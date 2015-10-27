@@ -1,0 +1,370 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+
+{% block content %}
+    <div class="content">
+        <div class="page-header mrgb-lg">
+            <h1 class="ttl-2 txt-upper">Modifier votre annonce</h1>
+        </div>
+        <div class="BlockConnexionAnnonce content">
+            {{ form_start(edit_form) }}
+            {{ form_errors(edit_form) }}
+            <div id="multimedia" class="BlockAddPicture">
+                <div id="WindowsAddPicture">
+                    <div id="pictures-rollover" class="media-selector">
+                        <label class="rollover-picture">
+                            {{ form_widget(edit_form.upload0, {attr:{class:"visuallyhidden"}}) }}
+                        </label>
+                        <a class="rollover-photo{% if edit_form.gallery0|length > 1 %} disabled{% endif %}"></a>
+                        {% if edit_form.gallery0|length > 1 %}
+                            <div class="media-gallery main-container-pdg main-container-pdg">
+                                <div class="content">
+                                    <div class="page-header mrgb-lg">
+                                        <h3 class="ttl-2 cell">Selectionner la photo à ajouter à l'annonce
+                                        </h3>
+                                        <div class="icon-close cell">
+                                            <button type="button" class="btn btn-default">Valider mon choix</button>
+                                        </div>
+                                    </div>
+                                    {% for imageOpt in edit_form.gallery0 %}
+                                        <div class="search-result">
+                                            {% if loop.first %}
+
+                                                <label class="search-result-img">
+                                                    <img src="{{ asset('bundles/borcore/tpl/img/common/multimedia-default.png') }}"
+                                                         alt=""/>
+                                                    <div class="search-result-bottom-title search-result-bottom">
+                                                        <p>{% if loop.index == 1 %}Aucune image{% else %}Selectionner cette image{% endif %} {{ form_widget(imageOpt, {attr:{class:""}}) }}</p>
+                                                    </div>
+                                                </label>
+                                            {% else %}
+                                                {% form_theme imageOpt with 'BORAdvertBundle:Form:imageLabel.html.twig' %}
+                                                {{ form_label(imageOpt) }}
+                                                <div class="search-result-bottom-title search-result-bottom">
+                                                    <p>Selectionner cette image {{ form_widget(imageOpt, {attr:{class:""}}) }}</p>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div id="other-picture">
+                    <h4 id="h4-other-picture">AUTRES PHOTOS :</h4>
+                    <div class="article-picture">
+                        <div class="pictures-rollover-little media-selector">
+                            <label class="rollover-picture-little">
+                                {{ form_widget(edit_form.upload1, {attr:{class:"visuallyhidden"}}) }}
+                            </label>
+                            <a class="rollover-photo-little{% if edit_form.gallery1|length > 1 %} disabled{% endif %}"></a>
+                            {% if edit_form.gallery1|length > 1 %}
+                                <div class="media-gallery main-container-pdg main-container-pdg">
+                                    <div class="content">
+                                        <div class="page-header mrgb-lg">
+                                            <h3 class="ttl-2 cell">Selectionner la photo à ajouter à l'annonce
+                                            </h3>
+                                            <div class="icon-close cell">
+                                                <button type="button" class="btn btn-default">Valider mon choix</button>
+                                            </div>
+                                        </div>
+                                        {% for imageOpt in edit_form.gallery1 %}
+                                            <div class="search-result">
+                                                {% if loop.first %}
+
+                                                    <label class="search-result-img">
+                                                        <img src="{{ asset('bundles/borcore/tpl/img/common/multimedia-default.png') }}"
+                                                             alt=""/>
+                                                        <div class="search-result-bottom-title search-result-bottom">
+                                                            <p>Aucune image: {{ form_widget(imageOpt, {attr:{class:""}}) }}</p>
+                                                        </div>
+                                                    </label>
+                                                {% else %}
+                                                    {% form_theme imageOpt with 'BORAdvertBundle:Form:imageLabel.html.twig' %}
+                                                    {{ form_label(imageOpt) }}
+                                                    <div class="search-result-bottom-title search-result-bottom">
+                                                        <p>Selectionner cette image {{ form_widget(imageOpt, {attr:{class:""}}) }}</p>
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="article-picture">
+                        <div class="pictures-rollover-little media-selector">
+                            <label class="rollover-picture-little">
+                                {{ form_widget(edit_form.upload2, {attr:{class:"visuallyhidden"}}) }}
+                            </label>
+                            <a class="rollover-photo-little{% if edit_form.gallery2|length > 1 %} disabled{% endif %}"></a>
+                            {% if edit_form.gallery2|length > 1 %}
+                                <div class="media-gallery main-container-pdg main-container-pdg">
+                                    <div class="content">
+                                        <div class="page-header mrgb-lg">
+                                            <h3 class="ttl-2 cell">Selectionner la photo à ajouter à l'annonce
+                                            </h3>
+                                            <div class="icon-close cell">
+                                                <button type="button" class="btn btn-default">Valider mon choix</button>
+                                            </div>
+                                        </div>
+                                        {% for imageOpt in edit_form.gallery2 %}
+                                            <div class="search-result">
+                                                {% if loop.first %}
+
+                                                    <label class="search-result-img">
+                                                        <img src="{{ asset('bundles/borcore/tpl/img/common/multimedia-default.png') }}"
+                                                             alt=""/>
+                                                        <div class="search-result-bottom-title search-result-bottom">
+                                                            <p>Aucune image: {{ form_widget(imageOpt, {attr:{class:""}}) }}</p>
+                                                        </div>
+                                                    </label>
+                                                {% else %}
+                                                    {% form_theme imageOpt with 'BORAdvertBundle:Form:imageLabel.html.twig' %}
+                                                    {{ form_label(imageOpt) }}
+                                                    <div class="search-result-bottom-title search-result-bottom">
+                                                        <p>Selectionner cette image {{ form_widget(imageOpt, {attr:{class:""}}) }}</p>
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="article-picture">
+                        <div class="pictures-rollover-little media-selector">
+                            <label class="rollover-picture-little">
+                                {{ form_widget(edit_form.upload3, {attr:{class:"visuallyhidden"}}) }}
+                            </label>
+                            <a class="rollover-photo-little{% if edit_form.gallery3|length > 1 %} disabled{% endif %}"></a>
+                            {% if edit_form.gallery3|length > 1 %}
+                                <div class="media-gallery main-container-pdg main-container-pdg">
+                                    <div class="content">
+                                        <div class="page-header mrgb-lg">
+                                            <h3 class="ttl-2 cell">Selectionner la photo à ajouter à l'annonce
+                                            </h3>
+                                            <div class="icon-close cell">
+                                                <button type="button" class="btn btn-default">Valider mon choix</button>
+                                            </div>
+                                        </div>
+                                        {% for imageOpt in edit_form.gallery3 %}
+                                            <div class="search-result">
+                                                {% if loop.first %}
+
+                                                    <label class="search-result-img">
+                                                        <img src="{{ asset('bundles/borcore/tpl/img/common/multimedia-default.png') }}"
+                                                             alt=""/>
+                                                        <div class="search-result-bottom-title search-result-bottom">
+                                                            <p>Aucune image: {{ form_widget(imageOpt, {attr:{class:""}}) }}</p>
+                                                        </div>
+                                                    </label>
+                                                {% else %}
+                                                    {% form_theme imageOpt with 'BORAdvertBundle:Form:imageLabel.html.twig' %}
+                                                    {{ form_label(imageOpt) }}
+                                                    <div class="search-result-bottom-title search-result-bottom">
+                                                        <p>Selectionner cette image {{ form_widget(imageOpt, {attr:{class:""}}) }}</p>
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="article-picture">
+                        <div class="pictures-rollover-little media-selector">
+                            <label class="rollover-picture-little">
+                                {{ form_widget(edit_form.upload4, {attr:{class:"visuallyhidden"}}) }}
+                            </label>
+                            <a class="rollover-photo-little{% if edit_form.gallery4|length > 1 %} disabled{% endif %}"></a>
+                            {% if edit_form.gallery4|length > 1 %}
+                                <div class="media-gallery main-container-pdg main-container-pdg">
+                                    <div class="content">
+                                        <div class="page-header mrgb-lg">
+                                            <h3 class="ttl-2 cell">Selectionner la photo à ajouter à l'annonce
+                                            </h3>
+                                            <div class="icon-close cell">
+                                                <button type="button" class="btn btn-default">Valider mon choix</button>
+                                            </div>
+                                        </div>
+                                        {% for imageOpt in edit_form.gallery4 %}
+                                            <div class="search-result">
+                                                {% if loop.first %}
+
+                                                    <label class="search-result-img">
+                                                        <img src="{{ asset('bundles/borcore/tpl/img/common/multimedia-default.png') }}"
+                                                             alt=""/>
+                                                        <div class="search-result-bottom-title search-result-bottom">
+                                                            <p>Aucune image: {{ form_widget(imageOpt, {attr:{class:""}}) }}</p>
+                                                        </div>
+                                                    </label>
+                                                {% else %}
+                                                    {% form_theme imageOpt with 'BORAdvertBundle:Form:imageLabel.html.twig' %}
+                                                    {{ form_label(imageOpt) }}
+                                                    <div class="search-result-bottom-title search-result-bottom">
+                                                        <p>Selectionner cette image {{ form_widget(imageOpt, {attr:{class:""}}) }}</p>
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="BlockFormAddAnnonce">
+                <div class="RawForm">
+                    <label class="LabelInput">{{form_label(edit_form.title,'Titre')}}* :</label>
+                    {{form_widget(edit_form.title, {"attr":{
+                        "class":"TextInputAddAnnonce",
+                        "type":"text",
+                        "required":"true",
+                        "placeholder":"Saisir le titre de votre annonce"
+                    }})
+                    }}
+                </div>
+                <div class="RawForm">
+                    <label class="LabelDescriptionInput">{{form_label(edit_form.description)}}* :</label>
+                    {{form_widget(edit_form.description, {"attr":{
+                        "class":"TextAreaInputAddAnnonce",
+                        "required":"true",
+                        "placeholder":"240 maximum"
+                    }})
+                    }}
+                </div>
+                <div class="RawForm">
+                    <label class="LabelInput">{{form_label(edit_form.lodgmentType,'Type de logement')}}* :</label>
+                    <div class="ListeInputDownGrey">
+                        {{ form_widget(edit_form.lodgmentType, {'attr': {id:'lodgmentType',name:'_lodgmentType'}}) }}
+                    </div>
+                </div>
+                <div class="RawForm">
+                    {{form_label(edit_form.surface, "Surface :", {label_attr:{class:"LabelInput"}})}}
+                    {{form_widget(edit_form.surface, {'attr': {class:"TextInputAddAnnonce"}}) }}
+                </div>
+                <div class="RawForm">
+                    <label class="LabelInput">{{form_label(edit_form.transactType,'Type de transaction')}}* :</label>
+                    <div class="ListeInputDownGrey">
+                        {{ form_widget(edit_form.transactType, {'attr': {id:'transactType',name:'_transactType'}}) }}
+                    </div>
+                </div>
+                <div class="RawForm">
+                    <label class="LabelInput">{{form_label(edit_form.charges,'Charges €')}}* :</label>
+                    {{form_widget(edit_form.charges, {"attr":{
+                        "class":"TextInputAddAnnonce",
+                        "type":"text",
+                        "required":"true",
+                        "placeholder":"Saisir le montant des charges €"
+                    }})
+                    }}
+                </div>
+                <div class="RawForm">
+                    <label class="LabelInput">{{form_label(edit_form.price,'Prix €')}}* :</label>
+                    {{form_widget(edit_form.price, {"attr":{
+                        "class":"TextInputAddAnnonce",
+                        "type":"text",
+                        "required":"true",
+                        "placeholder":"Saisir le montant des frais €"
+                    }})
+                    }}
+                </div>
+                <div class="RawForm">
+                    <label class="LabelInput">{{form_label(edit_form.tax,'Tax €')}}* :</label>
+                    {{form_widget(edit_form.tax, {"attr":{
+                        "class":"TextInputAddAnnonce",
+                        "type":"text",
+                        "required":"true",
+                        "placeholder":"Saisir total Charges + frais"
+                    }})
+                    }}
+                </div>
+                <div class="RawForm">
+                    <label class="LabelInput">{{form_label(edit_form.street,'Nom de la voie')}}* :</label>
+                    {{form_widget(edit_form.street, {"attr":{
+                        "class":"TextInputAddAnnonce",
+                        "type":"text",
+                        "required":"true",
+                        "placeholder":"Saisir l'adresse du bien"
+                    }})
+                    }}
+                </div>
+                <!-- Il manquait le numéro de rue voir AdvertType.php StreetNumber -->
+                <div class="RawForm">
+                    <label class="LabelInput">{{form_label(edit_form.streetNumber,'Numéro de la voie')}}* :</label>
+                    {{form_widget(edit_form.streetNumber, {"attr":{
+                        "class":"TextInputAddAnnonce",
+                        "type":"text",
+                        "required":"true",
+                        "placeholder":"Saisir le numéro de la rue"
+                    }})
+                    }}
+                </div>
+                <div class="RawForm">
+                    <label class="LabelInput">{{form_label(edit_form.zipCode,'Code postal')}}* :</label>
+                    {{form_widget(edit_form.zipCode, {"attr":{
+                        "class":"TextInputAddAnnonce",
+                        "type":"text",
+                        "required":"true",
+                        "placeholder":"Saisir le CP du bien"
+                    }})
+                    }}
+                </div>
+                <div class="RawForm">
+                    <label class="LabelInput">{{form_label(edit_form.city,'Ville')}}* :</label>
+                    {{form_widget(edit_form.city, {"attr":{
+                        "class":"TextInputAddAnnonce",
+                        "type":"text",
+                        "required":"true",
+                        "placeholder":"Saisir la ville du bien"
+                    }})
+                    }}
+                </div>
+                <div class="RawForm">
+                    <label class="LabelInput">{{form_label(edit_form.country,'Pays')}}* :</label>
+                    {{form_widget(edit_form.country, {"attr":{
+                        "class":"TextInputAddAnnonce",
+                        "type":"text",
+                        "required":"true",
+                        "placeholder":"Saisir le pays du bien"
+                    }})
+                    }}
+                </div>
+                <div class="RawForm">
+                    <label class="LabelInput">{{form_label(edit_form.photosphere)}} :</label>
+                    {{form_widget(edit_form.photosphere, {"attr":{
+                        "class":"TextInputAddAnnonce",
+                        "type":"text",
+                        "placeholder":"Copier votre lien photosphère"
+                    }})
+                    }}
+                </div>
+                {% if edit_form.active is defined %}
+                    <div class="RawForm">
+                        <label class="LabelInputCheckBox">Faire apparaître l'annonce : </label>
+                        {{ form_widget(edit_form.active) }}
+                    </div>
+                {% endif %}
+                <div class="RawForm">
+                    {{ form_widget(edit_form.submit,{
+                        "label":"Je publie mon annonce",
+                        "attr":{
+                            "class":"OrangeSubmit",
+                        }})
+                    }}
+                </div>
+            </div>
+            <div class="visuallyhidden"> {{ form_rest(edit_form) }}</div>
+            {{ form_end(edit_form) }}
+        </div>
+    </div>
+
+{% endblock %}

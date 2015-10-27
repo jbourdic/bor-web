@@ -1,0 +1,80 @@
+<a href="{{ url("bor_core_index") }}">
+    <img class="logo pull-left" src="{{ asset("bundles/borcore/tpl/img/common/SG2014_logo_blablaacademy.png") }}"
+         alt="Blabla.academy">
+</a>
+<nav class="m-nav pull-right">
+    <button class="burger-nav active-menu"></button>
+    <div class="sub-menu">
+        <ul class="head-nav">
+
+            {% if app.user %}
+                <li>
+                {% if app.user.getMedia() %}
+                    <img style="width:50px;height50px;" src="{{ asset(app.user.getMedia().getWebPath()) }}">
+                {% endif %}
+                    <a href="{{ url("bor_user_myprofil") }}"><span>{{ app.user.firstname }} {{ app.user.lastname }}</span></a>
+                </li>
+
+            {% else %}
+                <li><a href="{{ url("bor_vip_index") }}"><span>S'abonner</span></a>
+                </li>
+                <li><a href="{{ url("bor_user_adherer") }}" onclick="ga('send', 'event', 'header', 'bouton', 'adherer');"><span>Adhérer</span></a>
+                </li>
+                <li><a href="{{ url("fos_user_security_login") }}" onclick="ga('send', 'event', 'header', 'bouton', 'connexion');"><span>Connexion</span></a>
+                </li>
+            {% endif %}
+        </ul>
+        <ul class="side-nav">
+            <li><a href="{{ url("bor_core_concept") }}" class="icon-concept"><span>Concept</span></a>
+            </li>
+            <li><a href="{{ url("bor_user_expert") }}" class="icon-experts"><span>questionner</span></a>
+            </li>
+            <li><a href="{{ url("bor_partenaire_index") }}" class="icon-partenaires"><span>parties prenantes</span></a>
+            </li>
+            <li><a href="{{ url("bor_advert_list") }}" class="icon-rechercher"><span>rechercher</span></a>
+            </li>
+            <li><a href="{{ url("bor_advert_create_post") }}" class="icon-publier"><span>publier</span></a>
+            </li>
+            <li><a href="{{ url("bor_post_renovate") }}" class="icon-personnaliser"><span>personnaliser</span></a>
+            </li>
+            <li>
+                <form action="{{ mooc.mooc_login_url }}" method="POST">
+                    <input type="hidden" name="tokenMooc" value="{{ mooc.token_mooc }}">
+                    <button type="submit" class="icon-moocer"><span class="">mooc</span></button>
+                </form>
+            </li>
+            <li><a href="{{ url("bor_post_news") }}" class="icon-actualites"><span>Actualités</span></a>
+            </li>
+            <li><a href="#"><span>Dashboard</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<nav class="d-nav pull-right">
+    <ul>
+
+
+        {% if app.user %}
+            <li><a href="{{ url("bor_vip_index") }}"><span>S'abonner</span></a>
+            </li>
+            <li class="authentification">
+                <a href="{{ url("bor_user_myprofil") }}">{{ app.user.firstname }} {{ app.user.lastname }}
+                {#{% if app.user.getMedia() %}
+                    <img style="display:inline-block;width:50px;height:40px;" src="{{ asset(app.user.getMedia().getWebPath()) }}">
+                {% endif %}#}
+                </a>
+            </li>
+        {% else %}
+            <li>
+                <a href="{{ url("bor_vip_index") }}"><span>S'abonner</span></a>
+            </li>
+            <li>
+                <a href="{{ url("fos_user_security_login") }}" onclick="ga('send', 'event', 'header', 'bouton', 'connexion');">Connexion</a>
+            </li>
+            <li>
+                <a href="{{ url("bor_user_adherer") }}" onclick="ga('send', 'event', 'header', 'bouton', 'adherer');">Adhérer</a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>
+

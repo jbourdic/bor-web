@@ -1,0 +1,19 @@
+{% extends '::baseError.html.twig' %}
+{% set page_title = 'Erreur 403' %}
+{% set description = "Oups... Vous n'avez pas accès à ce contenu." %}
+{% block meta %}
+    <meta name="description" content="{{ description }}">
+{% endblock %}
+{% block content %}
+    <div class="text-center">
+        <h1>403</h1>
+        <h2>Accès refusé</h2>
+        <p>{{ description }}</p>
+        {% block navError %}
+            {% if app.user is null %}
+                <p><a href="{{ path('fos_user_security_login') }}">Connexion</a></p>
+            {% endif %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}

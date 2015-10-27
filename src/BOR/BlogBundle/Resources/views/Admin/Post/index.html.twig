@@ -1,0 +1,77 @@
+{% extends 'BORAdminBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>Post admin</h1>
+
+    <ul>
+        <li>
+            <a href="{{ path('bor_admin_post_create') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <a href="{{ path('bor_admin_post_list') }}">Tout</a>
+        </li>
+        <li>
+            <a href="{{ path('bor_admin_post_news') }}">News</a>
+        </li>
+        <li>
+            <a href="{{ path('bor_post_renovate') }}">Renovate</a>
+        </li>
+    </ul>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Actions</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>User</th>
+                <th>Photo</th>
+                <th>Type</th>
+                <th>Active</th>
+                <th>Createdon</th>
+                <th>Updatedon</th>
+                <th>Metatitle</th>
+                <th>Metadescription</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('bor_post_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('bor_admin_post_show', { 'id': entity.id }) }}">Show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('bor_admin_post_edit', { 'id': entity.id }) }}">Edit</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('bor_blockpost_create', { 'id': entity.id })  }}">Block</a>
+                        </li>
+                    </ul>
+                </td>
+                <td>{{ entity.title }}</td>
+                <td>{{ entity.content|slice(0,200) }}</td>
+                <td>{{ entity.user }}</td>
+                <td>{% if entity.media is not null %}
+                        <img style="width: 100px;" src="{{ asset(entity.media.getWebPath()) }}">
+                    {% endif %}</td>
+                <td>{{ entity.type }}</td>
+                <td>{{ entity.active }}</td>
+                <td>{% if entity.createdOn %}{{ entity.createdOn|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.updatedOn %}{{ entity.updatedOn|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.metaTitle }}</td>
+                <td>{{ entity.metaDescription }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% endblock %}

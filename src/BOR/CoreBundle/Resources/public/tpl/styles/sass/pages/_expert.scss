@@ -1,0 +1,217 @@
+/* ==========================================================================
+   @comment:
+   ========================================================================== */
+
+/*----------------------------------------------------------------
+	Mode desktop
+-----------------------------------------------------------------*/
+.main-container {
+    .title-expert {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 952px;
+        h2 {
+            text-transform: uppercase;
+            color: #000000;
+        }
+        p {
+            padding-left: 20px;
+            color: $text-color;
+            width: 100%;
+            max-width: 650px;
+        }
+    }
+    .profil-expert {
+        background-color: $bg-color-2;
+        border: 1px solid $text-color;
+        display: table;
+        margin: 0 auto 24px auto;
+        width: 100%;
+        max-width: 952px;
+        ul {
+            float: left;
+            padding: 27px;
+            li {
+                margin: 40px 44px;
+                margin-top: 0;
+                float: left;
+                width: 135px;
+                a { 
+                    display: block;
+                    padding: 40px 0 66px 0;
+                    cursor: pointer;
+                    height: 100%;
+
+                    &[name="mon_profil"]{
+                        background: url(../img/common/mon_profil.png) 0% 0% no-repeat;
+                        &:hover {
+                            background-position: 0 100%;
+                        }
+                    }
+                    &[name="mes_annonces"]{
+                        background: url(../img/common/mes_annonces.png) 0% 0% no-repeat;
+                        &:hover {
+                            background-position: 0 100%;
+                        }
+                    }
+                    &[name="mes_articles"]{
+                        background: url(../img/common/mes_articles.png) 0% 0% no-repeat;
+                        &:hover {
+                            background-position: 0 100%;
+                        }
+                    }
+                    &[name="mes_achats"]{
+                        background: url(../img/common/mes_achats.png) 0% 0% no-repeat;
+                        &:hover {
+                            background-position: 0 100%;
+                        }
+                    }
+                    &[name="favoris"]{
+                        background: url(../img/common/favoris.png) 0% 0% no-repeat;
+                        &:hover {
+                            background-position: 0 100%;
+                        }
+                    }
+                    &[name="galerie"]{
+                        background: url(../img/common/galerie.png) 0% 0% no-repeat;
+                        &:hover {
+                            background-position: 0 100%;
+                        }
+                    }
+                    &[name="me_deconnecter"]{
+                        background: url(../img/common/me_deconnecter.png) 0% 0% no-repeat;
+                        &:hover {
+                            background-position: 0 100%;
+                        }
+                    }
+                    &[name="abonnement"]{
+                        background: url(../img/common/abonnement.png) 0% 0% no-repeat;
+                        &:hover {
+                            background-position: 0 100%;
+                        }
+                    }
+                    p {
+                        text-align: center;
+                        color: $text-color;
+                        position: relative;
+                        bottom: -90px;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 1200px
+-----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 1120px
+-----------------------------------------------------------------*/
+
+@media screen and (max-width: 1120px) {
+    .main-container {
+        .title-expert {
+                max-width: 725px;
+        }  
+        .profil-expert {
+             max-width: 725px;
+        }
+    }
+}
+
+/*----------------------------------------------------------------
+	Breakpoint 2 : 1024px
+-----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 920px
+-----------------------------------------------------------------*/
+
+@media screen and (max-width: 1121px) {
+    .main-container {
+        .title-expert {
+                max-width: 582px;
+        }
+
+        .profil-expert {
+            background-size:60%;
+
+             max-width: 582px;
+            ul {
+                li {
+                    margin: 20px 20px 30px 20px;
+                    a{
+                        background-size: 60% !important;
+                        background-position: center top !important;
+                        padding: 21px 0 30px 0;
+
+                        p{
+                            bottom:-66px;
+                        }
+                    }
+
+                    a:hover{
+                        background-size: 60% !important;
+                        background-position: center bottom !important;
+                        padding: 21px 0 30px 0;
+
+                        p{
+                            bottom:-66px;
+                        }
+                    }
+
+                }
+        }
+        }
+    }
+}
+
+/*----------------------------------------------------------------
+	Breakpoint 3 : 768px
+-----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 620px
+-----------------------------------------------------------------*/
+
+@media screen and (max-width: 620px) {
+    .main-container {
+        .title-expert {
+                max-width: 343px;
+        }  
+        .profil-expert {
+             max-width: 343px;
+                    ul {
+            li {
+                margin: 0px 10px 40px 10px;
+                width: 123px;
+                a{
+                    background-size: 45% !important;
+                    background-position: center top !important;
+                    padding: 3px 0 30px 0;
+
+                    p{
+                        bottom:-66px;
+                    }
+                }
+
+                a:hover{
+                    background-size: 45% !important;
+                    background-position: center bottom !important;
+                    padding: 3px 0 30px 0;
+
+                    p{
+                        bottom:-66px;
+                    }
+                }
+            }
+        }
+        }
+    }
+}
+/*----------------------------------------------------------------
+	Breakpoint 1 : 480px
+-----------------------------------------------------------------*/

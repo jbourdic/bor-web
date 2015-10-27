@@ -1,0 +1,116 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+{% set page_title = 'Rechercher un logement avec Blabla.academy' %}
+{% block meta %}
+    <meta name="description" content="Blabla.academy vous propose des biens immobiliers disponibles à la location ou à la vente. Choisissez vos critères de recherche et trouvez le logement idéal.">
+{% endblock %}
+{% block mainId %}id="advert"{% endblock %}
+{% block content %}
+    <div class="content clearfix mrgb-lg">
+        <div id="search-result-container">
+            <div class="page-header">
+                <div class="cell">
+                    <h1 class="ttl-2 txt-upper">Rechercher un logement</h1>
+                    <p>
+                        Gagnez du temps en utilisant votre géolocalisation et/ou les filtres de recherche.<br/>
+                        Vous avez un compte ? Sauvegardez les meilleures annonces dans vos favoris.
+                    </p>
+                </div>
+                <div class="cell tools">
+                    {{ form_start(searchForm, {attr:{class:"input-group mrgb-md"}}) }}
+                        {{ form_widget(searchForm.search, {attr:{class:"form-control input-sm"}}) }}
+                        {{ form_label(searchForm.search, " ", {label_attr:{class:"input-group-label icon-search"}}) }}
+                        <div class="visuallyhidden">{{ form_rest(searchForm) }}</div>
+                    {{ form_end(searchForm) }}
+                    <div class="input-group">
+                        <button class="btn btn-default collapse-btn btn-block" data-target="#collapseFilter" data-toggle="collapse">Filtrer les résultats de recherche</button>
+                        <div class="aside-filter bg-trans">
+
+                            <div class="collapse" id="collapseFilter">
+                                {{ form_start(form_filter, {attr:{class:"clearfix pdt-lg pdb-lg"}}) }}
+                                <div class="form-group clearfix">
+                                    <div class="col-md-6">
+                                        {{ form_label(form_filter.min, null, {label_attr:{class:"control-label"}}) }}
+                                        {{ form_widget(form_filter.min, {attr:{class:"form-control",placeholder:"Min"}}) }}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{ form_label(form_filter.max, null, {label_attr:{class:"control-label"}}) }}
+                                        {{ form_widget(form_filter.max, {attr:{class:"form-control",placeholder:"Max"}}) }}
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    {% for radio in form_filter.priceType %}
+                                        <div class="col-md-3">
+                                            {{ form_label(radio, null, {label_attr:{class:"control-label "}}) }}
+                                            {{ form_widget(radio, {attr:{class:""}}) }}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                <div class="form-group clearfix">
+                                    <div class="col-md-12">
+                                        {{ form_label(form_filter.zipCode, 'Code postal', {label_attr:{class:"control-label"}}) }}
+                                        {{ form_widget(form_filter.zipCode, {attr:{class:"form-control", placeholder:"Code postal"}}) }}
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <div class="col-md-12">
+                                        {{ form_label(form_filter.transactType, 'Type de transaction', {label_attr:{class:"control-label"}}) }}
+                                        {{ form_widget(form_filter.transactType, {attr:{class:"form-control"}}) }}
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <div class="col-md-12">
+                                        {{ form_label(form_filter.order, 'Trier par', {label_attr:{class:"control-label"}}) }}
+                                        {{ form_widget(form_filter.order, {attr:{class:"form-control"}}) }}
+                                    </div>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <div class="col-md-12">
+                                        {{ form_widget(form_filter.submit, {attr:{class:"btn btn-default btn-block"}}) }}
+                                    </div>
+                                </div>
+                                <div class="visuallyhidden">
+                                    {{ form_rest(form_filter) }}
+                                </div>
+                                {{ form_end(form_filter) }}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {% for entity in entities %}
+            {% if entity.active %}
+                <div class="search-result">
+                    <a class="search-result-img" href="{{ path('bor_advert_get', { 'id': entity.id , 'slug': entity.title }) }}">
+                        <img src="{% if entity.getMedias().first() %}{{ asset(entity.getMedias().first().getWebPath()) }}{% else %}{{ asset('bundles/borcore/tpl/img/common/multimedia-default.png') }}{% endif %}" alt="image logement">
+                    </a>
+                    <div class="search-result-bottom-title search-result-bottom">
+                        <p>
+                            {% if entity.title|length > 22 %}
+                                {{ entity.title|slice(0,20) }}...
+                            {% else %}
+                                {{ entity.title }}
+                            {% endif %}
+                        </p>
+                        <ul>
+                            <li>{{ entity.city }} ({{ entity.zipCode }})</li>
+                            <li>{{ entity.price }} €</li>
+                        </ul>
+                    </div>
+                    <div class="search-result-bottom-hover search-result-bottom">
+                        <ul>
+                            <li><a href="javascript:ouvre('http://www.facebook.com/share.php?u=http://{{ app.request.getHost }}{{ path('bor_advert_get', { 'id': entity.id , 'slug': entity.title }) }}&title={{ entity.title }}')" title="facebook" onclick="ga('send', 'event', 'rechercher', 'partage', 'facebook');"></a></li>
+                            <li><a href="javascript:ouvre('http://twitter.com/intent/tweet?status={{ entity.title }}+http://{{ app.request.getHost }}{{ path('bor_advert_get', { 'id': entity.id , 'slug': entity.title }) }}')" title="tweeter" onclick="ga('send', 'event', 'rechercher', 'partage', 'twitter');"></a></li>
+                            <li><a href="javascript:ouvre('https://plus.google.com/share?url=http://{{ app.request.getHost }}{{ path('bor_advert_get', { 'id': entity.id , 'slug': entity.title }) }}')" title="google +" onclick="ga('send', 'event', 'rechercher', 'partage', 'google');"></a></li>
+                            <li><a href="javascript:;" class="fav {% for fav in favorites %} {% if fav.user == entity.user %}active{% endif %} {% endfor %}" data-id="{{ entity.id }}" title="favoris" onclick="ga('send', 'event', 'rechercher', 'bouton', 'ajout_favori');"></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                {% endif %}
+            {% endfor %}
+            <input id="pth" type="hidden" value="{{ path('bor_favorite_add') }}"/>
+            <input id="isCo" type="hidden" value="{% if app.user is not null %}1{% else %}0{% endif %}"/>
+        </div>
+    </div>
+{% endblock %}

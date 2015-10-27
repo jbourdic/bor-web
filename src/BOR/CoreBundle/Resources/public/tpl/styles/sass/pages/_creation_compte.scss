@@ -1,0 +1,240 @@
+/* ==========================================================================
+   @comment:
+   ========================================================================== */
+
+/*----------------------------------------------------------------
+   Mode desktop
+-----------------------------------------------------------------*/
+#contenu_compte{
+
+  p{
+    color:$text-color;
+    text-align: justify;
+    font-size:0.9em;
+    padding-left: 2%;
+
+  }
+}
+
+#ad_ex{
+  width:70%;
+  margin-left: auto;
+  margin-right:auto;
+  margin-bottom: 5%;
+
+  h2{
+    color:$orange-color;
+    margin-bottom:10px;
+    font-size: 1em;
+  }
+
+  p{
+    text-align: justify;
+    color:$text-color;
+    font-size:0.8em;
+    margin-bottom: 15px;
+    padding-left: 0px;
+
+  }
+
+  img{
+    margin: auto;
+    width: 50%;
+    display: block;
+  }
+}
+
+
+#profil_ad{
+  width: 46%;
+  background: $bg-color-2;
+  border: $text-color 1px solid;
+  float:left;
+  margin-top: 2%;
+  padding: 4%;
+
+  .LienBouton_ad{
+
+    p a {
+
+      display: block;
+      padding-bottom: 9px;
+      padding-top: 7px;
+      padding-left: 30px;
+      background-color: #{$orange-color};
+      font-size: 14px;
+      border: none;
+      color: white;
+      border-radius: 2px;
+      -moz-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      -ms-border-radius: 2px;
+      background-image: url("#{$pathImg}input_arrow_white.png");
+      background-repeat: no-repeat;
+      background-position: center right 12px;
+    }
+
+    p a:hover {
+      display: block;
+      padding-bottom: 9px;
+      padding-top: 7px;
+      padding-left: 30px;
+      background-color: #{$border-grey};
+      font-size: 14px;
+      border: none;
+      color: white;
+      border-radius: 2px;
+      -moz-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      -ms-border-radius: 2px;
+      background-image: url("#{$pathImg}input_arrow_white.png");
+      background-repeat: no-repeat;
+      background-position: center right 12px;
+    }
+
+  }
+
+
+
+}
+
+#profil_ex{
+
+  width: 46%;
+  background: $bg-color-2;
+  border: $text-color 1px solid;
+  float:right;
+  margin-top: 2%;
+  padding:4%;
+
+  .LienBouton_ex{
+
+    p a {
+      display: block;
+      padding-bottom: 9px;
+      padding-top: 7px;
+      padding-left: 30px;
+      background-color: #{$orange-color};
+      font-size: 14px;
+      border: none;
+      color: white;
+      border-radius: 2px;
+      -moz-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      -ms-border-radius: 2px;
+      background-image: url("#{$pathImg}input_arrow_white.png");
+      background-repeat: no-repeat;
+      background-position: center right 12px;
+    }
+
+    p a:hover {
+      display: block;
+      padding-bottom: 9px;
+      padding-top: 7px;
+      padding-left: 30px;
+      background-color: #{$border-grey};
+      font-size: 14px;
+      border: none;
+      color: white;
+      border-radius: 2px;
+      -moz-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      -ms-border-radius: 2px;
+      background-image: url("#{$pathImg}input_arrow_white.png");
+      background-repeat: no-repeat;
+      background-position: center right 12px;
+    }
+  }
+}
+
+
+@media screen and (max-width:900px) {
+  #ad_ex{
+    width:100%;
+    clear:both;
+  }
+
+  #contenu_compte {
+    width: 70%;
+    margin: auto;
+  }
+
+  #profil_ad {
+    width: 46%;
+  }
+
+  #profil_ex{
+    width: 46%;
+  }
+}
+
+
+@media screen and (max-width:680px) {
+
+  #ad_ex{
+    width:100%;
+    clear:both;
+  }
+
+  #contenu_compte {
+    width: 100%;
+    margin: auto;
+  }
+
+  #profil_ad {
+    width: 100%;
+
+    img{
+      float: left;
+      width: 30%;
+      padding-right: 4%;
+    }
+
+    .LienBouton_ad{
+      float: right;
+      width: 70%;
+    }
+  }
+
+  #profil_ex{
+    width: 100%;
+
+    img{
+      float: left;
+      width: 30%;
+      padding-right: 4%;
+    }
+
+    .LienBouton_ex{
+      float: right;
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width:460px){
+  #profil_ex{
+    img{
+      width: 46%;
+      padding-top: 6%;
+    }
+    .LienBouton_ex{
+      width: 100%;
+    }
+  }
+
+
+
+  #profil_ad {
+    img{
+      width: 46%;
+      padding-top: 6%;
+    }
+
+    .LienBouton_ad{
+      width: 100%;
+    }
+  }
+
+
+}

@@ -1,0 +1,113 @@
+@media screen and (max-width: $tablet), screen and (max-height: $height-break) {
+  .main-container {
+    .title-tdb {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 952px;
+      h2 {
+        text-transform: uppercase;
+        color: #000000;
+        position: relative;
+        padding-left: 40px;
+        font-weight: normal;
+        .logo{
+          width: 30px;
+          position: absolute;
+          left: 0px;
+          top: -5px;
+        }
+        > span {
+          display: inline-block;
+        }
+      }
+      p {
+        padding-left: 20px;
+        color: $text-color;
+        width: 100%;
+        max-width: 650px;
+      }
+    }
+    .dashboard-list {
+      background-color: $bg-color-2;
+      border: 1px solid $text-color;
+      display: table;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 952px;
+      ul {
+        -moz-column-count: 3;
+        -moz-column-gap: 20px;
+        -webkit-column-count: 3;
+        -webkit-column-gap: 20px;
+        column-count: 3;
+        column-gap: 20px;
+        list-style: none;
+        padding: 27px;
+        li {
+          margin: 10px 44px;
+          margin-top: 0;
+          float: left;
+          width: 135px;
+          hr{
+            color: $text-color;
+            width: 25px;
+            margin: 0 auto;
+          }
+          a {
+            display: block;
+            padding: 67px 0 66px 0;
+            cursor: pointer;
+            height: 100%;
+          }
+          p {
+            text-align: center;
+            color: $text-color;
+            margin-bottom: 14px;
+          }
+        }
+      }
+    }
+    p.data-dashboard{
+      font-size: 22px;
+    }
+    p.title-dashboard{
+      font-size: 10px;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .main-container .dashboard-list ul {
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    column-count: 2;
+    column-gap: 20px;
+    list-style: none;
+  }
+}
+
+
+
+@media screen and (max-width: 501px) {
+  .main-container .dashboard-list{
+    width:80%;
+  }
+
+  .main-container .dashboard-list ul {
+    -moz-column-count: 1;
+    -moz-column-gap: 0px;
+    -webkit-column-count: 1;
+    -webkit-column-gap: 0px;
+    column-count: 1;
+    column-gap: 0px;
+    list-style: none;
+    width: 100%;
+    li {
+      float: none;
+      margin: 10PX auto;
+    }
+  }
+}
+
+

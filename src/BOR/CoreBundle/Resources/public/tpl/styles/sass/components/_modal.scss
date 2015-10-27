@@ -1,0 +1,24 @@
+.modal-msg {
+
+  .msg-box {
+    max-width: 550px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.7);
+    @include centerer;
+
+    padding: 24px;
+  }
+}
+.report-wrapper{
+  position: relative;
+}
+.report-box {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  padding: 0 12px;
+
+  iframe {
+    width: 100%;
+  }
+}

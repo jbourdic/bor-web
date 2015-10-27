@@ -1,0 +1,77 @@
+{% extends 'BORAdminBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>Advert Admin list</h1>
+        <ul>
+            <li>
+                <a href="{{ path('bor_admin_advert_create') }}">
+                    Create a new entry
+                </a>
+            </li>
+        </ul>
+
+        {{ form(form_filter) }}
+    <table class="records_list responsive">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Actions</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Lodgmenttype</th>
+                <th>Transacttype</th>
+                <th>Charges</th>
+                <th>Price</th>
+                <th>Tax</th>
+                <th>Street</th>
+                <th>Streetnumber</th>
+                <th>Zipcode</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Lat</th>
+                <th>Lng</th>
+                <th>Active</th>
+                <th>Createdon</th>
+                <th>Updatedon</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('bor_admin_advert_get', { 'id': entity.id , 'slug': entity.title }) }}">{{ entity.id }}</a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('bor_admin_advert_get', { 'id': entity.id , 'slug': entity.title }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('bor_admin_advert_update', { 'id': entity.id }) }}">edit</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('bor_blockadvert_new', { 'idAdvert': entity.id }) }}">block</a>
+                        </li>
+                    </ul>
+                </td>
+                <td>{{ entity.title }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.lodgmentType }}</td>
+                <td>{{ entity.transactType }}</td>
+                <td>{{ entity.charges }}</td>
+                <td>{{ entity.price }}</td>
+                <td>{{ entity.tax }}</td>
+                <td>{{ entity.street }}</td>
+                <td>{{ entity.streetNumber }}</td>
+                <td>{{ entity.zipCode }}</td>
+                <td>{{ entity.city }}</td>
+                <td>{{ entity.country }}</td>
+                <td>{{ entity.lat }}</td>
+                <td>{{ entity.lng }}</td>
+                <td>{{ entity.active }}</td>
+                <td>{% if entity.createdOn %}{{ entity.createdOn|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.updatedOn %}{{ entity.updatedOn|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}

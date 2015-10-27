@@ -1,0 +1,50 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+{% set page_title = 'Rechercher un logement avec Blabla.academy' %}
+{% block meta %}
+    <meta name="description" content="Blabla.academy vous propose des biens immobiliers disponibles à la location ou à la vente. Choisissez vos critères de recherche et trouvez le logement idéal.">
+{% endblock %}
+{% block mainId %}id="advert"{% endblock %}
+{% block content %}
+    <div class="content clearfix mrgb-lg">
+        <div id="search-result-container">
+            <div class="page-header">
+                <div class="cell">
+                    <h1 class="ttl-2 txt-upper">Mes Annonces</h1>
+                </div>
+            </div>
+            {% for entity in entities %}
+            {% if entity.active %}
+                <div class="search-result">
+                    <a class="search-result-img" href="{{ path('bor_advert_get', { 'id': entity.id , 'slug': entity.title }) }}">
+                        <img src="{% if entity.getMedias().first() %}{{ asset(entity.getMedias().first().getWebPath()) }}{% else %}{{ asset('bundles/borcore/tpl/img/common/multimedia-default.png') }}{% endif %}" alt="image logement">
+                    </a>
+                    <div class="search-result-bottom-title search-result-bottom">
+                        <p>
+                            {% if entity.title|length > 22 %}
+                                {{ entity.title|slice(0,20) }}...
+                            {% else %}
+                                {{ entity.title }}
+                            {% endif %}
+                        </p>
+                        <ul>
+                            <li>{{ entity.city }} ({{ entity.zipCode }})</li>
+                            <li>{{ entity.price }} €</li>
+                        </ul>
+                    </div>
+                    <div class="search-result-bottom-hover search-result-bottom">
+                        <ul>
+                            <li><a href="javascript:ouvre('http://www.facebook.com/share.php?u={{ app.request.getHost }}{{ path('bor_advert_get', { 'id': entity.id , 'slug': entity.title }) }}&title={{ entity.title }}')" title="facebook" onclick="ga('send', 'event', 'rechercher', 'partage', 'facebook');"></a></li>
+                            <li><a href="javascript:ouvre('http://twitter.com/intent/tweet?status={{ entity.title }}+{{ app.request.getHost }}{{ path('bor_advert_get', { 'id': entity.id , 'slug': entity.title }) }}')" title="tweeter" onclick="ga('send', 'event', 'rechercher', 'partage', 'twitter');"></a></li>
+                            <li><a href="javascript:ouvre('https://plus.google.com/share?url={{ app.request.getHost }}{{ path('bor_advert_get', { 'id': entity.id , 'slug': entity.title }) }}')" title="google +" onclick="ga('send', 'event', 'rechercher', 'partage', 'google');"></a></li>
+                            <li><a href="javascript:;" class="fav {% for fav in favorites %} {% if fav.user == entity.user %}active{% endif %} {% endfor %}" data-id="{{ entity.id }}" title="favoris" onclick="ga('send', 'event', 'rechercher', 'bouton', 'ajout_favori');"></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                {% endif %}
+            {% endfor %}
+            <input id="pth" type="hidden" value="{{ path('bor_favorite_add') }}"/>
+            <input id="isCo" type="hidden" value="{% if app.user is not null %}1{% else %}0{% endif %}"/>
+        </div>
+    </div>
+{% endblock %}

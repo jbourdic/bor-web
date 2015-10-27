@@ -1,0 +1,47 @@
+{% extends 'BORCoreBundle::layout.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    {% block mainId %}id="main-contact"{% endblock %}
+    {% block content %}
+        <div class="BlockConnexion bg-trans">
+            <div id="BlockFormConnexion">
+                <h1 class="H1Form">CONNECTEZ-VOUS</h1>
+                <p class="PForm">À VOTRE ESPACE BLABLA.BUSINESS</p>
+                <form class="Form" action="{{ path("fos_user_security_check") }}" method="post">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+                    <div class="RawForm">
+                        <label for="username" class="LabelInput">{{ 'security.login.username'|trans }}</label>
+                        <input type="text" class="TextInput right" id="username" name="_username" value="{{ last_username }}" required="required" />
+                    </div>
+                    <div class="RawForm">
+                        <label for="password" class="LabelInput">{{ 'security.login.password'|trans }}</label>
+                        <input type="password" class="TextInput right" id="password" name="_password" required="required" />
+                    </div>
+                    {% if error %}
+                        <div class="error login-error" style="float:left;color:red;">{{ error.message|trans() }}</div>
+                    {% endif %}
+                    <div class="RawForm">
+                        <a class="LienForm" href="#">Mot de passe oublié?</a>
+                        <input class="OrangeSubmit" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}"/>
+                    </div>
+                </form>
+
+                <hr class="HrBlack">
+
+                <h1 class="H1Form">PAS ENCORE DE COMPTE?</h1>
+                <p class="PForm">CRÉEZ LE VOTRE</p>
+                <div class="RawForm">
+                    <div class="LienBouton">
+                        <p>
+                            <a href="{{ url("bor_user_adherer") }}">Créer mon compte !!</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+
+{% endblock fos_user_content %}

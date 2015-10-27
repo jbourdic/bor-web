@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block stylesheets %}
+        <!-- Les styles css ICI -->
+        <link rel="stylesheet" href="{{ asset("bundles/borcore/tpl/styles/main.css") }}" />
+    {% endblock %}
+</head>
+<body>
+<div style="padding: 0 25px">
+    <h1 id="H1FormContact">Signaler cet utilisateur</h1>
+    <div id="BlockFormConnexionTall">
+        {{ form_start(form) }}
+        <div class="Raw">
+            <label class="LabelInput">{{form_label(form.reason,'Raison')}}* :</label>
+            {{form_widget(form.reason, {"attr":{
+                "class":"TextAreaInputAddAnnonce",
+                "type":"textarea",
+                "required":"true",
+                "placeholder":"Saisir la raison de votre signalement"
+            }})
+            }}
+        </div>
+        <div class="RawForm">
+            {{form_widget(form.submit, { "label" : "Signaler", "attr":{
+                "class":"OrangeSubmit",
+                "value":"Create"
+            }})
+            }}
+        </div>
+
+        {{ form_end(form) }}
+        <div class="clear"></div>
+        <p><a href="{{ path('bor_user_expert')}}">
+                Retourner à la liste des experts
+            </a></p>
+    </div>
+</div>
+</body>
+</html>

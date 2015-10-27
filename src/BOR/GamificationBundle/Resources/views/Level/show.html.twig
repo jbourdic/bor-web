@@ -1,0 +1,48 @@
+{% extends 'BORAdminBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>Level</h1>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('bor_level_index') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('bor_level_edit', { 'id': entity.id }) }}">
+                Edit
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Level</th>
+                <td>{{ entity.level }}</td>
+            </tr>
+            <tr>
+                <th>Experiencemin</th>
+                <td>{{ entity.experienceMin }}</td>
+            </tr>
+            <tr>
+                <th>Experiencemax</th>
+                <td>{{ entity.experienceMax }}</td>
+            </tr>
+            <tr>
+                <th>Createdon</th>
+                <td>{{ entity.createdOn|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Updatedon</th>
+                <td>{{ entity.updatedOn|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

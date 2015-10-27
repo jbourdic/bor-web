@@ -1,0 +1,111 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+{% set page_title = 'Expert '~expert.firstname~' '~expert.lastname~' - Blabla.academy' %}
+{% block meta %}
+    {% if (expert.description != "") %}
+        <meta name="description" content="{{ expert.description }}">
+    {% endif %}
+{% endblock %}
+{% block content %}
+    <div class="block-expert">
+        <div id="popup1" class="popup1">
+            <div data-toggle="close-popup" data-target="#popup1" class="close-popup">X</div>
+            <iframe src="{{ url('bor_blockuser_new', {'idUser': expert.id}) }}" frameborder="0"></iframe>
+        </div>
+        <div class="block-left">
+            <div class="id-expert">
+                {% if expert.media is not null %}
+                    <div class="picture-expert"><img src="{{ asset(expert.getMedia().getWebPath()) }}" alt="Image de profil"></div>
+                {% else %}
+                    <div class="picture-expert"><img src="{{ asset("bundles/borcore/tpl/img/common/avatar.png") }}" alt="Pas d'image de profil"></div>
+                {% endif %}
+                <div class="title-expert">
+                    <h3>{{ expert.firstname~' '~expert.lastname }}<br/><span class="label">{{ expert.job }}</span></h3>
+
+                    <div class="mobile-contact">
+                        <h4 class="site">Me contacter</h4>
+                        <a href="#"><span class="icon-chat"></span></a>
+                        <a href="#" onclick="ga('send', 'event', 'expert', 'bouton', 'email');"><span class="icon-mail"></span></a>
+                        <a href="#" onclick="ga('send', 'event', 'expert', 'bouton', 'numero');"><span class="icon-phone">{{ expert.phone }}</span></a>
+
+                        <div class="ref-expert">
+                            <h4 class="site">Mon site internet</h4>
+                            {% if expert.website %}
+                                <a href="{{ expert.website }}" target="_blank">{{ expert.website }}</a>
+                            {% else %}
+                                <a href="{{ url('bor_user_expert_show', {'id': expert.id}) }}">{{ url('bor_user_expert_show', {'id': expert.id}) }}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="clear"></div>
+            <div class="description-expert">
+                <h4>Description</h4>
+
+                <p>{{ expert.description }}</p>
+            </div>
+            <a data-target="#popup1" data-toggle="open-popup" class="signaler_annonce">Signaler l'expert</a>
+            {% if expert.presentationVideo %}
+                <h4>Quelques mots</h4>
+                <div class="yt-video">
+                    <iframe width="380" height="270" src="//www.youtube.com/embed/{{ expert.presentationVideo }}" frameborder="0"
+                            allowfullscreen></iframe>
+                </div>
+            {% endif %}
+        </div>
+        {% if app.user %}
+        <div class="block-right">
+            <div class="contact-expert">
+                <h4>Me contacter</h4>
+                <ul>
+{#                     <li>
+                        <a href="#">
+                            <span class="icon-chat"></span>
+                            <span class="entitled-expert">Chattez avec moi</span>
+                        </a>
+
+                        <div class="clear"></div>
+                    </li> #}
+                    <li>
+                        <a href="mailto:{{ expert.email }}"><span class="icon-mail"></span><span class="entitled-expert">Envoyez moi un mail</span></a>
+                        <div class="clear"></div>
+                    </li>
+                    <li><span class="icon-phone"></span><span class="entitled-expert">{{ expert.phone }}</span>
+
+                        <div class="clear"></div>
+                    </li>
+                </ul>
+            </div>
+            {% endif %}
+            <div class="ref-expert">
+                <h4>Mon site internet</h4>
+                {% if expert.website %}
+                    <a href="{{ expert.website }}">{{ expert.website }}</a>
+                {% else %}
+                    <a href="{{ url('bor_user_expert_show', {'id': expert.id}) }}"
+                       target="_blank">{{ url('bor_user_expert_show', {'id': expert.id}) }}</a>
+                {% endif %}
+            </div>
+            <div class="article-expert">
+                <h4>Mes derniers articles</h4>
+                <ul>
+                    {% for post in posts %}
+                        <li><a href="{{ url('bor_post_show', {'id': post.id}) }}">{{ post.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="clear"></div>
+            <div class="video-expert">
+                <h4>Mes dernières vidéos</h4>
+                <ul>
+                    <li>. <a href="#">Nom vidéo 1 - Niveau</a></li>
+                    <li>. <a href="#">Nom vidéo 2 - Niveau</a></li>
+                    <li>. <a href="#">Nom vidéo 3 - Niveau</a></li>
+                    <li>. <a href="#">Nom vidéo 4 - Niveau</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

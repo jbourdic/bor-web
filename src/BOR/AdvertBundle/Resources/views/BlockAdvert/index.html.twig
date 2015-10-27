@@ -1,0 +1,41 @@
+{% extends 'BORAdminBundle::layout.html.twig' %}
+
+{% block content -%}
+<div class="main-container">
+    <div class="title-expert">
+    <h2 class="text-shadow">BlockAdvert list</h2>
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Reason</th>
+                <th>Idadvert</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('bor_blockadvert_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.reason }}</td>
+                <td>{{ entity.idAdvert }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('bor_blockadvert_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('bor_blockadvert_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('bor_admin_advert_update', { 'id': entity.idAdvert }) }}">edit advert</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+    </div>
+{% endblock %}

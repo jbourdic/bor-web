@@ -1,0 +1,412 @@
+/* ==========================================================================
+   @comment:
+   ========================================================================== */
+
+/*----------------------------------------------------------------
+	Mode desktop
+-----------------------------------------------------------------*/
+
+#advert {
+
+    #search-result-container {
+        width: 87%;
+        margin: 0 auto;
+        float: left;
+    }
+
+    #search-result-top-left {
+        width: 57%;
+        float: left;
+    }
+
+    #search-result-top-left h1 {
+        font-family: sans-serif;
+        font-size: 20px;
+    }
+
+    #search-result-top-left p {
+        width: 90%;
+        float: left;
+        font-family: sans-serif;
+        font-size: 14px;
+        margin-left: 20px;
+        color: #868686;
+        margin-top: 0%;
+    }
+
+    #search-result-top-right {
+        float: right;
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .search-button {
+        background-color: #838383;
+        position: absolute;
+        height: 26px;
+        width: 26px;
+        top: 0;
+        right: 0;
+        padding: 3px;
+        a {
+            background: url("../../tpl/img/common/loupe-white.png") no-repeat;
+            background-size: cover;
+            height: 20px;
+            width: 20px;
+            display: block;
+
+        }
+
+    }
+
+    #search-result-top-right input {
+        display: block;
+        width: 210px;
+        height: 22px;
+        background-color: #e9e9e9;
+        color: #858282;
+        border: 1px solid #858282;
+        margin-right: 26px;
+    }
+
+    #search-result-top-right select {
+        margin-top: 15px;
+        width: 236px;
+        height: 22px;
+        background-color: #e9e9e9;
+        color: #858282;
+        border: 0px;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    .search-result {
+        width: 225px;
+        height: 220px;
+        position: relative;
+        float: left;
+        margin-left: 20px;
+        margin-top: 5px;
+
+        a.search-result-img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+
+            background-color: $light-grey-color;
+            img {
+                width: 225px;
+                height: 220px;
+            }
+        }
+
+        li {
+            display: inline-block;
+        }
+        .search-result-bottom {
+            opacity: 0.6;
+            color: #FFF;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            height: 50px;
+            max-height: 50px;
+        }
+
+        .search-result-bottom-title {
+            background-color: $primary-orange;
+
+            font-size: 10px;
+
+            li {
+                font-style: italic;
+            }
+            li:nth-child(2) {
+                margin-left: 10px;
+            }
+
+            li:first-child {
+                float: left;
+                width: 85px;
+            }
+
+            li:last-child {
+                float: right;
+            }
+
+            p {
+                text-transform: uppercase;
+                font-size: 14px;
+                margin-bottom: 3px;
+            }
+
+            .favorite-search-result-icone {
+                background: url("../../tpl/img/common/favoris-white.png") no-repeat;
+                background-size: cover;
+                float: right;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 5px;
+                right: 5px;
+            }
+        }
+
+        .search-result-bottom-hover {
+            background-color: $border-grey;
+            opacity: 0;
+
+            ul {
+                padding-left: 10px;
+            }
+
+            li a {
+                height: 30px;
+                width: 30px;
+                margin-left: 5px;
+                display: block;
+            }
+
+            li:nth-child(1) a {
+                background: url("../../tpl/img/common/facebook-white.png") no-repeat;
+                background-size: cover;
+            }
+
+            li:nth-child(1) a:hover {
+                background-position: 0px -30px;
+            }
+
+            li:nth-child(2) a {
+                background: url("../../tpl/img/common/twitter-white.png") no-repeat;
+                background-size: cover;
+            }
+
+            li:nth-child(2) a:hover {
+                background-position: 0px -30px;
+            }
+
+            li:nth-child(3) a {
+                background: url("../../tpl/img/common/google-plus-white.png") no-repeat;
+                background-size: cover;
+            }
+
+            li:nth-child(3) a:hover, li:nth-child(3) a.active {
+                background-position: 0px -30px;
+            }
+
+            li:nth-child(4) a {
+                background: url("../../tpl/img/common/favoris-white.png") no-repeat;
+                background-size: cover;
+            }
+
+            li:nth-child(4) a:hover, li:nth-child(4) a.active {
+                background-position: 0px -26px;
+            }
+
+            li:nth-child(5) a {
+                background: url("../../tpl/img/common/trash-white.png") no-repeat;
+                background-size: cover;
+            }
+
+            li:nth-child(5) a:hover {
+                background-position: 0px -32px;
+            }
+        }
+    }
+
+    /*-----------------Hover under div.the search-result -----------*/
+    .search-result:hover {
+        .search-result-bottom-hover {
+            opacity: 0.8;
+
+            li {
+
+                opacity: 1;
+
+            }
+
+        }
+
+        .search-result-bottom-title {
+            opacity: 0;
+        }
+    }
+
+    .left-button-search-result {
+        width: 7%;
+        float: left;
+        display: block;
+        div {
+            height: 40px;
+            width: 25px;
+            background-color: $light-grey-color;
+            color: white;
+            padding: 10px;
+            margin: 0 auto;
+            position: relative;
+            top: 21.8em;
+        }
+        span {
+            display: block;
+            border-top: 1px solid white;
+            border-left: 1px solid white;
+            -webkit-transform: rotate(-45deg);
+            height: 20px;
+            width: 20px;
+        }
+    }
+
+    .right-button-search-result {
+        width: 4%;
+        float: left;
+        display: block;
+        div {
+            height: 40px;
+            width: 25px;
+            background-color: $light-grey-color;
+            color: white;
+            padding: 10px;
+            margin: 0 auto;
+            position: relative;
+            top: 21.8em;
+            -webkit-transform: rotate(180deg);
+        }
+        span {
+            display: block;
+            border-top: 1px solid white;
+            border-left: 1px solid white;
+            -webkit-transform: rotate(-45deg);
+            height: 20px;
+            width: 20px;
+        }
+    }
+
+    .page-and-link-search-result {
+        position: relative;
+        ul {
+            position: absolute;
+            right: 0;
+            top: 0;
+            li {
+                display: inline-block;
+            }
+        }
+        span {
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+            font-size: 14px;
+            color: $footer-font-color;
+        }
+    }
+
+    .favorite-search-result {
+        background: url(../img/common/favoris.png) no-repeat;
+        background-size: cover;
+        height: 30px;
+        width: 30px;
+        display: block;
+    }
+
+    .upload-search-result {
+        background: url(../img/common/deposer.png) no-repeat;
+        background-size: cover;
+        height: 26px;
+        width: 20px;
+        display: block;
+    }
+
+    .favorite-search-result:hover {
+        background-position: 0px -30px;
+    }
+
+    .upload-search-result:hover {
+        background-position: 0px -29px;
+    }
+    .search-page-hidden {
+        display: none;
+    }
+    .hidden-page-search-result {
+        display: none;
+    }
+
+    #search-result-top-right input::-webkit-input-placeholder {
+        font-size: 16px;
+    }
+
+}
+/*----------------------------------------------------------------
+	Breakpoint 1 : 1200px
+-----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+	Breakpoint 2 : 1024px
+-----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+	Breakpoint 3 : 768px
+-----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 480px
+-----------------------------------------------------------------*/
+@media screen and (max-width: $phone) {
+
+    .page-and-link-search-result {
+        div {
+            margin: 0 auto;
+            width: 100px;
+            span {
+                float: left;
+                width: 65px;
+                margin: 0px 5px;
+            }
+        }
+
+    }
+    #advert {
+        #search-result-top-left {
+            width: 100%;
+        }
+    }
+    .right-button-search-result, .left-button-search-result {
+        display: none;
+    }
+    .search-result {
+        display: block;
+        margin: 10px auto;
+        float: none;
+    }
+    #search-result-container {
+        width: 100%;
+    }
+    .search-page-hidden {
+        display: inline-block;
+        float: left;
+        color: $footer-font-color;
+    }
+    #search-result-top-left p {
+        padding: 10px;
+        float: none;
+        width: 100%;
+        text-align: justify;
+        margin-left: 0px;
+    }
+    #search-result-top-right {
+        margin: 0 auto;
+        display: block;
+        width: 240px;
+        float: none;
+    }
+    .hidden-page-search-result {
+        display: block;
+        margin-bottom: 10px;
+
+    }
+    .page-and-link-search-result ul {
+        right: 20%;
+    }
+}

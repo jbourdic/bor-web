@@ -1,0 +1,70 @@
+/* ==========================================================================
+   @comment: Gestion des titres sur l'ensemble du site
+   ========================================================================== */
+
+/*----------------------------------------------------------------
+	Mode desktop
+-----------------------------------------------------------------*/
+/**
+  Titles classes starting with ttl-
+*/
+[class^="ttl-"] {
+  margin-bottom: 16px;
+  &.txt-upper {
+    text-transform: uppercase;
+  }
+  &.txt-bold {
+    font-weight: bold;
+  }
+  &.txt-under {
+    text-decoration: underline;
+  }
+  &.txt-italic {
+    font-style: italic;
+  }
+  &.txt-shadow {
+    text-shadow: 2px 2px 2px black
+  }
+  &.color-orange{
+    color: $orange-color;
+  }
+  &.color-gray{
+    color: $text-color;
+  }
+  &.color-white{
+    color: $white-color;
+  }
+  &.color-primary{}
+}
+
+/**
+  Hn styling
+*/
+.ttl-1{
+  font-size: 24px;font-weight: bold;
+}
+.ttl-2{
+  font-size: 20px;font-weight: bold;color: $black-color;
+}
+.ttl-3{
+  font-size: 16px;
+}
+.ttl-4{
+  font-size: 15px;
+}
+
+/**
+  Title zones
+*/
+.page-ttl {
+
+  &.under {
+    margin-bottom: 16px;
+    border-bottom: 1px solid $text-color;
+  }
+}
+
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 1200px
+-----------------------------------------------------------------*/

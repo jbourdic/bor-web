@@ -1,0 +1,86 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+
+{% block content %}
+    <div class="content">
+        <div class="titre-page">
+            <h1>Consulter les annonces</h1>
+        </div>
+        <div class="outils-right">
+            <a href="#" onclick="ga('send', 'event', 'annonce', 'bouton', 'ajout_favori');"><span class="ajout_favoris fav {% if isFavorite %}active{% endif %}" data-id="{{ entity.id }}" title="Ajouter aux favoris"></span></a>
+            {% if app.user == entity.user %}
+                <a class="editer-profil" href="{{ url("bor_advert_edit", {'id': entity.id}) }}"><span><img alt="Editer l'annonce" src="{{ asset("bundles/borcore/tpl/img/picto_compte/picto_editer.png") }}"/></span></a>
+            {% endif %}
+        </div>
+        <div class="contenu-page">
+            <div id="popup1" class="popup1">
+                <div data-toggle="close-popup" data-target="#popup1" class="close-popup">X</div>
+                <iframe src="{{ url('bor_blockadvert_new', {'idAdvert': entity.id}) }}" frameborder="0"></iframe>
+            </div>
+            <div class="slider report-wrapper">
+                {% for media in entity.medias|slice(0, 1) %}
+                    <div id="vignette" class="img1-active">
+                        <img src="{{ asset(media.getWebPath()) }}" alt="">
+                    </div>
+                {% endfor %}
+                    <div class="liste-image">
+                        {% if entity.medias|length > 1 %}<p>Autres photos :</p>
+                            {% for media in entity.medias %}
+                                    <div class="img-small">
+                                        <img class="liste-vignette" src="{{ asset(media.getWebPath()) }}" alt="" data-img="{{ asset(media.getWebPath()) }}">
+                                    </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+            </div>
+            <div class="contenu-annonce">
+                <div class="titre-annonce-desktop">
+                    <h2>{{ entity.title }}</h2>
+                    <p class="ville">{{ entity.zipCode }}</p>
+                    <p class="prixTTC">{{ entity.price }}€ TTC</p>
+                </div>
+                <div class="description">
+                    <h3>Description</h3>
+                    <p> {{ entity.description }}
+                    </p>
+                </div>
+                <div class="fiche-detaillee">
+                    <h3>Fiche détaillée</h3>
+                    <ul class="lieu">
+                        <li>{{ entity.streetNumber }} {{ entity.street }}</li>
+                        <li>{{ entity.zipCode }}</li>
+                        <li>{{ entity.city }}</li>
+                    </ul>
+                    <ul class="prix">
+                        <li>Charges : {{ entity.charges }}</li>
+                        <li>Frais : {{ entity.tax }}</li>
+                        <li>Total : {{ entity.charges }} + {{ entity.tax }}</li>
+                    </ul>
+                    <ul class="type">
+                        <li>{{ entity.surface }} m²</li>
+                        <li>{{ entity.lodgmentType }}</li>
+                        <li>{{ entity.transactType }}</li>
+                    </ul>
+                </div>
+                <div class="informations-vendeur">
+                    <h3>Informations vendeur</h3>
+                    <div class="consult_num">
+                        <img src="{{ asset('bundles/borcore/tpl/img/annonce/tel.png') }}" alt="Consulter le numéro">
+                        <a href="tel:{{ entity.user.phone }}" onclick="ga('send', 'event', 'annonce', 'bouton', 'numero');">{{ entity.user.phone }}</a>
+                    </div>
+                    <div class="envoi_mail">
+                        <img src="{{ asset('bundles/borcore/tpl/img/annonce/mail.png') }}" alt="Envoyer un email">
+                        <a href="mailto:{{ entity.user.email }}" onclick="ga('send', 'event', 'annonce', 'bouton', 'email');">Envoyer un email</a>
+                    </div>
+                </div>
+                <input id="pth" type="hidden" value="{{ path('bor_favorite_add') }}"/>
+                <input id="isCo" type="hidden" value="{% if app.user is not null %}1{% else %}0{% endif %}"/>
+                <a data-target="#popup1" data-toggle="open-popup" class="signaler_annonce">Signaler l'annonce</a>
+                <div class="social-networks">
+                    <a href="javascript:ouvre('http://www.facebook.com/share.php?u=http://{{ app.request.getHost }}{{ path('bor_advert_get', { 'id': entity.id , 'slug': entity.title }) }}&title={{ entity.title }}')" onclick="ga('send', 'event', 'annonce', 'partage', 'facebook');"><span class="Facebook" title="Partager sur Facebook"></span></a>
+                    <a href="javascript:ouvre('http://twitter.com/intent/tweet?status={{ entity.title }}+http://{{ app.request.getHost }}{{ path('bor_advert_get', { 'id': entity.id , 'slug': entity.title }) }}')" onclick="ga('send', 'event', 'annonce', 'partage', 'twitter');"><span class="Twitter" title="Partager sur Twitter"></span></a>
+                    <a href="javascript:ouvre('https://plus.google.com/share?url=http://{{ app.request.getHost }}{{ path('bor_advert_get', { 'id': entity.id , 'slug': entity.title }) }}')" onclick="ga('send', 'event', 'annonce', 'partage', 'google');"><span class="Google" title="Partager sur Google +"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

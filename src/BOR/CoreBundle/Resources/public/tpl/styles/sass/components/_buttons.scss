@@ -1,0 +1,40 @@
+/* ==========================================================================
+   @comment: Button design
+   ========================================================================== */
+
+/*----------------------------------------------------------------
+	Mode desktop
+-----------------------------------------------------------------*/
+
+
+/**
+  Basic btn style
+*/
+
+.btn {
+
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  border: none;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/**
+  btn type styling
+*/
+
+.btn-default {
+  @include button-variant($white-color,$orange-color, $white-color, $text-color);
+}
+.btn-gray{
+  @include button-variant($white-color,$border-grey,$white-color,$orange-color);
+}

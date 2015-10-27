@@ -1,0 +1,388 @@
+/* ==========================================================================
+   @comment:
+   ========================================================================== */
+
+/*----------------------------------------------------------------
+	Mode desktop
+-----------------------------------------------------------------*/
+
+header {
+  @include clearfix;
+
+  position: fixed;top:0;
+  width:100%;height: $headerHeght;
+
+  padding-bottom: 10px;
+  border-bottom: 1px solid $border-grey;
+  background: $bg-color;
+
+  .logo {
+    padding: 12px 0px 0px 20px;
+    max-height: 47px;
+  }  
+
+  .cookie-legal{
+    position: absolute;
+    left: 0;top: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .d-nav ul {
+    padding:0;
+    margin:0;
+    padding: 15px 20px ;
+    list-style-type:none;
+
+    li.authentification{
+      text-transform: none;
+      margin-left: 0px;
+      position:relative;
+
+      .sub-nav{
+        position:absolute;
+        right: 0;top:25px;
+        display: none;
+        white-space: nowrap;
+        background-color: rgba(133,130,130,.7);
+        li {
+          width:250px;
+        }
+
+        li:last-child a{
+          border: none;
+        }
+        li:first-child a{
+          padding-top: 0;
+        }
+        li a{
+          color:white;
+          font-size: 14px;
+          border-bottom: 1px solid white;
+          padding-top: 7px;
+          padding-bottom: 7px;
+          display: block;
+          width: 100%;
+          text-align: left;
+        }
+      }
+
+      &:hover{
+        .sub-nav {
+          display: block;
+        }
+      }
+    }
+
+  li {
+    text-transform: uppercase;
+    margin-left: 5px;
+    float: left; /*pour IE*/
+
+    a {
+      display: block;
+      float: left;
+      color: #999999;
+      text-decoration: none;
+      text-align: center;
+      padding: 5px;
+      /*pour avoir un effet "outset" avec IE :*/
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+  }
+  .m-nav {
+    display: none;
+    position: relative;
+    .burger-nav {
+      display: block;
+      width: $headerHeght;
+      height: $headerHeght;
+      background: url("#{$pathImg}menu_mobile.png") no-repeat center;
+
+      border: none;
+      &:focus {
+        outline: none;
+      }
+
+    }
+    &:hover .burger-nav, &:active .burger-nav {
+      background: url("#{$pathImg}menu_mobile_hover.png") no-repeat center;
+      outline: none;
+    }
+    .sub-menu  {
+      display: none;
+      position: absolute;
+      min-width: 260px;
+      right: 0;
+      background-color: #f0eeee;
+
+      > ul li {
+        &:last-child {
+          a > span{
+            border: none;
+          }
+        }
+        a,button {
+          position: relative;
+          display: block;
+          width: 100%;
+          padding: 0 24px;
+          text-align: left;
+          background: none;
+          border: none;
+          &:hover {
+            > span {
+              color: $orange-color;
+            }
+          }
+          > span {
+            display: block;
+            padding: 11px 0 11px 30px;
+            border-bottom: 1px solid #000000;
+          }
+        }
+      }
+
+      [class^="icon-"]:before {
+        content: "";left: 28px;top: 50%;
+        position: absolute;
+        width: 18px;height: 18px;
+        margin-top: -9px;
+      }
+
+      .icon-concept{
+        &:before {
+          background-image: url("../img/picto_menu/mobile/concept_mobile.png");
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        &:hover:before {
+          background-image: url("../img/picto_menu/mobile/concept_hover_mobile.png");
+        }
+
+      }
+
+      .icon-experts{
+        &:before {
+          background-image: url("../img/picto_menu/mobile/conseil_mobile.png");
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        &:hover:before {
+          background-image: url("../img/picto_menu/mobile/conseil_hover_mobile.png");
+        }
+
+      }
+
+      .icon-partenaires{
+        &:before {
+          background-image: url("../img/picto_menu/mobile/partenaire_mobile.png");
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        &:hover:before {
+          background-image: url("../img/picto_menu/mobile/partenaire_hover_mobile.png");
+        }
+      }
+
+      .icon-rechercher{
+        &:before {
+          background-image: url("../img/picto_menu/mobile/loupe_mobile.png");
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        &:hover:before {
+          background-image: url("../img/picto_menu/mobile/loupe_loupe_mobile.png");
+        }
+      }
+
+      .icon-publier{
+        &:before {
+          background-image: url("../img/picto_menu/mobile/annoncer_mobile.png");
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        &:hover:before {
+          background-image: url("../img/picto_menu/mobile/annoncer_hover_mobile.png");
+        }
+      }
+
+      .icon-personnaliser{
+        &:before {
+          background-image: url("../img/picto_menu/mobile/perso_mobile.png");
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        &:hover:before {
+          background-image: url("../img/picto_menu/mobile/perso_hover_mobile.png");
+        }
+      }
+
+      .icon-moocer {
+        &:before {
+          background-image: url("../img/picto_menu/mobile/mooc_mobile.png");
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        &:hover:before {
+          background-image: url("../img/picto_menu/mobile/mooc_hover_mobile.png");
+        }
+      }
+      .icon-actualites{
+        &:before {
+          background-image: url("../img/picto_menu/mobile/actualites_mobile.png");
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        &:hover:before {
+          background-image: url("../img/picto_menu/mobile/actualites_hover_mobile.png");
+        }
+
+      }
+
+      .icon-tableau{
+        &:before {
+          background-image: url("../img/picto_menu/mobile/tableau_bord_mobile.png");
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        &:hover:before {
+          background-image: url("../img/picto_menu/mobile/tableau_bord_hover_mobile.png");
+        }
+
+      }
+      
+      .head-nav {
+        display: none;
+        background: #FFFFFF;
+        border-bottom: 1px solid $border-grey;
+      }
+    }
+    &.active {
+      .sub-menu {
+        display: block;
+      }
+    }
+  }
+
+
+
+  }
+
+
+
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 1200px
+-----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+	Breakpoint 2 : 1024px
+-----------------------------------------------------------------*/
+@media screen and (max-width:$tablet){
+  header{
+    @include clearfix;
+    height:$headerHeght;
+
+    .logo {
+      max-height: 40px;
+    }
+
+    .d-nav ul {
+
+      li.authentification{
+
+        .sub-nav{
+          top:20px;
+          li {
+            width:200px;
+          }
+
+          }
+          li a{
+            font-size: 12px;
+          }
+        }
+      li {
+
+        a {
+          font-size: 12px;
+          /*pour avoir un effet "outset" avec IE :*/
+
+        }
+      }
+    }
+
+
+    }
+}
+@media screen and (max-width: $wide-phone), screen and (max-height: $height-break){
+  header {
+    .m-nav{
+      display: block;
+    }
+  }
+
+}
+
+
+/*----------------------------------------------------------------
+	Breakpoint 3 : 768px
+-----------------------------------------------------------------*/
+@media screen and (max-width:$wide-phone){
+  header{
+    @include clearfix;
+    height:$headerHeght;
+    .logo {
+      max-height: 36px;
+    }
+    .d-nav ul {
+      li.authentification{
+        .sub-nav{
+          top:18px;
+          li {
+            width:180px;
+          }
+        }
+        li a,{
+          font-size: 11px;
+        }
+      }
+    }
+    li {
+      a, button {
+        font-size: 11px;
+        /*pour avoir un effet "outset" avec IE :*/
+      }
+    }
+  }
+}
+/*----------------------------------------------------------------
+	Breakpoint 1 : 480px
+-----------------------------------------------------------------*/
+@media screen and (max-width: $phone) {
+  header {
+    @include clearfix;
+    height: $headerHeght;
+
+    .logo {
+      max-height: 36px;
+    }
+
+    .d-nav ul {
+      display: none;
+    }
+    .m-nav {
+      &.active {
+        .sub-menu .head-nav {
+          display: block;
+        }
+      }
+    }
+  }
+}

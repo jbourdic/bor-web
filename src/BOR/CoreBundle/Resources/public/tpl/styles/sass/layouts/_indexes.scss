@@ -1,0 +1,46 @@
+/* ==========================================================================
+   @comment: Regroupe l'ensemble des z-index utilisés sur le projet. Permet
+   d'avoir une visibilité sur les index
+   ========================================================================== */
+
+/*----------------------------------------------------------------
+	Mode desktop
+-----------------------------------------------------------------*/
+
+.dashboard, .sidenav, footer {
+  z-index: $indexFrame;
+}
+header {
+  z-index:$indexHeader;
+}
+.main-container {
+  z-index: $indexContainer;
+}
+
+#homepage {
+  #carousel-home {
+    .triangle-down-right {
+      z-index: 101;
+    }
+    .hover-slide {
+      z-index: 102;
+    }
+  }
+}
+.modal-msg .msg-box{
+  z-index: 2000;
+}
+
+/**
+  Media gallery == pop up media
+*/
+.media-gallery{
+  z-index: 1;
+}
+
+/**
+  Filter
+*/
+.aside-filter{
+  z-index: 1;
+}

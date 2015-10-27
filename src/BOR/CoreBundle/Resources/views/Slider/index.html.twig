@@ -1,0 +1,62 @@
+{% extends 'BORAdminBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>Slider list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Id</th>
+                <th>Link</th>
+                <th>Text</th>
+                <th>Active</th>
+                <th>Order</th>
+                <th>Createdon</th>
+                <th>Up</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                {% if entity.getMedia() is defined %}
+                    <td><img style="width:100px;" src="{{ asset(entity.getMedia().getWebPath()) }}"/></td>
+                {% else %}
+                    <td>Pas de photo</td>
+                {% endif %}
+                <td><a href="{{ path('bor_slider_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.link }}</td>
+                <td>{{ entity.text }}</td>
+                <td>{{ entity.active }}</td>
+                <td>{{ entity.slideOrder }}<td>
+                <td>{% if entity.createdOn %}{{ entity.createdOn|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.updatedOn %}{{ entity.updatedOn|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('bor_slider_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('bor_slider_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                    <li><a href="{{ path('bor_slider_delete', { 'id': entity.id }) }}">delete</a></li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% if nbRows <= 8 %}
+    <ul>
+        <li>
+            <a href="{{ path('bor_slider_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% else %}
+        Vous ne pouvez pas avoir plus de 8 images dans le slider
+    {% endif %}
+    {% endblock %}

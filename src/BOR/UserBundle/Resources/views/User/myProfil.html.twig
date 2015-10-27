@@ -1,0 +1,24 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+{% set page_title = 'Mon profil - Blabla.academy' %}
+{% block meta %}
+    <meta name="description" content="Mon profil - Blabla.academy">
+{% endblock %}
+{% block content %}
+<div class="title-expert">
+    <h2 class="text-shadow">Mon Profil</h2>
+    <p>
+    </p>
+    </div>
+    <div class="profil-expert">
+        <ul>
+            <li><a href="{{ url("fos_user_profile_show") }}" name="mon_profil"><p>Mon profil</p></a></li>
+            <li><a href="{{ url("bor_advert_me") }}" name="mes_annonces"><p>Mes annonces</p></a></li>
+            <li><a href="{{ url("bor_post_me") }}" name="mes_articles"><p>Mes articles</p></a></li>
+            <li><a href="#" name="mes_achats"><p>Mes achats</p></a></li>
+            <li><a href="{{ url("bor_favorite_me") }}" name="favoris"><p>Mes favoris</p></a></li>
+            <li><a href="{{ url("bor_vip_index") }}" name="abonnement"><p>Abonnement</p></a></li>
+            <li><a href="{{ url("bor_gallery") }}" name="galerie"><p>Ma galerie</p></a></li>
+            <li><a href="{{ url("fos_user_security_logout") }}" name="me_deconnecter"><p>Me déconnecter</p></a></li>
+        </ul>   
+    </div>
+{% endblock %}

@@ -1,0 +1,69 @@
+<div id="carousel-home" class="carousel slide" data-ride="carousel">
+    <div class="triangle-down-right"></div>
+    <div class="hover-slide text-right pdr-lg">
+        <h2 class="ttl-1 txt-upper">Blabla.academy</h2>
+        <p class="ttl-2">Devenez un expert dans toutes vos démarches immobilières</p>
+        <div class="home-search">
+            {{ form_start(form_filter, {'action': path('bor_advert_list')   }) }}
+            <p class="DescriptionInputBas">RECHERCHEZ VOTRE BIEN : </p>
+            {#{{ form_start(form_filter, {attr:{class:"clearfix pdt-lg pdb-lg"}}) }}#}
+            <div class="box-dib">
+                <div id="collapsePrice" class="collapse">
+                    <div class="wrapper bg-trans">
+                        <div class="form-group">
+                            {{ form_label(form_filter.min, null, {label_attr:{class:"label-control"}}) }}
+                            {{ form_widget(form_filter.min,{attr:{class:"form-control"}}) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form_filter.max, null, {label_attr:{class:"label-control"}}) }}
+                            {{ form_widget(form_filter.max,{attr:{class:"form-control"}}) }}
+                        </div>
+                        <div class="form-group clearfix">
+                            {% for radio in form_filter.priceType %}
+                                <div class="col-md-6">
+                                    {{ form_label(radio, null, {label_attr:{class:"control-label "}}) }}
+                                    {{ form_widget(radio, {attr:{class:""}}) }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <button class="button btn btn-block btn-white" type="button" data-target="#collapsePrice" data-toggle="collapse">Prix / Loyer</button>
+            </div>
+            <div class="box-dib">
+                <div id="collapseLoc" class="collapse">
+                    <div class="wrapper bg-trans">
+                        <div class="form-group">
+                            {{ form_label(form_filter.zipCode, 'Code postal', {label_attr:{class:"label-control"}}) }}
+                            {{ form_widget(form_filter.zipCode,{attr:{class:"form-control"}}) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form_filter.transactType, 'Type de transaction', {label_attr:{class:"label-control"}}) }}
+                            {{ form_widget(form_filter.transactType,{attr:{class:"form-control"}}) }}
+                        </div>
+                    </div>
+                </div>
+                <button class="button btn btn-block btn-white" type="button" data-target="#collapseLoc" data-toggle="collapse">Localisation</button>
+            </div>
+            <div class="box-dib">
+                {{ form_widget(form_filter.submit,{attr:{class:"btn btn-block btn-default"}}) }}
+            </div>
+            <div class="visuallyhidden">
+                {{ form_rest(form_filter) }}
+            </div>
+            {{ form_end(form_filter) }}
+        </div>
+    </div>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        {% for entity in entities %}
+            <div class="item{% if loop.first %} active{% endif %}">
+                <img src="{{ asset(entity.getMedia().getWebPath()) }}" />
+                <div class="carousel-caption">
+                    <a href="{{ entity.link }}" onclick="ga('send', 'event', 'accueil', 'lien', 'contenu_slider');">{{ entity.text }}</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>

@@ -1,0 +1,115 @@
+/* ==========================================================================
+   @comment: Modified the 09/01/2015 by P.Dialinas and C.Laurens
+   ========================================================================== */
+
+/*----------------------------------------------------------------
+	Mode desktop
+-----------------------------------------------------------------*/
+
+footer {
+  position: fixed;bottom:0;left:0;
+  width: 100%;height: $footerHeight;
+  background: $bg-color;
+
+  color:$footer-font-color;
+  border-top:1px solid $border-grey;
+  font-size: 10px;
+  font-style:sans-serif;
+
+    a
+    {
+      text-decoration:none;
+     color:$footer-font-color;
+      height:18px;
+    }
+    a:hover
+    {
+      color:$primary-orange;
+    }
+
+    li
+    {
+      display:inline-block;
+    }
+
+    .footer-left
+    {
+      liste-style:none;
+      text-decoration: none;
+      float:left;
+      margin-top:18px;
+      padding-left: 1.6%;
+    }
+
+    .footer-right
+    {
+      float:right;
+      margin-top: 10px;
+      padding-right: 1.6%;
+
+        a
+        {
+          width:18px;
+          height:18px;
+          display:block;
+          margin-left:5px;
+          position:relative;
+          top:5px;
+        }
+    }
+
+    .footer-right #img-facebook-footer
+    {
+        background:url("../../tpl/img/social-icon/facebook-icon.png") no-repeat;
+    }
+
+    .footer-right #img-facebook-footer:hover
+    {
+      background:url("../../tpl/img/social-icon/facebook-icon-hover.png") no-repeat;
+    }
+
+    .footer-right #img-twitter-footer
+    {
+        background:url("../../tpl/img/social-icon/twitter-icon.png") no-repeat;
+    }
+
+    .footer-right #img-twitter-footer:hover
+    {
+        background:url("../../tpl/img/social-icon/twitter-icon-hover.png") no-repeat;
+    }
+
+    .footer-right #img-google-footer
+    {
+        background:url("../../tpl/img/social-icon/google-icon.png") no-repeat;
+    }
+
+     .footer-right #img-google-footer:hover
+    {
+        background:url("../../tpl/img/social-icon/google-icon-hover.png") no-repeat;
+    }
+}
+
+/*----------------------------------------------------------------
+	Breakpoint 1 : 1200px
+-----------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------
+	Breakpoint 2 : 1024px
+-----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+	Breakpoint 3 : 768px
+-----------------------------------------------------------------*/
+@media screen and (max-width: $phone)
+{
+  footer{
+    .mobile-footer-hide
+    {
+      position: relative;
+    }
+  }
+}
+/*----------------------------------------------------------------
+	Breakpoint 1 : 480px
+-----------------------------------------------------------------*/

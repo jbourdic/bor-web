@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{% block stylesheets %}
+		<!-- Les styles css ICI -->
+		<link rel="stylesheet" href="{{ asset("bundles/borcore/tpl/styles/main.css") }}" />
+	{% endblock %}
+</head>
+<body>
+<div style="padding: 0 25px">
+    <h1 class="H1FormContact">Signaler cet article</h1>
+{#
+	<td>Id : {{ entity.post.id }}</td><br />
+	<td>Title : {{ entity.post.title }}</td><br />
+	<td>Content : {{ entity.post.content }}</td><br />
+	<td>Type : {{ entity.post.type }}</td><br />
+	<td>Active : {{ entity.post.active }}</td><br />
+	<td>Media title : {{ entity.post.metatitle }}</td><br />
+	<td>Meta description : {{ entity.post.metadescription }}</td><br />#}
+
+	     <div id="BlockFormConnexionTall">
+			{{ form_start(form) }}
+			 <div class="Raw">
+				 <label class="LabelInput">{{form_label(form.reason,'Raison')}}* :</label>
+				 {{form_widget(form.reason, {"attr":{
+					 "class":"TextAreaInputAddAnnonce",
+					 "type":"textarea",
+					 "required":"true",
+					 "placeholder":"Saisir la raison de votre signalement"
+				 }})
+				 }}
+			 </div>
+			 <div class="RawForm">
+				 {{form_widget(form.submit, { "label" : "Signaler", "attr":{
+					 "class":"OrangeSubmit",
+					 "value":"Signaler"
+				 }})
+				 }}
+			 </div>
+			 {{ form_end(form) }}
+			 <div class="clear"></div>
+			 <p>
+				 <a href="{{ path('bor_post_list') }}">
+					 Retourner à la liste des articles
+				 </a>
+			 </p>
+		</div>
+</div>
+</body>
+</html>

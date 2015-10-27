@@ -1,0 +1,49 @@
+{% extends "BORCoreBundle::layout.html.twig" %}
+{% set page_title = 'Plan du site - Blabla.academy' %}
+{% block meta %}
+    <meta name="description" content="Plan du site - Blabla.academy">
+{% endblock %}
+{% block content %}
+    <div class="content">
+        <h2 class="ttl-1 mrgb-lg">Plan du site</h2>
+        <div class="clearfix contenu-page">
+            <div class="col-md-6">
+                <h2 class="ttl-2">Premiers pas</h2>
+                <ul>
+                    <li><a target="_blank" href="{{ url("bor_core_index") }}">Homepage</a></li>
+                    <li><a target="_blank" href="{{ url("bor_user_adherer") }}">Adhérer</a></li>
+                    <li><a target="_blank" href="{{ url("fos_user_security_login") }}">Se connecter</a></li>
+                </ul>
+                <h2 class="ttl-2">Notre site</h2>
+                <ul>
+                    <li><a target="_blank" href="{{ url("bor_core_concept") }}">Le concept</a></li>
+                    <li><a target="_blank" href="{{ url("bor_vip_index") }}">Nos offres</a></li>
+                    <li><a target="_blank" href="{{ url("bor_contact_create") }}">Contact</a></li>
+                </ul>
+                <h2 class="ttl-2">Juridique</h2>
+                <ul>
+                    <li><a target="_blank" href="{{ url("bor_core_mentionsLegales") }}">Mentions légales</a></li>
+                    <li><a target="_blank" href="{{ url("bor_core_cgu") }}">Conditions générales d'utilisation</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h2 class="ttl-2">Annonces</h2>
+                <ul>
+                    <li><a target="_blank" href="{{ url("bor_advert_list") }}">Rechercher une annonce</a></li>
+                    <li><a target="_blank" href="{{ url("bor_advert_create_post") }}">Créer une annonce</a></li>
+                </ul>
+                <h2 class="ttl-2">Experts</h2>
+                <ul>
+                    <li><a target="_blank" href="{{ url("bor_user_expert") }}">Nos experts</a></li>
+                </ul>
+                <h2 class="ttl-2">Articles</h2>
+                <ul>
+                    <li><a target="_blank" href="{{ url("bor_post_list") }}">Rechercher un article</a></li>
+                    <li><a target="_blank" href="{{ url("bor_post_news") }}">Rechercher une news</a></li>
+                    <li><a target="_blank" href="{{ url("bor_post_renovate") }}">Rechercher un article rénovation</a></li>
+                    <li><a target="_blank" href="{{ url("bor_post_create") }}">Créer un article</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

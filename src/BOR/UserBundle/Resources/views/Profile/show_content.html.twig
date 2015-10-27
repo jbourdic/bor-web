@@ -1,0 +1,83 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block content %}
+    <div class="fos_user_user_show">
+    </div>
+    <div id="Titre">
+        <h1>Consulter mon profil</h1>
+    </div>
+    <div class="BlockCreation">
+        <a class="disable-profil" href="#">Désactiver mon compte</a>
+        <a href="{{ url("fos_user_profile_edit") }}"><img class="editer-profil" alt="Editer mon profil " src="{{ asset("bundles/borcore/tpl/img/picto_compte/picto_editer.png") }}"/></a>
+        <h2>Mes informations personnelles</h2>
+
+        <hr class="HrBlack">
+        <div class="BlockCreationG">
+
+            <div style="display:block;" class="RawFormAdherent">
+                {% if user.media %}
+                    <img style="width:100px;" src="{{ asset(user.getMedia().getWebPath()) }}"/>
+                {% else %}
+                    <img class="avatar" alt="Mon profil Blabla.Academy" src="{{ asset("bundles/borcore/tpl/img/picto_compte/avatar.png") }}" >
+                {% endif %}
+            </div>
+            <div class="RawFormAdherent">
+                <span class="LabelInput3">Civilité* :</span>
+                <span>{{ user.civility }}</span>
+            </div>
+            <div class="RawFormAdherent">
+                <span class="LabelInput3">Prénom* :</span>
+                <span>{{ user.firstname }}</span>
+            </div>
+            <div class="RawFormAdherent">
+                <span class="LabelInput3">Nom* :</span>
+                <span>{{ user.lastname }}</span>
+            </div>
+            <div class="RawFormAdherent">
+                <span class="LabelInput3">Téléphone* :</span>
+                <span>{{ user.phone }}</span>
+            </div>
+            <div class="RawFormAdherent">
+                <span class="LabelInput3">Code Postal* :</span>
+                <span>{{ user.zipCode }}</span>
+            </div>
+        </div>
+
+        <div class="BlockCreationD">
+            <div class="RawFormAdherent">
+                <span class="LabelInput3">E-mail</span>
+                <span>{{ user.email }}</span>
+            </div>
+
+        </div>
+        <div class="BlockCreationBas">
+            <h2 class="H2Form">Je parraine un ami...</h2>
+            <hr class="HrBlack">
+
+            <div id="par_ami">
+                <div class="RawFormAdherent">
+                    <span class="LabelInput1">E-mail de votre ami* :</span>
+                    <input class="TextInput" type="text" placeholder="Saissez l'adresse E-mail de votre ami"/>
+                    <a href="#"><u>En savoir plus </u></a>
+                </div>
+            </div>
+
+            <div id="bouton">
+                <div class="RawFormAdherent">
+                    <input class="OrangeSubmit small" type="submit" value="Envoyer l'invitation"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='popup1' style="display:none">
+        <div class='close-popup'>X</div>
+        <h1>Confirmation</h1><hr>
+        <h2>Êtes-vous sûr de vouloir désactiver votre compte ? (Pour le réactiver, vous devrez vous adresser au support)</h2>
+        <form action="{{ url("bor_user_disable") }}" method="PUT">
+            <input type='button' class='cancel OrangeSubmit' value='Annuler'>
+            <input type='submit' class='ok OrangeSubmit' value='Oui'>
+        </form>
+    </div>
+
+{% endblock %}

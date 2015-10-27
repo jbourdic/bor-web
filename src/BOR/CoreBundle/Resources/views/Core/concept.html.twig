@@ -1,0 +1,116 @@
+{% extends 'BORCoreBundle::layout.html.twig' %}
+{% set page_title = 'Le concept Blabla.academy' %}
+{% block meta %}
+    <meta name="description" content="Blabla.academy est un outil de recherche, de partage et d'apprentissage en immobilier. Trouvez des annonces logement, contactez un expert ou apprenez grâce aux vidéos du MOOC.">
+{% endblock %}
+{% block mainId %} id="main-contact"{% endblock %}
+{% block content %}
+    <div id="concept">
+        <div class="content-box bg-trans">
+            <h1 class="ttl-2">Le concept Blabla.academy</h1>
+
+            <section>
+                <h2 class="ttl-3"><img src="{{ asset('bundles/borcore/tpl/img/concept/concept-banner-1.png') }}" alt="Blabla.academy c'est quoi ?"/></h2>
+                <h3 class="ttl-4"><strong>Un outil de recherche, de partage, et<br/> d'apprentissage en immobilier ! </strong></h3>
+                <div class="col-section clearfix">
+                    <p class="mrgb-lg">Blabla.Academy, c'est la possibilité de : </p>
+                    <div class="col-md-4">
+                        <p class="has-icon"><span class="icon"><img  src="{{ asset('bundles/borcore/tpl/img/concept/icon-loupe.png') }}" alt=""/></span><strong>Pouvoir publier et rechercher des annonces de logement. </strong></p>
+                        <p>Blabla.Academy vous donne la possiblité d'augmenter la visibilité de vos annonces grâce à notre formulaire en ligne.</p>
+                        <p>En recherche ? Trouvez le logement idéal grâce aux filtres de recherche, sauvegardez-le dans vos favoris et retrouvez le grâce à la géolocalisation.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="has-icon"><span class="icon"><img  src="{{ asset('bundles/borcore/tpl/img/concept/icon-portrait.png') }}" alt=""/></span><strong>Se faire conseiller par un expert.</strong></p>
+                        <p>Faites appel à nos experts et échangez directement avec eux grâce à notre livechat pour avoir leurs conseils en ligne.</p>
+                        <p>Nos experts sont à votre disposition pour vous aider dans toutes vos démarches immobilères: rechercher vente de logement, rénovation, conseils, personnalisation d'intérieur.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="has-icon"><span class="icon"><img  src="{{ asset('bundles/borcore/tpl/img/concept/icon-mooc.png') }}" alt=""/></span><strong>Consulter et créer des MOOC.</strong></p>
+                        <p>Blabla.Academy vous propose des MOOC, autrement appelés cours en ligne, afin de vous autoformer dans vos démarches immobilières.</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="ttl-3"><img src="{{ asset('bundles/borcore/tpl/img/concept/concept-banner-2.png') }}" alt="Quand s'inscrire ?"/></h2>
+                <div class="col-section clearfix">
+                    <div class="col-md-6">
+                        <ul>
+                            <li>Quand vous le souhaitez, notamment quand vous voudrez retrouver vos favoris, suivre ou créer votre premier MOOC</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul>
+                            <li>
+                                Sans compte, vous pourrez toujours profiter du reste des fonctionnalités 24h24, 7j/7 en tant que visiteur de nos sites et applications.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="ttl-3"><img src="{{ asset('bundles/borcore/tpl/img/concept/concept-banner-3.png') }}" alt="Pourquoi s'inscrire ?"/></h2>
+                <h3 class="ttl-4">Blabla.Academy propose autant de services gratuits
+                    aux particuliers qu'aux professionnels de l'immobilier.</h3>
+                <div class="col-section clearfix">
+                    <div class="col-md-6">
+                        <p class="has-icon"><span class="icon"><img  src="{{ asset('bundles/borcore/tpl/img/concept/icon-maison.png') }}" alt=""/></span><strong>Particulier?<br/>Devenez l'un de nos adhérents et profitez :</strong></p>
+                        <ul>
+                            <li>
+                                d'un espace personnel pour sauvegarder vos favoris
+                            </li>
+                            <li>
+                                d'un livechat pour discuter avec tous nos experts
+                            </li>
+                            <li>
+                                de points d'expériences cumulés tout au long de votre navigation pour vous permettre de gagner gratuitement des accès aux vidéos
+                            </li>
+                            <li>
+                                d'un accès illimité au MOOC en souscrivant à l'un de nos abonnements Premium
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="has-icon"><span class="icon"><img  src="{{ asset('bundles/borcore/tpl/img/concept/icon-maison-2.png') }}" alt=""/></span><strong>Professionnel ? <br/> Devenez l'un de nos experts et profitez :</strong></p>
+                        <ul>
+                            <li>
+                                d'un espace personnel pour publier vos articles sur e site
+                            </li>
+                            <li>
+                                d'un profil public pour être en contact direct avec les utilisateurs du site et de l'application mobile
+                            </li>
+                            <li>
+                                d'un accès à la rubrique MOOC pour pouvoir créer facilement vos propres vidéos en ligne
+                            </li>
+                        </ul>
+                        <div class="text-right">
+                            <a class="OrangeSubmit" href="{{ path("fos_user_registration_register") }}" onclick="ga('send', 'event', 'concept', 'bouton', 'inscription');">S'inscrire</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="ttl-3"><img src="{{ asset('bundles/borcore/tpl/img/concept/concept-banner-4.png') }}" alt="Quel abonnement choisir ?"/></h2>
+                <h3 class="ttl-4">
+                    Que vous soyez adhérent ou expert, 3 abonnements sout à votre disposition pour profiter pleinement de nos services :
+                </h3>
+                <div class="img-wraper">
+                    <img src="{{ asset('bundles/borcore/tpl/img/concept/prestation.jpg') }}" alt=""/>
+                </div>
+                <div class="foot clearfix">
+                    <span class="details"><i>* Inscrivez-vous pour pouvoir choisir un abonnement<i/></span>
+                    <a class="OrangeSubmit pull-right" href="{{ path('bor_vip_index') }}" onclick="ga('send', 'event', 'concept', 'bouton', 'abonnements');">S'abonner *</a>
+                </div>
+            </section>
+            <section>
+                <h3 class="ttl-3"><img src="{{ asset('bundles/borcore/tpl/img/concept/concept-banner-5.png') }}" alt="Qui sommes nous ?"/></h3>
+                <blockquote>
+                    Association Loi 1901, tous nos bénévoles s'efforcent de rendre plus faciles et plus accessibles les formations d'aujourd'hui et de demain. Devenez bénévole, traducteur ou adhérent pour participer à l'aventure !
+                </blockquote>
+
+                <cite class="pull-right">
+                    <strong>Philippe, président de l'asociation &<br/> Isabelle, trésorière de l'association</strong>
+                </cite>
+            </section>
+        </div>
+    </div>
+{% endblock %}
