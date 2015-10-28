@@ -34,7 +34,7 @@ class RegistrationFormType extends BaseType
                 'type' => 'password',
                 'options' => array('translation_domain' => 'FOSUserBundle'),
                 'first_options' => array('label' => 'Mot de passe * :'),
-                'second_options' => array('label' => 'Verification * :'),
+                'second_options' => array('label' => 'Verification du mot de passe * :'),
                 'invalid_message' => 'fos_user.password.mismatch',
             ))
             ->add('civility', 'choice', array(
